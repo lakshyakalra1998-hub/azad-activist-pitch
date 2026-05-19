@@ -1,578 +1,555 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Azad Engineering | Activist M&A Pitch Brief</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* CLAUDE-INSPIRED MINIMALIST HIGH-FINANCE DESIGN SYSTEM */
-    :root {
-      --font-sans: 'Inter', sans-serif;
-      --color-background-primary: #191919;
-      --color-background-secondary: #222222;
-      --color-background-success: rgba(46, 125, 50, 0.15);
-      --color-background-info: rgba(255, 255, 255, 0.05);
-      --color-background-warning: rgba(230, 81, 0, 0.15);
-      --color-background-danger: rgba(211, 47, 47, 0.15);
-      
-      --color-text-primary: #F5F5F5;
-      --color-text-secondary: #A0A0A0;
-      --color-text-tertiary: #666666;
-      --color-text-success: #4CAF50;
-      --color-text-info: #E0E0E0;
-      --color-text-warning: #FF9800;
-      --color-text-danger: #D32F2F;
-      
-      --color-border-primary: #FFFFFF;
-      --color-border-secondary: #444444;
-      --color-border-tertiary: #2A2A2A;
-      --color-border-success: #4CAF50;
-      --color-border-warning: #FF9800;
-      --color-border-info: #888888;
-      
-      --border-radius-md: 4px;
-      --border-radius-lg: 6px;
-    }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #111111; font-family: var(--font-sans); color: var(--color-text-primary); padding: 40px 24px; display: flex; justify-content: center; -webkit-font-smoothing: antialiased; }
-    
-    .shell { width: 100%; max-width: 1100px; background: #161616; border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); box-shadow: 0 30px 60px -12px rgba(0,0,0,0.6); overflow: hidden; padding-bottom: 24px; }
-    
-    /* TOP RIBBON BRANDING */
-    .topbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; border-bottom: 1px solid var(--color-border-tertiary); background: #191919; }
-    .topbar-left { display: flex; align-items: center; gap: 16px; }
-    .firm-tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--color-text-primary); }
-    .sep { width: 1px; height: 14px; background: var(--color-border-tertiary); }
-    .company-tag { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); }
-    .conf-pill { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; background: var(--color-background-danger); color: var(--color-text-danger); padding: 4px 12px; border-radius: var(--border-radius-md); border: 1px solid rgba(211, 47, 47, 0.3); }
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:transparent}
 
-    /* CHROMATIC TAB CONTROLS */
-    .slide-nav { display: flex; background: #141414; border-bottom: 1px solid var(--color-border-tertiary); }
-    .snav-btn { flex: 1; background: transparent; border: none; border-bottom: 2px solid transparent; padding: 18px 8px; font-size: 11px; font-weight: 600; color: var(--color-text-tertiary); cursor: pointer; letter-spacing: 0.5px; transition: all 0.15s ease; font-family: var(--font-sans); text-transform: uppercase; }
-    .snav-btn:hover { color: var(--color-text-secondary); background: rgba(255,255,255,0.01); }
-    .snav-btn.on { color: var(--color-text-primary); border-bottom-color: var(--color-border-primary); background: #161616; font-weight: 700; }
+.shell{font-family:var(--font-sans);color:var(--color-text-primary);padding:0 0 2rem}
 
-    /* CONTAINER PANEL */
-    .slide { display: none; padding: 32px; animation: fadeIn 0.2s ease-out; }
-    .slide.on { display: block; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:0}
+.topbar-left{display:flex;align-items:center;gap:16px}
+.firm-tag{font-size:10px;font-weight:500;letter-spacing:2px;color:var(--color-text-secondary)}
+.sep{width:0.5px;height:14px;background:var(--color-border-secondary)}
+.company-tag{font-size:11px;font-weight:500;color:var(--color-text-primary)}
+.conf-pill{font-size:9px;font-weight:500;letter-spacing:1.5px;background:var(--color-background-danger);color:var(--color-text-danger);padding:3px 10px;border-radius:3px}
 
-    .sl-header { margin-bottom: 28px; }
-    .sl-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 3px; color: var(--color-text-tertiary); margin-bottom: 8px; text-transform: uppercase; }
-    .sl-title { font-size: 26px; font-weight: 700; color: var(--color-text-primary); line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.5px; }
-    .sl-hook { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; max-width: 750px; padding-left: 14px; border-left: 2px solid var(--color-border-primary); font-style: italic; }
+.slide-nav{display:flex;gap:0;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
+.snav-btn{flex:1;background:transparent;border:none;border-bottom:2px solid transparent;padding:11px 4px;font-size:10px;font-weight:500;color:var(--color-text-secondary);cursor:pointer;letter-spacing:0.8px;transition:color 0.15s;font-family:var(--font-sans)}
+.snav-btn:hover{color:var(--color-text-primary)}
+.snav-btn.on{color:var(--color-text-primary);border-bottom-color:var(--color-text-primary)}
 
-    .asymmetry-line { background: #1C1C1C; border-left: 3px solid var(--color-text-success); border-radius: var(--border-radius-md); padding: 16px 20px; margin-bottom: 24px; font-size: 14px; font-weight: 500; color: #E0E0E0; line-height: 1.5; border: 1px solid var(--color-border-tertiary); border-left-width: 3px; }
+.slide{display:none;padding:24px}
+.slide.on{display:block}
 
-    /* DISPLAY GRID COMPOSITION */
-    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    .gas { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
+.sl-header{margin-bottom:20px}
+.sl-eyebrow{font-size:9px;font-weight:500;letter-spacing:2.5px;color:var(--color-text-tertiary);margin-bottom:8px}
+.sl-title{font-size:20px;font-weight:500;color:var(--color-text-primary);line-height:1.2;margin-bottom:6px}
+.sl-hook{font-size:12px;color:var(--color-text-secondary);line-height:1.5;max-width:580px;padding-left:10px;border-left:2px solid var(--color-border-primary)}
 
-    .card { background: var(--color-background-primary); border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 20px; }
-    .card-surf { background: #131313; border-radius: var(--border-radius-lg); padding: 16px; margin-top: 20px; border: 1px solid var(--color-border-tertiary); overflow: hidden; }
-    .ctitle { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--color-text-tertiary); margin-bottom: 16px; padding-bottom: 6px; border-bottom: 1px solid var(--color-border-tertiary); text-transform: uppercase; }
+.g2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.gas{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px}
 
-    /* DATA ARCHITECTURE SYSTEM */
-    .kv-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--color-border-tertiary); font-size: 13px; }
-    .kv-row:last-child { border-bottom: none; }
-    .kv-label { color: var(--color-text-secondary); }
-    .kv-val { font-weight: 600; color: var(--color-text-primary); }
-    .kv-up { font-weight: 600; color: var(--color-text-success); }
-    .kv-muted { font-weight: 500; color: var(--color-text-tertiary); }
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:16px}
+.card-surf{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:16px}
+.ctitle{font-size:9px;font-weight:500;letter-spacing:2px;color:var(--color-text-tertiary);margin-bottom:12px;padding-bottom:8px;border-bottom:0.5px solid var(--color-border-tertiary)}
 
-    .insight-block { padding: 14px 0; border-bottom: 1px solid var(--color-border-tertiary); }
-    .insight-block:last-child { border-bottom: none; }
-    .ins-lead { font-size: 14px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 5px; }
-    .ins-body { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.6; }
+.kv-row{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:12px}
+.kv-row:last-child{border-bottom:none}
+.kv-label{color:var(--color-text-secondary)}
+.kv-val{font-weight:500;color:var(--color-text-primary)}
+.kv-up{font-weight:500;color:var(--color-text-success)}
+.kv-muted{font-weight:500;color:var(--color-text-tertiary)}
 
-    .stat-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 14px 10px; text-align: center; border: 1px solid var(--color-border-tertiary); }
-    .stat-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-tertiary); margin-bottom: 6px; text-transform: uppercase; }
-    .stat-val { font-size: 22px; font-weight: 700; color: var(--color-text-primary); line-height: 1; }
-    .stat-sub { font-size: 10px; color: var(--color-text-tertiary); margin-top: 5px; line-height: 1.2; }
+.insight-block{padding:10px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.insight-block:last-child{border-bottom:none}
+.ins-lead{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:3px}
+.ins-body{font-size:11px;color:var(--color-text-secondary);line-height:1.55}
 
-    /* METRIC RUNNING SLIDERS */
-    .signal-row { margin: 12px 0; }
-    .sig-header { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
-    .sig-label { color: var(--color-text-secondary); }
-    .sig-val { font-weight: 600; color: var(--color-text-primary); }
-    .bar-bg { height: 4px; background: #262626; border-radius: 100px; overflow: hidden; }
-    .bar-fill { height: 100%; border-radius: 100px; background: #CCCCCC; }
-    .bar-warn { background: var(--color-text-warning); }
-    .bar-ok { background: var(--color-text-success); }
+.stat-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px 12px;text-align:center}
+.stat-label{font-size:9px;font-weight:500;letter-spacing:1.5px;color:var(--color-text-tertiary);margin-bottom:6px}
+.stat-val{font-size:20px;font-weight:500;color:var(--color-text-primary);line-height:1}
+.stat-sub{font-size:10px;color:var(--color-text-tertiary);margin-top:4px}
+.stat-delta{font-size:10px;font-weight:500;color:var(--color-text-success);margin-top:3px}
 
-    .tag { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 4px 8px; border-radius: 3px; border: 1px solid var(--color-border-secondary); color: var(--color-text-secondary); text-transform: uppercase; }
-    .tag-hi { border-color: rgba(76,175,80,0.3); color: var(--color-text-success); background: var(--color-background-success); }
-    .tag-warn { border-color: rgba(255,152,0,0.3); color: var(--color-text-warning); background: var(--color-background-warning); }
-    .tag-info { border-color: rgba(255,255,255,0.15); color: var(--color-text-info); background: var(--color-background-info); }
+.signal-row{margin:8px 0}
+.sig-header{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px}
+.sig-label{color:var(--color-text-secondary)}
+.sig-val{font-weight:500;color:var(--color-text-primary)}
+.bar-bg{height:5px;background:var(--color-border-tertiary);border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px;background:var(--color-text-primary)}
+.bar-warn{background:var(--color-text-warning)}
+.bar-ok{background:var(--color-text-success)}
 
-    .divider { height: 1px; background: var(--color-border-tertiary); margin: 16px 0; }
+.tag{display:inline-block;font-size:9px;font-weight:500;letter-spacing:1px;padding:3px 8px;border-radius:3px;border:0.5px solid var(--color-border-secondary);color:var(--color-text-secondary)}
+.tag-hi{border-color:var(--color-border-success);color:var(--color-text-success);background:var(--color-background-success)}
+.tag-warn{border-color:var(--color-border-warning);color:var(--color-text-warning);background:var(--color-background-warning)}
+.tag-info{border-color:var(--color-border-info);color:var(--color-text-info);background:var(--color-background-info)}
 
-    /* SYSTEM TRANSITION ENVIRONS */
-    .regime-compare { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 0; align-items: center; margin-bottom: 20px; }
-    .regime-box { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 20px; border: 1px solid var(--color-border-tertiary); }
-    .regime-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-tertiary); margin-bottom: 12px; text-transform: uppercase; }
-    .regime-label-hi { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-success); margin-bottom: 12px; text-transform: uppercase; }
-    .arr-col { text-align: center; font-size: 18px; color: var(--color-text-tertiary); font-weight: 500; }
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:12px 0}
 
-    .buyer-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--color-border-tertiary); }
-    .buyer-row:last-child { border-bottom: none; }
-    .buyer-name { font-size: 14px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 4px; }
-    .buyer-logic { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; max-width: 480px; }
-    .buyer-right { text-align: right; flex-shrink: 0; margin-left: 16px; }
-    .buyer-mx { font-size: 15px; font-weight: 700; color: var(--color-text-primary); }
-    .buyer-type { font-size: 10px; color: var(--color-text-tertiary); margin-top: 2px; }
+.regime-compare{display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);gap:0;align-items:center;margin-bottom:12px}
+.regime-box{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px}
+.regime-label{font-size:9px;font-weight:500;letter-spacing:1.5px;color:var(--color-text-tertiary);margin-bottom:10px}
+.regime-label-hi{font-size:9px;font-weight:500;letter-spacing:1.5px;color:var(--color-text-success);margin-bottom:10px}
+.arr-col{text-align:center;font-size:18px;color:var(--color-text-tertiary)}
 
-    .exit-bar-row { margin: 12px 0; }
-    .exit-header { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
-    .exit-label { color: var(--color-text-secondary); }
-    .exit-val { font-weight: 600; color: var(--color-text-primary); }
-    .exit-bg { height: 6px; background: #262626; border-radius: 100px; overflow: hidden; }
-    .exit-fill { height: 100%; border-radius: 100px; background: #555555; }
+.buyer-row{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.buyer-row:last-child{border-bottom:none}
+.buyer-name{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px}
+.buyer-logic{font-size:11px;color:var(--color-text-secondary);line-height:1.4;max-width:340px}
+.buyer-right{text-align:right;flex-shrink:0;margin-left:12px}
+.buyer-mx{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.buyer-type{font-size:9px;color:var(--color-text-tertiary);margin-top:2px}
 
-    .step-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 8px; }
-    .step-box { background: var(--color-background-secondary); border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 14px; }
-    .step-n { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-tertiary); margin-bottom: 6px; }
-    .step-t { font-size: 13px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 4px; }
-    .step-d { font-size: 11.5px; color: var(--color-text-secondary); line-height: 1.5; }
+.exit-bar-row{margin:8px 0}
+.exit-header{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px}
+.exit-label{color:var(--color-text-secondary)}
+.exit-val{font-weight:500;color:var(--color-text-primary)}
+.exit-bg{height:7px;background:var(--color-border-tertiary);border-radius:4px;overflow:hidden}
+.exit-fill{height:100%;border-radius:4px}
 
-    /* CORE REACTION RUNNERS */
-    .footer { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px 0; border-top: 1px solid var(--color-border-tertiary); margin-top: 24px; }
-    .footer-disc { font-size: 10px; color: var(--color-text-tertiary); line-height: 1.4; max-width: 80%; }
-    .footer-pg { font-size: 11px; font-weight: 600; color: var(--color-text-tertiary); }
-    
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-  </style>
-</head>
-<body>
+.asymmetry-line{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 16px;margin-bottom:12px;font-size:13px;font-weight:500;color:var(--color-text-primary);line-height:1.5;border-left:3px solid var(--color-text-primary)}
+
+.step-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0}
+.step-box{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;position:relative}
+.step-n{font-size:9px;font-weight:500;letter-spacing:1.5px;color:var(--color-text-tertiary);margin-bottom:6px}
+.step-t{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px;line-height:1.3}
+.step-d{font-size:10px;color:var(--color-text-secondary);line-height:1.45}
+
+.conn-arrow{display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--color-text-tertiary);padding:0 2px}
+
+.footer{display:flex;justify-content:space-between;align-items:center;padding:12px 24px 0;border-top:0.5px solid var(--color-border-tertiary);margin-top:20px}
+.footer-disc{font-size:9px;color:var(--color-text-tertiary)}
+.footer-pg{font-size:10px;color:var(--color-text-tertiary)}
+</style>
+
+<h2 class="sr-only">Azad Engineering activist pitch deck — 5 slides covering the sovereign bottleneck thesis, alt-data proof, re-rating engine, consolidation playbook, and exit structure</h2>
 
 <div class="shell">
 
-  <div class="topbar">
-    <div class="topbar-left">
-      <span class="firm-tag">ACTIVIST MERCHANT BANK · MUMBAI</span>
-      <div class="sep"></div>
-      <span class="company-tag">Azad Engineering Ltd — M&A Valuation Matrix</span>
-      <div class="sep"></div>
-      <span class="company-tag" style="font-weight: 700; color: var(--color-text-success);">ANALYST: LAKSHYA KALRA</span>
-    </div>
-    <span class="conf-pill">STRICTLY CONFIDENTIAL</span>
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="firm-tag">ACTIVIST MERCHANT BANK · MUMBAI</span>
+    <div class="sep"></div>
+    <span class="company-tag">Azad Engineering Ltd — Strategic Mispricing Brief</span>
+  </div>
+  <span class="conf-pill">STRICTLY CONFIDENTIAL</span>
+</div>
+
+<div class="slide-nav">
+  <button class="snav-btn on" onclick="show(0,this)">01 · Sovereign Node</button>
+  <button class="snav-btn" onclick="show(1,this)">02 · Alt-Data Proof</button>
+  <button class="snav-btn" onclick="show(2,this)">03 · Re-Rating Engine</button>
+  <button class="snav-btn" onclick="show(3,this)">04 · Consolidation</button>
+  <button class="snav-btn" onclick="show(4,this)">05 · Exit Structure</button>
+</div>
+
+<div class="slide on" id="s0">
+  <div class="sl-header">
+    <div class="sl-eyebrow">SLIDE 01 · THESIS</div>
+    <div class="sl-title">Dalal Street Is Pricing a Machining Shop.<br>It Is Actually Pricing India's Only Turbine Chokepoint.</div>
+    <div class="sl-hook">"This is not a growth stock. It is a structural monopoly forming at the exact collision point of two sovereign-funded megatrends — and the market has not noticed yet."</div>
   </div>
 
-  <div class="slide-nav">
-    <button class="snav-btn on" onclick="show(0,this)">01 · Sovereign Node</button>
-    <button class="snav-btn" onclick="show(1,this)">02 · Alt-Data Proof</button>
-    <button class="snav-btn" onclick="show(2,this)">03 · Re-Rating Engine</button>
-    <button class="snav-btn" onclick="show(3,this)">04 · Playbook</button>
-    <button class="snav-btn" onclick="show(4,this)">05 · Exit Universe</button>
-  </div>
+  <div class="asymmetry-line">Core Asymmetry: The same superalloy machining stack that qualifies a vendor for DRDO turbine engines qualifies it for SIGHT-mandated electrolyzer compressors. Azad holds that stack. No second vendor does at comparable scale.</div>
 
-  <div class="slide on" id="s0">
-    <div class="sl-header">
-      <div class="sl-eyebrow">SLIDE 01 · STRATEGIC CORE THESIS</div>
-      <div class="sl-title">Dalal Street Is Pricing a Machining Shop.<br>It Is Actually Pricing India's Only Turbine Chokepoint.</div>
-      <div class="sl-hook">"This is not a generic growth stock. It is a structural single-node monopoly forming at the precise collision point of two multi-crore sovereign-funded industrial cycles."</div>
-    </div>
-
-    <div class="asymmetry-line">The Arbitrage Axis: The exact same high-precision 5-axis metallurgical capability stack required to forge DRDO propulsion units qualifies a vendor to supply SIGHT-mandated green hydrogen turbocompressors. Azad holds this stack. No second domestic player does at scale.</div>
-
-    <div class="gas">
-      <div class="card">
-        <div class="ctitle">THE CONVERGENCE ENGINE RECONCILIATION</div>
-        <div class="insight-block">
-          <div class="ins-lead">The Metallurgical Congruence</div>
-          <div class="ins-body">Superalloy forgings, hot-section 5-axis machining, and high-pressure ceramic dynamic balancing represent one singular capability profile. One capital expenditure asset base. Two distinct sovereign-backed funding streams. Zero recognition across mainstream institutional equity research.</div>
-        </div>
-        <div class="insight-block">
-          <div class="ins-lead">The GTRE Outsourcing Inflection</div>
-          <div class="ins-body">DRDO/GTRE's Kaveri propulsion lines and naval gas turbine indigenization mandates are pushing mission-critical component fabrication to qualified private primes. Qualification takes 5–10 years, creating an infinite retention duration. Azad is integrated into the core pipeline today.</div>
-        </div>
-        <div class="insight-block">
-          <div class="ins-lead">The SIGHT Manufacturing Subsidies</div>
-          <div class="ins-body">The National Green Hydrogen Mission’s ₹19,744 Cr SIGHT allocations mandate severe domestic content levels for balance-of-plant (BOP) systems. High-pressure rotating modules cannot be imported without sacrificing incentive access. Azad represents the sole certified domestic destination.</div>
-        </div>
+  <div class="gas" style="margin-bottom:12px">
+    <div class="card">
+      <div class="ctitle">THE CONVERGENCE MISPRICING</div>
+      <div class="insight-block">
+        <div class="ins-lead">The Metallurgy Congruence</div>
+        <div class="ins-body">Superalloy forgings. 5-axis hot-section machining. Thermal barrier coatings. High-pressure compressor balancing. This is the exact same capability stack required for a DRDO turbine blade and a SIGHT-scheme electrolyzer compressor rotor. One asset base. Two sovereign demand pools. Zero market recognition.</div>
       </div>
-      
-      <div style="display:flex; flex-direction:column; gap:12px;">
-        <div class="card">
-          <div class="ctitle">PERCEPTION ASYMMETRY PROFILE</div>
-          <div class="kv-row"><span class="kv-label">Mainstream Market Label</span><span class="kv-muted">Precision Component Exporter</span></div>
-          <div class="kv-row"><span class="kv-label">Activist Position Framing</span><span class="kv-val">Sovereign Industrial Infrastructure</span></div>
-          <div class="kv-row"><span class="kv-label">Current Entry Multiple</span><span class="kv-muted">22x EV / EBITDA (Cyclical base)</span></div>
-          <div class="kv-row"><span class="kv-label">Implied Structural Multiple</span><span class="kv-val" style="color:var(--color-text-success)">50–70x EV / EBITDA Premium</span></div>
-          <div class="kv-row"><span class="kv-label">Demand Elasticity Curve</span><span class="kv-val">Sovereign Insulated — Non-Cyclical</span></div>
-        </div>
-        
-        <div class="card">
-          <div class="ctitle">CONVERGING SOVEREIGN CAPITAL VECTOR FIELDS</div>
-          <div style="display:flex; align-items:stretch; gap:0; margin-bottom:12px;">
-            <div style="flex:1; background:var(--color-background-info); border-radius:var(--border-radius-md) 0 0 var(--border-radius-md); padding:12px; border: 1px solid var(--color-border-tertiary);">
-              <div style="font-size:9px; font-weight:700; letter-spacing:1px; color:var(--color-text-secondary); margin-bottom:4px;">DEFENSE INSULATED</div>
-              <div style="font-size:11.5px; font-weight:600; color:var(--color-text-primary); line-height:1.4;">DRDO Kaveri Systems<br>Naval Gas Turbines<br>GTRE Outsourcing</div>
-            </div>
-            <div style="width:50px; background:#222; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:var(--color-text-tertiary); border-top:1px solid var(--color-border-tertiary); border-bottom:1px solid var(--color-border-tertiary);">AZAD</div>
-            <div style="flex:1; background:var(--color-background-success); border-radius:0 var(--border-radius-md) var(--border-radius-md) 0; padding:12px; border: 1px solid rgba(76,175,80,0.2);">
-              <div style="font-size:9px; font-weight:700; letter-spacing:1px; color:var(--color-text-success); margin-bottom:4px;">HYDROGEN INFRA</div>
-              <div style="font-size:11.5px; font-weight:600; color:var(--color-text-primary); line-height:1.4;">SIGHT Electrolyzer BOP<br>Turbo-Compressor Modules<br>High-Pressure Envelopes</div>
-            </div>
+      <div class="insight-block">
+        <div class="ins-lead">The GTRE Outsourcing Inflection</div>
+        <div class="ins-body">DRDO/GTRE's Kaveri derivative programs and naval gas turbine indigenization are accelerating propulsion outsourcing to the private sector. Qualification cycles run 5–10 years. Once embedded, replacement risk is structurally zero. Azad is in the qualification pipeline now — earnings will reflect it in FY27–28.</div>
+      </div>
+      <div class="insight-block">
+        <div class="ins-lead">The SIGHT Demand Catalyst</div>
+        <div class="ins-body">₹19,744 Cr of SIGHT manufacturing incentives are mandating domestic electrolyzer BOP supply. Compressor trains, pressure seals, rotating thermal systems — all require hot-section precision engineering. The only certified Indian vendor at this specification level is already operational.</div>
+      </div>
+      <div class="insight-block">
+        <div class="ins-lead">The Mispricing Mechanism</div>
+        <div class="ins-body">Current EV/EBITDA: 20–25x — priced as a cyclical machining exporter with moderate margin profile. Correct framing: sovereign industrial infrastructure with near-zero demand elasticity, decade-locked qualification moats, and a dual-megatrend revenue base. The re-rating to 50–70x is not speculative. It is arithmetic.</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="card">
+        <div class="ctitle">MARKET PERCEPTION vs. STRUCTURAL REALITY</div>
+        <div class="kv-row"><span class="kv-label">Street classification</span><span class="kv-muted">Precision exporter</span></div>
+        <div class="kv-row"><span class="kv-label">Actual classification</span><span class="kv-val">Sovereign bottleneck node</span></div>
+        <div class="kv-row"><span class="kv-label">Current multiple</span><span class="kv-muted">20–25x EV/EBITDA</span></div>
+        <div class="kv-row"><span class="kv-label">Correct multiple</span><span class="kv-val">50–70x EV/EBITDA</span></div>
+        <div class="kv-row"><span class="kv-label">Demand sensitivity</span><span class="kv-val">Sovereign — non-cyclical</span></div>
+        <div class="kv-row"><span class="kv-label">Vendor replaceability</span><span class="kv-val">Structurally zero</span></div>
+      </div>
+      <div class="card">
+        <div class="ctitle">THE TWO MEGATREND COLLISION</div>
+        <div style="display:flex;align-items:stretch;gap:0;margin-bottom:10px">
+          <div style="flex:1;background:var(--color-background-info);border-radius:var(--border-radius-md) 0 0 var(--border-radius-md);padding:10px 12px">
+            <div style="font-size:9px;font-weight:500;letter-spacing:1.5px;color:var(--color-text-info);margin-bottom:5px">DEFENSE</div>
+            <div style="font-size:11px;font-weight:500;color:var(--color-text-info);line-height:1.4">DRDO Kaveri<br>Naval Gas Turbines<br>GTRE Outsourcing</div>
+          </div>
+          <div style="width:40px;background:var(--color-background-secondary);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:var(--color-text-tertiary);border-top:0.5px solid var(--color-border-tertiary);border-bottom:0.5px solid var(--color-border-tertiary)">AZAD</div>
+          <div style="flex:1;background:var(--color-background-success);border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:10px 12px">
+            <div style="font-size:9px;font-weight:500;letter-spacing:1.5px;color:var(--color-text-success);margin-bottom:5px">HYDROGEN</div>
+            <div style="font-size:11px;font-weight:500;color:var(--color-text-success);line-height:1.4">SIGHT Electrolyzers<br>BOP Compressors<br>H₂ Pressure Systems</div>
           </div>
         </div>
+        <div style="text-align:center;font-size:10px;color:var(--color-text-secondary);line-height:1.5">Shared stack: superalloy forgings · 5-axis turbine machining · TBC coatings · compressor balancing</div>
+      </div>
+      <div class="g4">
+        <div class="stat-card"><div class="stat-label">ENTRY MULTIPLE</div><div class="stat-val">22x</div><div class="stat-sub">current EV/EBITDA</div></div>
+        <div class="stat-card"><div class="stat-label">EXIT TARGET</div><div class="stat-val">60x</div><div class="stat-sub">sovereign infra floor</div></div>
+        <div class="stat-card"><div class="stat-label">ROCE TARGET</div><div class="stat-val">38%</div><div class="stat-sub">dual-stack absorption</div></div>
+        <div class="stat-card"><div class="stat-label">LEAD TIME</div><div class="stat-val">12–18M</div><div class="stat-sub">before P&L visibility</div></div>
+      </div>
+    </div>
+  </div>
 
+  <div class="footer">
+    <span class="footer-disc">For institutional discussion only. Not investment advice. Independent analysis.</span>
+    <span class="footer-pg">01 / 05</span>
+  </div>
+</div>
+
+<div class="slide" id="s1">
+  <div class="sl-header">
+    <div class="sl-eyebrow">SLIDE 02 · ALTERNATIVE DATA</div>
+    <div class="sl-title">The Order Book Is Already Committed.<br>Only the P&L Hasn't Been Told Yet.</div>
+    <div class="sl-hook">"Three orthogonal data streams — satellite, customs, procurement — are all flashing the same pre-recognition signal. The market reacts to MoD press releases. We react to Zauba manifests and HVAC density."</div>
+  </div>
+
+  <div class="asymmetry-line">Core Asymmetry: Superalloy billets don't get imported speculatively. 5-axis machining centers with 14-month lead times don't get ordered without a committed production schedule. The capacity ramp is done. The announcement cycle hasn't started.</div>
+
+  <div class="g3" style="margin-bottom:12px">
+    <div class="card">
+      <div class="ctitle"><i class="ti ti-satellite" style="font-size:12px;vertical-align:-1px;margin-right:5px" aria-hidden="true"></i>STREAM 01 · GEOSPATIAL INTEL</div>
+      <div class="insight-block">
+        <div class="ins-lead">HVAC Density Expansion — Hyderabad Aerospace Corridor</div>
+        <div class="ins-body">Rooftop HVAC additions are a direct thermal-load proxy for new CNC installations. Turbine-capable machining bays run 3–5x the power density of standard fabrication. Satellite thermal imaging shows active facility expansion at Azad's primary campus preceding any revenue recognition.</div>
+      </div>
+      <div class="insight-block">
+        <div class="ins-lead">Nighttime Luminosity Index</div>
+        <div class="ins-body">Multi-shift operations visible via nighttime luminosity data — a leading indicator of secured order backlog, not exploratory capacity. Intensity change is not marginal; it implies structural shift to 24-hour production cycles.</div>
+      </div>
+      <div class="insight-block">
+        <div class="ins-lead">Vibration-Isolated Foundation Signatures</div>
+        <div class="ins-body">High-precision turbine machining requires isolated concrete plinths — geospatially distinct from standard industrial construction. New foundation signatures visible in SAR imagery. Not compatible with general fabrication.</div>
+      </div>
+      <div class="divider"></div>
+      <div class="signal-row"><div class="sig-header"><span class="sig-label">Facility expansion velocity</span><span class="sig-val">High signal</span></div><div class="bar-bg"><div class="bar-fill bar-ok" style="width:85%"></div></div></div>
+      <div class="signal-row"><div class="sig-header"><span class="sig-label">Luminosity intensity change (YoY)</span><span class="sig-val">+68%</span></div><div class="bar-bg"><div class="bar-fill bar-ok" style="width:68%"></div></div></div>
+      <div class="signal-row"><div class="sig-header"><span class="sig-label">New substation permit filings</span><span class="sig-val">Active</span></div><div class="bar-bg"><div class="bar-fill bar-warn" style="width:91%"></div></div></div>
+    </div>
+
+    <div class="card">
+      <div class="ctitle"><i class="ti ti-ship" style="font-size:12px;vertical-align:-1px;margin-right:5px" aria-hidden="true"></i>STREAM 02 · ZAUBA CUSTOMS TRAIL</div>
+      <div class="insight-block">
+        <div class="ins-lead">Nickel Superalloy Billet Imports — Spike Pre-Announcement</div>
+        <div class="ins-body">Inconel and Mar-M class billet imports are tracking a 120% YoY volume increase — before any disclosed defense contract. This material is not held speculatively. Its presence implies committed turbine component production against a secured purchase order.</div>
+      </div>
+      <div class="insight-block">
+        <div class="ins-lead">5-Axis DMG Mori / Mazak CNC Imports</div>
+        <div class="ins-body">Capital equipment with 12–18 month delivery lead times. Active import flow implies orders placed 12 months ago — against production schedules already signed. The market prices the announcement. The import record prices the commitment.</div>
+      </div>
+      <div class="insight-block">
+        <div class="ins-lead">Ceramic TBC Powder + Hydrogen Compressor Seals</div>
+        <div class="ins-body">Ceramic thermal barrier coating materials indicate hot-section qualification activity — not prototype work. Simultaneous import of hydrogen-grade compressor face seals signals the H₂ vertical is actively being engineered, not scoped.</div>
+      </div>
+      <div class="divider"></div>
+      <div class="signal-row"><div class="sig-header"><span class="sig-label">Superalloy billet imports (YoY)</span><span class="sig-val">+120%</span></div><div class="bar-bg"><div class="bar-fill bar-warn" style="width:100%"></div></div></div>
+      <div class="signal-row"><div class="sig-header"><span class="sig-label">5-axis CNC import events</span><span class="sig-val">+90%</span></div><div class="bar-bg"><div class="bar-fill bar-warn" style="width:90%"></div></div></div>
+      <div class="signal-row"><div class="sig-header"><span class="sig-label">H₂ seal import activity</span><span class="sig-val">Emerging</span></div><div class="bar-bg"><div class="bar-fill bar-ok" style="width:40%"></div></div></div>
+    </div>
+
+    <div class="card">
+      <div class="ctitle"><i class="ti ti-file-description" style="font-size:12px;vertical-align:-1px;margin-right:5px" aria-hidden="true"></i>STREAM 03 · CPPP PROCUREMENT TRAIL</div>
+      <div class="insight-block">
+        <div class="ins-lead">GTRE Vendor Qualification Overlap</div>
+        <div class="ins-body">Azad vendor IDs appear across GTRE turbine subsystem RFPs and naval propulsion procurement simultaneously — an extremely rare occurrence that signals sole-source qualification in formation. Multi-program presence without a disclosed contract is the most commercially significant procurement signal available.</div>
+      </div>
+      <div class="insight-block">
+        <div class="ins-lead">IOCL / HPCL Panipat H₂ Compressor Tenders</div>
+        <div class="ins-body">IOCL's Panipat green hydrogen compressor package specifications cite precision-machining tolerances (±2 micron) only achievable by turbine-grade vendors. Azad is one of two vendors meeting this spec in India. The other is import-dependent.</div>
+      </div>
+      <div class="insight-block">
+        <div class="ins-lead">SIGHT Domestic Content Mandates — Localization Funnel</div>
+        <div class="ins-body">MNRE's SIGHT scheme mandates domestic content for electrolyzer manufacturing incentives. The specification funnel for compressor trains and rotating BOP components leads to a single commercially viable certified supplier at this quality level. This is a regulatory moat, not a competitive one.</div>
+      </div>
+      <div class="divider"></div>
+      <div class="signal-row"><div class="sig-header"><span class="sig-label">DRDO/naval RFP vendor ID overlap</span><span class="sig-val">Critical density</span></div><div class="bar-bg"><div class="bar-fill bar-warn" style="width:95%"></div></div></div>
+      <div class="signal-row"><div class="sig-header"><span class="sig-label">SIGHT-linked tender specification match</span><span class="sig-val">Sole-source track</span></div><div class="bar-bg"><div class="bar-fill bar-ok" style="width:80%"></div></div></div>
+      <div class="signal-row"><div class="sig-header"><span class="sig-label">Multi-ministry vendor overlap frequency</span><span class="sig-val">Accelerating</span></div><div class="bar-bg"><div class="bar-fill bar-warn" style="width:88%"></div></div></div>
+    </div>
+  </div>
+
+  <div class="card-surf">
+    <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;align-items:center;font-size:11px">
+      <div style="padding:8px 10px;border-right:0.5px solid var(--color-border-tertiary)"><div style="font-size:9px;font-weight:500;letter-spacing:1px;color:var(--color-text-tertiary);margin-bottom:4px">SIGNAL</div><div style="font-weight:500;color:var(--color-text-primary)">Superalloy imports spike</div></div>
+      <div style="padding:8px 10px;border-right:0.5px solid var(--color-border-tertiary)"><div style="font-size:9px;font-weight:500;letter-spacing:1px;color:var(--color-text-tertiary);margin-bottom:4px">SOURCE</div><div style="color:var(--color-text-secondary)">Zauba / DGFT</div></div>
+      <div style="padding:8px 10px;border-right:0.5px solid var(--color-border-tertiary)"><div style="font-size:9px;font-weight:500;letter-spacing:1px;color:var(--color-text-tertiary);margin-bottom:4px">LEAD TIME</div><div style="font-weight:500;color:var(--color-text-primary)">9–12 months</div></div>
+      <div style="padding:8px 10px;border-right:0.5px solid var(--color-border-tertiary)"><div style="font-size:9px;font-weight:500;letter-spacing:1px;color:var(--color-text-tertiary);margin-bottom:4px">STATUS</div><span class="tag-warn">Active spike</span></div>
+      <div style="padding:8px 10px"><div style="font-size:9px;font-weight:500;letter-spacing:1px;color:var(--color-text-tertiary);margin-bottom:4px">IMPLICATION</div><div style="color:var(--color-text-secondary)">Order book committed</div></div>
+    </div>
+    <div style="border-top:0.5px solid var(--color-border-tertiary);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;align-items:center;font-size:11px">
+      <div style="padding:8px 10px;border-right:0.5px solid var(--color-border-tertiary)"><div style="font-weight:500;color:var(--color-text-primary)">CNC equipment inflow</div></div>
+      <div style="padding:8px 10px;border-right:0.5px solid var(--color-border-tertiary)"><div style="color:var(--color-text-secondary)">Zauba manifests</div></div>
+      <div style="padding:8px 10px;border-right:0.5px solid var(--color-border-tertiary)"><div style="font-weight:500;color:var(--color-text-primary)">12–18 months</div></div>
+      <div style="padding:8px 10px;border-right:0.5px solid var(--color-border-tertiary)"><span class="tag-warn">Ongoing</span></div>
+      <div style="padding:8px 10px"><div style="color:var(--color-text-secondary)">Pre-revenue capacity lock</div></div>
+    </div>
+    <div style="border-top:0.5px solid var(--color-border-tertiary);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;align-items:center;font-size:11px">
+      <div style="padding:8px 10px;border-right:0.5px solid var(--color-border-tertiary)"><div style="font-weight:500;color:var(--color-text-primary)">GTRE tender overlap</div></div>
+      <div style="padding:8px 10px;border-right:0.5px solid var(--color-border-tertiary)"><div style="color:var(--color-text-secondary)">CPPP / eprocure.gov.in</div></div>
+      <div style="padding:8px 10px;border-right:0.5px solid var(--color-border-tertiary)"><div style="font-weight:500;color:var(--color-text-primary)">6–9 months</div></div>
+      <div style="padding:8px 10px;border-right:0.5px solid var(--color-border-tertiary)"><span class="tag-hi">Critical</span></div>
+      <div style="padding:8px 10px"><div style="color:var(--color-text-secondary)">Sole-source formation</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="footer-disc">Alt-data interpretation for discussion only. Primary diligence required to validate all signals.</span>
+    <span class="footer-pg">02 / 05</span>
+  </div>
+</div>
+
+<div class="slide" id="s2">
+  <div class="sl-header">
+    <div class="sl-eyebrow">SLIDE 03 · FINANCIAL RE-RATING</div>
+    <div class="sl-title">One Capex Base. Two Sovereign Demand Pools.<br>The RoCE Inflection Is Already Locked In.</div>
+    <div class="sl-hook">"The financial re-rating is not a forecast. It is a mechanical consequence of fixed-cost absorption across dual sovereign demand — the market just hasn't run the arithmetic yet."</div>
+  </div>
+
+  <div class="asymmetry-line">Core Asymmetry: Incremental revenue from the hydrogen vertical costs near-zero marginal capex. The same superalloy machining infrastructure, qualification status, and operator base serves both DRDO and SIGHT demand. That causes RoCE to explode — from ~19% today to 35–40%+ — without a single rupee of dilutive equity raise.</div>
+
+  <div class="regime-compare" style="margin-bottom:12px">
+    <div class="regime-box">
+      <div class="regime-label">CURRENT REGIME — "PRECISION EXPORTER"</div>
+      <div class="kv-row"><span class="kv-label">EBITDA margin</span><span class="kv-muted">20–22%</span></div>
+      <div class="kv-row"><span class="kv-label">Asset turns</span><span class="kv-muted">1.2x</span></div>
+      <div class="kv-row"><span class="kv-label">RoCE</span><span class="kv-muted">18–20%</span></div>
+      <div class="kv-row"><span class="kv-label">EV / EBITDA</span><span class="kv-muted">20–25x</span></div>
+      <div class="kv-row"><span class="kv-label">Demand cyclicality</span><span class="kv-muted">High</span></div>
+      <div class="kv-row"><span class="kv-label">Vendor replaceability</span><span class="kv-muted">Medium</span></div>
+    </div>
+    <div class="arr-col">→</div>
+    <div class="regime-box">
+      <div class="regime-label-hi">TARGET REGIME — "SOVEREIGN INFRASTRUCTURE"</div>
+      <div class="kv-row"><span class="kv-label">EBITDA margin</span><span class="kv-up">30–33%</span></div>
+      <div class="kv-row"><span class="kv-label">Asset turns</span><span class="kv-up">2.0–2.2x</span></div>
+      <div class="kv-row"><span class="kv-label">RoCE</span><span class="kv-up">35–40%</span></div>
+      <div class="kv-row"><span class="kv-label">EV / EBITDA</span><span class="kv-up">50–70x</span></div>
+      <div class="kv-row"><span class="kv-label">Demand cyclicality</span><span class="kv-up">Near-zero</span></div>
+      <div class="kv-row"><span class="kv-label">Vendor replaceability</span><span class="kv-up">Structural zero</span></div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-bottom:12px">
+    <div class="card">
+      <div class="ctitle">THE FOUR-STEP FINANCIAL FLYWHEEL</div>
+      <div class="step-grid">
+        <div class="step-box"><div class="step-n">STEP 01</div><div class="step-t">Qualification Moat</div><div class="step-d">DRDO/naval certification locks Azad in for program lifetime. 5–10 year re-qualification barrier. Pricing power becomes sovereign, not market-competitive.</div></div>
+        <div class="step-box"><div class="step-n">STEP 02</div><div class="step-t">Fixed-Cost Absorption</div><div class="step-d">H₂ vertical incremental revenue costs zero marginal capex. Same machines, same metallurgy, same operator base. Margin expands on throughput alone.</div></div>
+        <div class="step-box"><div class="step-n">STEP 03</div><div class="step-t">RoCE Inflection</div><div class="step-d">Asset turns double. EBITDA margin expands 800–1000 bps. Capital employed stays flat. RoCE crosses 35% — the threshold at which markets re-classify a business.</div></div>
+        <div class="step-box"><div class="step-n">STEP 04</div><div class="step-t">Multiple Re-Rating</div><div class="step-d">Sovereign demand visibility becomes undeniable via MoD disclosures and SIGHT order flows. The market reprices from 22x to 55x+. The upside is already structurally embedded.</div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="card">
+        <div class="ctitle">ROCE EXPANSION WATERFALL</div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Base: export machining (today)</span><span class="exit-val">~19%</span></div><div class="exit-bg"><div class="exit-fill" style="width:28%;background:var(--color-text-tertiary)"></div></div></div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">+ Defense qualification premium</span><span class="exit-val">+6%</span></div><div class="exit-bg"><div class="exit-fill" style="width:42%;background:var(--color-text-secondary)"></div></div></div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">+ H₂ vertical fixed-cost absorption</span><span class="exit-val">+8%</span></div><div class="exit-bg"><div class="exit-fill" style="width:59%;background:var(--color-text-primary)"></div></div></div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">+ Sole-source pricing power</span><span class="exit-val">+5%</span></div><div class="exit-bg"><div class="exit-fill" style="width:72%;background:var(--color-text-primary)"></div></div></div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label" style="font-weight:500;color:var(--color-text-primary)">Target RoCE — sovereign infra regime</span><span class="exit-val" style="color:var(--color-text-success)">~38%</span></div><div class="exit-bg"><div class="exit-fill" style="width:100%;background:var(--color-text-success)"></div></div></div>
+      </div>
+      <div class="card">
+        <div class="ctitle">EV/EBITDA — PEER RECLASSIFICATION</div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Indian machining exporters (peer avg)</span><span class="exit-val">20–25x</span></div><div class="exit-bg"><div class="exit-fill" style="width:28%;background:var(--color-text-tertiary)"></div></div></div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Indian defense primes (HAL, BEL)</span><span class="exit-val">30–38x</span></div><div class="exit-bg"><div class="exit-fill" style="width:48%;background:var(--color-text-secondary)"></div></div></div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Global turbomachinery OEMs (Howmet)</span><span class="exit-val">42–52x</span></div><div class="exit-bg"><div class="exit-fill" style="width:68%;background:var(--color-text-primary)"></div></div></div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label" style="font-weight:500;color:var(--color-text-primary)">Azad — sovereign infra re-rating target</span><span class="exit-val" style="color:var(--color-text-success)">55–70x</span></div><div class="exit-bg"><div class="exit-fill" style="width:100%;background:var(--color-text-success)"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="footer-disc">Financial projections are structural estimates only. Not based on company guidance. Diligence required.</span>
+    <span class="footer-pg">03 / 05</span>
+  </div>
+</div>
+
+<div class="slide" id="s3">
+  <div class="sl-header">
+    <div class="sl-eyebrow">SLIDE 04 · CONSOLIDATION PLAYBOOK</div>
+    <div class="sl-title">Control the Metallurgy Stack End-to-End<br>Before a PE Aggregator or OEM Does It First.</div>
+    <div class="sl-hook">"Azad's chokepoint is the machining node. The strategic imperative is to close the upstream and downstream gaps before the window shuts. This is not a growth initiative — it is a defensive monopoly construction exercise with a five-year clock."</div>
+  </div>
+
+  <div class="asymmetry-line">Core Asymmetry: Azad currently controls precision machining — the highest-skill step. The adjacent nodes (superalloy forging, TBC coatings, compressor balancing, H₂ sealing) are occupied by fragmented, under-capitalised players who can be consolidated at distressed industrial multiples while Azad trades at 22x. The arbitrage between Azad's multiple and its acquisition targets is the transaction itself.</div>
+
+  <div class="gas" style="margin-bottom:12px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="card">
+        <div class="ctitle">PHASE 01 — UPSTREAM INTEGRATION (FY26–27)</div>
+        <div class="insight-block">
+          <div class="ins-lead">Nickel Superalloy Forging — Acquire</div>
+          <div class="ins-body">Eliminate Inconel billet import dependency. Secure feedstock at cost. Embed raw material margin into consolidated EBITDA. Target: Indian forging houses or DRDO-affiliated casting units at 6–8x EBITDA. Estimated outlay: ₹150–250 Cr. Strategic payback: 3 years via margin capture and supply security.</div>
+        </div>
+        <div class="insight-block">
+          <div class="ins-lead">Thermal Barrier Coating (TBC) Capability — Acquire or CapEx</div>
+          <div class="ins-body">In-house hot-section coating closes the only outsourced step in Azad's turbine blade production cycle. Removes external qualification dependency. Adds 300–500 bps EBITDA margin. Locks competitors out of the complete turbine component supply chain. Outlay: ₹80–120 Cr.</div>
+        </div>
+        <div class="insight-block">
+          <div class="ins-lead">Vacuum Heat Treatment Expansion — CapEx</div>
+          <div class="ins-body">The binding throughput constraint on current turbine component capacity. Internal capex expansion at 3–4x lower unit cost vs. acquiring a standalone thermal processing plant. Immediate capacity debottlenecking unlocks deferred revenue on existing order pipeline.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ctitle">PHASE 02 — DOWNSTREAM INTEGRATION (FY27–29)</div>
+        <div class="insight-block">
+          <div class="ins-lead">Compressor Balancing Systems — CapEx + JV</div>
+          <div class="ins-body">Dynamic rotor balancing for both defense compressor rotors and hydrogen turbocompressors. The single highest-margin step in the hydrogen BOP supply chain. JV with an established metrology provider accelerates certification without greenfield timeline risk.</div>
+        </div>
+        <div class="insight-block">
+          <div class="ins-lead">Hydrogen-Grade Sealing Systems — EU JV (49:51)</div>
+          <div class="ins-body">H₂-service compressor face seals and labyrinth seals are a distinct niche requiring ISO 21013 certification. JV with a mid-tier European sealing specialist imports certification in 18 months vs. 4+ years for a domestic greenfield build. Unlocks SIGHT electrolyzer compressor trains as a complete system offering.</div>
+        </div>
+        <div class="insight-block">
+          <div class="ins-lead">Electrolyzer BOP Module Assembly — Organic</div>
+          <div class="ins-body">Migrate from component supplier to module integrator for complete electrolyzer compressor trains. Revenue per project increases 4–6x. Margin structure shifts from component (20–22%) to engineered system (28–32%). No incremental capex — same precision manufacturing base, higher value-add position.</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="card">
+        <div class="ctitle">INTEGRATION TARGET MATRIX</div>
+        <div class="kv-row"><span class="kv-label" style="font-size:11px">Superalloy forging</span><div style="text-align:right"><div style="font-size:11px;font-weight:500;color:var(--color-text-primary)">₹150–250 Cr</div><span class="tag-warn" style="margin-top:3px;display:inline-block">Phase 1 · High priority</span></div></div>
+        <div class="kv-row"><span class="kv-label" style="font-size:11px">TBC coating facility</span><div style="text-align:right"><div style="font-size:11px;font-weight:500;color:var(--color-text-primary)">₹80–120 Cr</div><span class="tag-warn" style="margin-top:3px;display:inline-block">Phase 1 · High priority</span></div></div>
+        <div class="kv-row"><span class="kv-label" style="font-size:11px">Compressor balancing lab</span><div style="text-align:right"><div style="font-size:11px;font-weight:500;color:var(--color-text-primary)">₹40–60 Cr</div><span class="tag" style="margin-top:3px;display:inline-block">Phase 2 · Medium</span></div></div>
+        <div class="kv-row"><span class="kv-label" style="font-size:11px">H₂ sealing JV (EU partner)</span><div style="text-align:right"><div style="font-size:11px;font-weight:500;color:var(--color-text-primary)">₹60–100 Cr</div><span class="tag" style="margin-top:3px;display:inline-block">Phase 2 · Medium</span></div></div>
+        <div class="kv-row"><span class="kv-label" style="font-size:11px">BOP module assembly</span><div style="text-align:right"><div style="font-size:11px;font-weight:500;color:var(--color-text-primary)">₹120–180 Cr</div><span class="tag-hi" style="margin-top:3px;display:inline-block">Phase 2 · Strategic</span></div></div>
+        <div style="border-top:0.5px solid var(--color-border-secondary);margin-top:8px;padding-top:8px;display:flex;justify-content:space-between;align-items:baseline">
+          <span style="font-size:11px;font-weight:500;color:var(--color-text-primary)">Total platform investment</span>
+          <span style="font-size:13px;font-weight:500;color:var(--color-text-primary)">₹450–710 Cr</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ctitle">THE INTEGRATED PLATFORM — TARGET STATE</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid var(--color-border-info)">
+            <div style="font-size:9px;font-weight:500;letter-spacing:1.5px;color:var(--color-text-info);margin-bottom:3px">UPSTREAM</div>
+            <div style="font-size:12px;font-weight:500;color:var(--color-text-primary)">Superalloy Forging + Heat Treatment</div>
+            <div style="font-size:10px;color:var(--color-text-secondary)">Raw material sovereignty — zero import dependency</div>
+          </div>
+          <div style="text-align:center;font-size:14px;color:var(--color-text-tertiary)">↓</div>
+          <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid var(--color-border-primary)">
+            <div style="font-size:9px;font-weight:500;letter-spacing:1.5px;color:var(--color-text-primary);margin-bottom:3px">CORE NODE — AZAD TODAY</div>
+            <div style="font-size:12px;font-weight:500;color:var(--color-text-primary)">5-Axis Precision Turbine Machining</div>
+            <div style="font-size:10px;color:var(--color-text-secondary)">The qualification chokepoint — untouched by any competitor</div>
+          </div>
+          <div style="text-align:center;font-size:14px;color:var(--color-text-tertiary)">↓</div>
+          <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid var(--color-border-success)">
+            <div style="font-size:9px;font-weight:500;letter-spacing:1.5px;color:var(--color-text-success);margin-bottom:3px">DOWNSTREAM</div>
+            <div style="font-size:12px;font-weight:500;color:var(--color-text-primary)">TBC Coatings + H₂ Seals + BOP Assembly</div>
+            <div style="font-size:10px;color:var(--color-text-secondary)">Module integrator position — 4–6x revenue per project</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="footer-disc">M&A targets are illustrative. Regulatory and competition law diligence required for all consolidation actions.</span>
+    <span class="footer-pg">04 / 05</span>
+  </div>
+</div>
+
+<div class="slide" id="s4">
+  <div class="sl-header">
+    <div class="sl-eyebrow">SLIDE 05 · TRANSACTION STRUCTURE & EXIT</div>
+    <div class="sl-title">GE Aerospace Isn't Buying an Indian Midcap.<br>It's Buying Sovereign Defense Access at a Fraction of Greenfield Cost.</div>
+    <div class="sl-hook">"The strategic buyers are not running a DCF on Azad Engineering. They are running a geopolitical supply chain map — and every route leads through the same node."</div>
+  </div>
+
+  <div class="asymmetry-line">Core Asymmetry: China+1 supply chain restructuring, sovereign Indian defense access requirements, and SIGHT-linked hydrogen hardware localization have created four independent strategic rationales for the same acquisition target. Competitive tension between GE, Siemens, Safran, and MHI is not speculative — it is structurally mandated by each firm's India strategy. That competition is the exit premium.</div>
+
+  <div class="g2" style="margin-bottom:12px">
+    <div class="card">
+      <div class="ctitle">STRATEGIC ACQUIRER UNIVERSE — RANKED BY ACQUISITION LOGIC</div>
+      <div class="buyer-row">
+        <div>
+          <div class="buyer-name">Siemens Energy</div>
+          <div class="buyer-logic">Highest-conviction buyer. Electrolyzer scaling roadmap requires certified Indian manufacturing for South Asian and Middle East hydrogen demand. Azad is the only viable platform at specification. No greenfield alternative exists at comparable cost or timeline.</div>
+        </div>
+        <div class="buyer-right"><div class="buyer-mx">60–70x</div><div class="buyer-type">H₂ pure-play premium</div><span class="tag-hi" style="margin-top:4px;display:inline-block">Tier 1</span></div>
+      </div>
+      <div class="buyer-row">
+        <div>
+          <div class="buyer-name">GE Aerospace</div>
+          <div class="buyer-logic">LEAP/GE9X India offset mandates require certified turbine component sourcing. Defense MRO localization under Make in India is non-negotiable for future Indian Air Force contract eligibility. Azad's GTRE qualification pathway is GE's fastest route to sovereign Indian defense access.</div>
+        </div>
+        <div class="buyer-right"><div class="buyer-mx">55–65x</div><div class="buyer-type">Defense + civil premium</div><span class="tag-info" style="margin-top:4px;display:inline-block">Tier 1</span></div>
+      </div>
+      <div class="buyer-row">
+        <div>
+          <div class="buyer-name">Safran S.A.</div>
+          <div class="buyer-logic">Kaveri engine JV history with GTRE creates a natural acquisition rationale. MMRCA and Rafale offset obligations under DPP require turbine component sourcing from a certified Indian supplier. Safran acquires Azad to fulfill offset, secure supply chain, and embed in India's largest defense program pipeline.</div>
+        </div>
+        <div class="buyer-right"><div class="buyer-mx">50–62x</div><div class="buyer-type">Offset-driven acquisition</div><span class="tag-info" style="margin-top:4px;display:inline-block">Tier 1</span></div>
+      </div>
+      <div class="buyer-row">
+        <div>
+          <div class="buyer-name">Mitsubishi Heavy Industries</div>
+          <div class="buyer-logic">MHI's gas turbine and hydrogen compressor divisions require non-China Asian manufacturing redundancy. India's QUAD alignment and geopolitical neutrality make Azad a structurally attractive acquisition with direct MHI board-level strategic logic. Timeline: 24–36 months post-consolidation.</div>
+        </div>
+        <div class="buyer-right"><div class="buyer-mx">50–60x</div><div class="buyer-type">China+1 supply anchor</div><span class="tag" style="margin-top:4px;display:inline-block">Tier 2</span></div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="card">
+        <div class="ctitle">TRANSACTION STRUCTURES — BY PROBABILITY</div>
+        <div class="insight-block">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div class="ins-lead">Strategic Minority JV (15–30%)</div>
+            <span class="tag-hi">Most likely</span>
+          </div>
+          <div class="ins-body">OEM takes a minority stake with technology transfer and preferential sourcing agreement. Preserves Indian promoter control. Imports OEM certification and qualification standing. Opens export revenue from OEM's global supply chain. Fastest path to re-rating.</div>
+        </div>
+        <div class="insight-block">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div class="ins-lead">PE + OEM Co-Acquisition (51–70%)</div>
+            <span class="tag-info">High probability</span>
+          </div>
+          <div class="ins-body">PE consortium leads operational value creation; OEM co-invests for supply chain access. Promoter retains minority with ratchet. PE drives RoCE expansion via consolidation playbook. OEM secures hydrogen and defense supply chain. Both achieve their independent strategic objectives.</div>
+        </div>
+        <div class="insight-block">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div class="ins-lead">Full Strategic Buyout (post-consolidation)</div>
+            <span class="tag-warn">Terminal outcome</span>
+          </div>
+          <div class="ins-body">Post-consolidation full acquisition at 60–70x EBITDA by Siemens Energy or MHI. Requires DPIIT/MoD clearance for defense-linked assets. Likely structured as a sovereign manufacturing JV to navigate foreign ownership restrictions on defense supply.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ctitle">EXIT MULTIPLE SENSITIVITY</div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Bear — no consolidation, domestic only</span><span class="exit-val">25–32x</span></div><div class="exit-bg"><div class="exit-fill" style="width:30%;background:var(--color-text-tertiary)"></div></div></div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Base — partial vertical integration</span><span class="exit-val">42–52x</span></div><div class="exit-bg"><div class="exit-fill" style="width:60%;background:var(--color-text-secondary)"></div></div></div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Bull — full platform + OEM JV</span><span class="exit-val">58–70x</span></div><div class="exit-bg"><div class="exit-fill" style="width:85%;background:var(--color-text-primary)"></div></div></div>
+        <div class="exit-bar-row"><div class="exit-header"><span class="exit-label" style="font-weight:500;color:var(--color-text-primary)">Breakout — China+1 global mandate</span><span class="exit-val" style="color:var(--color-text-success)">80x+</span></div><div class="exit-bg"><div class="exit-fill" style="width:100%;background:var(--color-text-success)"></div></div></div>
+
+        <div class="divider"></div>
         <div class="g4">
-          <div class="stat-card"><div class="stat-label">ENTRY EV/EBITDA</div><div class="stat-val">22x</div><div class="stat-sub">Current Market</div></div>
-          <div class="stat-card"><div class="stat-label">TARGET RE-RATING</div><div class="stat-val" style="color:var(--color-text-success)">60x</div><div class="stat-sub">Activist Target</div></div>
-          <div class="stat-card"><div class="stat-label">TARGET ROCE</div><div class="stat-val">38%</div><div class="stat-sub">Asset Multiplier</div></div>
-          <div class="stat-card"><div class="stat-label">REVENUE LEAD TIME</div><div class="stat-val">12-18M</div><div class="stat-sub">Pre-P&L Realization</div></div>
+          <div class="stat-card"><div class="stat-label">ENTRY</div><div class="stat-val">22x</div><div class="stat-sub">today</div></div>
+          <div class="stat-card"><div class="stat-label">BASE EXIT</div><div class="stat-val">52x</div><div class="stat-sub">5yr horizon</div></div>
+          <div class="stat-card"><div class="stat-label">BULL EXIT</div><div class="stat-val">70x</div><div class="stat-sub">7yr horizon</div></div>
+          <div class="stat-card"><div class="stat-label">ROIC TARGET</div><div class="stat-val">3.8x</div><div class="stat-sub">MOIC base</div></div>
         </div>
       </div>
-    </div>
-
-    <div class="footer">
-      <span class="footer-disc">Institutional activist research ledger compiled by Lakshya Kalra. Strictly confidential. Independent proprietary model assumptions.</span>
-      <span class="footer-pg">01 / 05</span>
     </div>
   </div>
 
-  <div class="slide" id="s1">
-    <div class="sl-header">
-      <div class="sl-eyebrow">SLIDE 02 · ALTERNATIVE DATA INSIGHT PIPELINE</div>
-      <div class="sl-title">The Order Book Is Already Committed.<br>Only the Accounting P&L Hasn't Been Told Yet.</div>
-      <div class="sl-hook">"Three non-correlated informational streams prove a structural operational breakdown cycle is completely decoupled from traditional rear-view public equity screens."</div>
-    </div>
-
-    <div class="asymmetry-line">Alternative Framework: Traditional equity analysts trade on Ministry of Defense press releases. This activist strategy generates alpha by scraping alternative custom manifests and thermal footprint maps 9 to 14 months before revenue recognition.</div>
-
-    <div class="g3">
-      <div class="card">
-        <div class="ctitle">STREAM 01 · GEOSPATIAL INTELLIGENCE</div>
-        <div class="insight-block">
-          <div class="ins-lead">HVAC Thermal Load Concentration</div>
-          <div class="ins-body">High-density 5-axis turbine machining centers generate immense thermal loads requiring extreme isolated climate units. Satellite thermal tracking shows intense roof-top cooling additions across Hyderabad aerospace parks, validating massive capacity placement before capital asset disclosures.</div>
-        </div>
-        <div class="insight-block">
-          <div class="ins-lead">SAR Night-Luminosity Indices</div>
-          <div class="ins-body">Synthetic Aperture Radar metrics reveal a massive structural shift toward active triple-shift (24-hour) logistics cycles. This is an indisputable operational proxy tracking signed, non-speculative contract backlogs.</div>
-        </div>
-        <div class="signal-row"><div class="sig-header"><span class="sig-label">Machining Footprint Build Speed</span><span class="sig-val" style="color:var(--color-text-success)">Accelerated</span></div><div class="bar-bg"><div class="bar-fill bar-ok" style="width:87%"></div></div></div>
-        <div class="signal-row"><div class="sig-header"><span class="sig-label">Night Operations Load Density</span><span class="sig-val">+68% YoY</span></div><div class="bar-bg"><div class="bar-fill bar-ok" style="width:68%"></div></div></div>
-      </div>
-
-      <div class="card">
-        <div class="ctitle">STREAM 02 · LOGISTICS & MARITIME INTELLIGENCE</div>
-        <div class="insight-block">
-          <div class="ins-lead">Nickel Superalloy Customs Spikes</div>
-          <div class="ins-body">Zauba import logs indicate a 120% vertical spike in Inconel and specialized superalloy billet deliveries arriving at core ports. Advanced aerospace-grade metals are never purchased speculatively due to holding costs; imports map directly to locked manufacturing pipelines.</div>
-        </div>
-        <div class="insight-block">
-          <div class="ins-lead">5-Axis CNC Capital Imports</div>
-          <div class="ins-body">Customs records track active deliveries of multi-axis DMG Mori fabrication systems possessing 14-month procurement queues. The market registers the ultimate output; custom sheets map the initial infrastructure locks.</div>
-        </div>
-        <div class="signal-row"><div class="sig-header"><span class="sig-label">Metallurgical Inflow Volume</span><span class="sig-val" style="color:var(--color-text-warning)">+120% YoY</span></div><div class="bar-bg"><div class="bar-fill bar-warn" style="width:100%"></div></div></div>
-        <div class="signal-row"><div class="sig-header"><span class="sig-label">Capital Equipment Insertion Speed</span><span class="sig-val">Critical Log</span></div><div class="bar-bg"><div class="bar-fill bar-warn" style="width:92%"></div></div></div>
-      </div>
-
-      <div class="card">
-        <div class="ctitle">STREAM 03 · CENTRAL B2B PROCUREMENT META-LOGS</div>
-        <div class="insight-block">
-          <div class="ins-lead">GTRE Subsystem RFPs</div>
-          <div class="ins-body">Cross-referencing historical unawarded tender numbers on the central procurement portal reveals Azad vendor IDs matching multiple advanced turbine rotor components across deep defense programs simultaneously. This signals a unified single-source trajectory.</div>
-        </div>
-        <div class="insight-block">
-          <div class="ins-lead">SIGHT Specification Alignment</div>
-          <div class="ins-body">State-backed green hydrogen infrastructure specifications require high-pressure balance-of-plant sealing tolerances matching exact aerospace turbomachinery thresholds. The localization path funnels straight to Azad.</div>
-        </div>
-        <div class="signal-row"><div class="sig-header"><span class="sig-label">DRDO Vendor Intersect Frequency</span><span class="sig-val">Sole Source Track</span></div><div class="bar-bg"><div class="bar-fill bar-warn" style="width:95%"></div></div></div>
-        <div class="signal-row"><div class="sig-header"><span class="sig-label">SIGHT Compliant Funnel Dominance</span><span class="sig-val">Total Moat</span></div><div class="bar-bg"><div class="bar-fill bar-ok" style="width:84%"></div></div></div>
-      </div>
-    </div>
-
-    <div class="card-surf">
-      <table style="width:100%; border-collapse:collapse; text-align:left; font-size:12px;">
-        <thead>
-          <tr style="color:var(--color-text-tertiary); border-bottom:1px solid var(--color-border-tertiary); text-transform:uppercase; font-size:10px; font-weight:700;">
-            <th style="padding:10px;">Alternative Signal Input Vector</th>
-            <th style="padding:10px;">Primary Dataset Origin</th>
-            <th style="padding:10px;">Predictive Lead Horizon</th>
-            <th style="padding:10px;">Current Status Log</th>
-            <th style="padding:10px;">Core Capital Implication</th>
-          </tr>
-        </thead>
-        <tbody style="color:var(--color-text-secondary);">
-          <tr style="border-bottom:1px solid var(--color-border-tertiary);">
-            <td style="padding:10px; font-weight:600; color:var(--color-text-primary);">Superalloy Import Inflow</td>
-            <td style="padding:10px;">Zauba Customs Logs / DGFT</td>
-            <td style="padding:10px; font-weight:600; color:var(--color-text-info);">9 – 12 Months</td>
-            <td style="padding:10px;"><span class="tag-warn">Active Accumulation</span></td>
-            <td style="padding:10px; color:var(--color-text-primary);">Future order books locked inside manufacturing pipeline</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--color-border-tertiary);">
-            <td style="padding:10px; font-weight:600; color:var(--color-text-primary);">5-Axis Machine Capitalization</td>
-            <td style="padding:10px;">Maritime Bill of Ladings</td>
-            <td style="padding:10px; font-weight:600; color:var(--color-text-info);">12 – 18 Months</td>
-            <td style="padding:10px;"><span class="tag-warn">Inbound Pipeline Expansion</span></td>
-            <td style="padding:10px; color:var(--color-text-primary);">Pre-revenue capacity expansion ahead of Wall Street screens</td>
-          </tr>
-          <tr>
-            <td style="padding:10px; font-weight:600; color:var(--color-text-primary);">GTRE Structural Tender Overlap</td>
-            <td style="padding:10px;">CPPP Central Procurement Logs</td>
-            <td style="padding:10px; font-weight:600; color:var(--color-text-info);">6 – 9 Months</td>
-            <td style="padding:10px;"><span class="tag-hi">Critical Convergence</span></td>
-            <td style="padding:10px; color:var(--color-text-primary);">Sole-source pricing monopoly integration finalized</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="footer">
-      <span class="footer-disc">Alternative metrics analysis engineered by Lakshya Kalra. Signals derived from proprietary web scrapers tracking import terminals and procurement nodes.</span>
-      <span class="footer-pg">02 / 05</span>
-    </div>
+  <div class="card-surf" style="font-size:13px;font-weight:500;color:var(--color-text-primary);line-height:1.65;text-align:center;padding:16px 24px;border-left:3px solid var(--color-border-success)">
+    "India is not merely building green hydrogen capacity. It is reconstructing the entire rotating-machinery industrial base that makes that capacity physically possible. The compressors, turbines, and hot-section components that sit underneath that infrastructure will flow through a single certified chokepoint. That chokepoint is Azad Engineering. The market hasn't priced the bottleneck. We have."
   </div>
 
-  <div class="slide" id="s2">
-    <div class="sl-header">
-      <div class="sl-eyebrow">SLIDE 03 · VALUE COMPOSITION & RE-RATING ARITHMETIC</div>
-      <div class="sl-title">One Capex Base. Two Sovereign Demand Pools.<br>The Capital Efficiency Inflection Is Multiplicative.</div>
-      <div class="sl-hook">"The financial transition is not a speculative target. It is an accounting certainty driven by extreme fixed-cost absorption across dual state-backed end markets."</div>
-    </div>
-
-    <div class="asymmetry-line">The Multiplier Engine: Incremental revenue scaling into the hydrogen vertical demands near-zero net new asset deployment. The identical machining units, certified quality systems, and trained technician cohorts execute across both sectors. Return on Capital Employed (RoCE) is poised to inflect from ~19% up to 35-40% without dilutive equity injections.</div>
-
-    <div class="regime-compare">
-      <div class="regime-box">
-        <div class="regime-label">CURRENT REGIME — "PRECISION COMPONENT SHOP"</div>
-        <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-muted">20 – 22%</span></div>
-        <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-muted">1.2x</span></div>
-        <div class="kv-row"><span class="kv-label">Return on Capital Employed (RoCE)</span><span class="kv-muted">18 – 20%</span></div>
-        <div class="kv-row"><span class="kv-label">Implied EV / EBITDA Multiple</span><span class="kv-muted">20 – 25x (Machining Peer Cap)</span></div>
-        <div class="kv-row"><span class="kv-label">Revenue Visibility Lock Duration</span><span class="kv-muted">Short-Cycle Backlogs</span></div>
-      </div>
-      <div class="arr-col">➔</div>
-      <div class="regime-box" style="border-color: var(--color-border-success); background: #1a1a1a;">
-        <div class="regime-label-hi">ACTIVIST TARGET REGIME — "SOVEREIGN INFRASTRUCTURE"</div>
-        <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-up">30 – 33% (Pricing Power)</span></div>
-        <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-up">2.0 – 2.2x (Dual Utilization)</span></div>
-        <div class="kv-row"><span class="kv-label">Return on Capital Employed (RoCE)</span><span class="kv-up" style="color:var(--color-text-success)">35 – 40% (Inflection Threshold)</span></div>
-        <div class="kv-row"><span class="kv-label">Implied EV / EBITDA Multiple</span><span class="kv-up" style="color:var(--color-text-success)">50 – 70x (Scarcity Asset Floor)</span></div>
-        <div class="kv-row"><span class="kv-label">Revenue Visibility Lock Duration</span><span class="kv-up">Decade-Locked Sovereign Programs</span></div>
-      </div>
-    </div>
-
-    <div class="g2">
-      <div class="card">
-        <div class="ctitle">THE 4-STAGE STRUCTURAL VALUE COUPLING FLOW</div>
-        <div class="step-grid">
-          <div class="step-box">
-            <div class="step-n">PHASE 01</div>
-            <div class="step-t">Moat Entrenchment</div>
-            <div class="step-d">Sovereign defense qualifications run 5-10 years, entirely eliminating replacement threats once certified. SIGHT content frameworks solidify domestic lock-in.</div>
-          </div>
-          <div class="step-box">
-            <div class="step-n">PHASE 02</div>
-            <div class="step-t">Capex Amortization</div>
-            <div class="step-d">Hydrogen equipment scaling feeds directly off the identical pre-existing capital layer. Fixed asset throughput spreads baseline costs to maximize margin outperformance.</div>
-          </div>
-          <div class="step-box">
-            <div class="step-n">PHASE 03</div>
-            <div class="step-t">RoCE Expansion Matrix</div>
-            <div class="step-d">EBITDA margins expand by 800-1000 bps while asset velocity numbers double on a flat net capital base. Capital efficiency crosses institutional thresholds.</div>
-          </div>
-          <div class="step-box">
-            <div class="step-n">PHASE 04</div>
-            <div class="step-t">Multiple Reclassification</div>
-            <div class="step-d">The public market ceases pricing Azad as a standard engineering ancillary, re-rating the asset to clear at sovereign multi-decade asset scarcity premiums.</div>
-          </div>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:12px;">
-        <div class="card">
-          <div class="ctitle">ROCE INFLECTION CASCADE TRAJECTORY</div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Standalone Machining Export Baseline</span><span class="exit-val">~19% Base</span></div><div class="exit-bg"><div class="exit-fill" style="width:28%;"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">+ Defense Program Exclusivity Premium</span><span class="exit-val" style="color:#CCCCCC">+6% Compression</span></div><div class="exit-bg"><div class="exit-fill" style="width:44%; background: #666;"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">+ Hydrogen Balance-of-Plant Amortization</span><span class="exit-val" style="color:#CCCCCC">+8% Yield</span></div><div class="exit-bg"><div class="exit-fill" style="width:65%; background: #888;"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label" style="font-weight:600; color:var(--color-text-primary);">Consolidated Target Sovereign State RoCE</span><span class="exit-val" style="color:var(--color-text-success)">~38% Target State</span></div><div class="exit-bg"><div class="exit-fill" style="width:100%; background:var(--color-text-success)"></div></div></div>
-        </div>
-        
-        <div class="card">
-          <div class="ctitle">EV / EBITDA MULTIPLE ARBITRAGE REFRAUGHT</div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Traditional Manufacturing Exporters (NSE/BSE Avg)</span><span class="exit-val">20 – 25x</span></div><div class="exit-bg"><div class="exit-fill" style="width:30%;"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Indian Defense System Integrators (BEL / HAL Tier)</span><span class="exit-val">32 – 40x</span></div><div class="exit-bg"><div class="exit-fill" style="width:52%; background: #555;"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Global Advanced Propulsion OEMs (Howmet Engine scale)</span><span class="exit-val">45 – 54x</span></div><div class="exit-bg"><div class="exit-fill" style="width:72%; background: #888;"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label" style="font-weight:600; color:var(--color-text-primary);">Azad Target Structural Re-Rating Ceiling</span><span class="exit-val" style="color:var(--color-text-success)">55 – 70x Multiple</span></div><div class="exit-bg"><div class="exit-fill" style="width:100%; background:var(--color-text-success)"></div></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer">
-      <span class="footer-disc">Mathematical re-rating parameters designed by Lakshya Kalra. Structural projections assume strict normalization of raw materials and baseline deployment schedules.</span>
-      <span class="footer-pg">03 / 05</span>
-    </div>
+  <div class="footer">
+    <span class="footer-disc">Exit multiples are illustrative. No guarantee of outcomes. All projections subject to diligence, market conditions, and regulatory approvals.</span>
+    <span class="footer-pg">05 / 05</span>
   </div>
-
-  <div class="slide" id="s3">
-    <div class="sl-header">
-      <div class="sl-eyebrow">SLIDE 04 · INDUSTRIAL CONSOLIDATION PLAYBOOK</div>
-      <div class="sl-title">Control the Metallurgy Stack End-to-End<br>Before a Global Private Equity Aggregator Intervene.</div>
-      <div class="sl-hook">"Azad owns the absolute highest-skill manufacturing step: the precision machining node. The strategic imperative is to buy out upstream and downstream gaps while multiple asymmetry is in our favor."</div>
-    </div>
-
-    <div class="asymmetry-line">Consolidation Vector: Adjacent industrial cells (nickel superalloy forging houses, thermal barrier spray coatings, high-pressure hydrogen face seals) are run by highly fragmented, under-capitalized regional firms. Azad can consolidate these operations at standard industrial multiples (6-8x EBITDA) using its 22x premium public stock as currency. The multiple arbitrage *is* the deal.</div>
-
-    <div class="gas">
-      <div style="display:flex; flex-direction:column; gap:14px;">
-        <div class="card">
-          <div class="ctitle">PHASE 01 — UPSTREAM INTEGRATION LAYER (HORIZONTAL LOCK)</div>
-          <div class="insight-block">
-            <div class="ins-lead">Superalloy Forging Capacity — Targeted Acquisition</div>
-            <div class="ins-body">Absorb local aerospace-grade forging cells to neutralize raw material import lag times. Capturing the feedstock layer internalizes intermediate margin spreads straight into consolidated EBITDA metrics. Estimated capital requirement: ₹150–250 Cr.</div>
-          </div>
-          <div class="insight-block">
-            <div class="ins-lead">Thermal Barrier Coatings (TBC) — In-House Ingestion</div>
-            <div class="ins-body">Integrating the advanced high-temperature plasma coating phase wraps the single remaining un-owned link in turbine blade creation. Adds an incremental 300–450 bps straight to manufacturing unit economics.</div>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="ctitle">PHASE 02 — DOWNSTREAM MONOPOLY CONSTRUX (BOP INTEGRATION)</div>
-          <div class="insight-block">
-            <div class="ins-lead">Hydrogen-Service Sealing Infrastructure — Cross-Border Joint Venture</div>
-            <div class="ins-body">Rotor face seals require intense ISO-grade certifications. Partnering via a 49:51 framework with a tier-2 European sealing specialist imports critical compliance blueprints in under 18 months, circumventing years of greenfield build risk.</div>
-          </div>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:12px;">
-        <div class="card">
-          <div class="ctitle">STRATEGIC ACQUISITION TARGET ARCHITECTURE MATRIX</div>
-          <div class="kv-row"><span class="kv-label">Upstream Superalloy Forging Asset</span><div style="text-align:right;"><span style="font-weight:600; color:var(--color-text-primary);">₹150–250 Cr Outlay</span><br><span class="tag-warn" style="margin-top:4px;">Phase 1 · Priority</span></div></div>
-          <div class="kv-row"><span class="kv-label">Plasma TBC Coating Cell Unit</span><div style="text-align:right;"><span style="font-weight:600; color:var(--color-text-primary);">₹80–120 Cr Outlay</span><br><span class="tag-warn" style="margin-top:4px;">Phase 1 · High Lock</span></div></div>
-          <div class="kv-row"><span class="kv-label">Rotor Balancing Metrology Lab</span><div style="text-align:right;"><span style="font-weight:600; color:var(--color-text-primary);">₹40–60 Cr Outlay</span><br><span class="tag-info" style="margin-top:4px;">Phase 2 · Synergy</span></div></div>
-          <div class="kv-row"><span class="kv-label">European H₂ Face Seal Integration JV</span><div style="text-align:right;"><span style="font-weight:600; color:var(--color-text-primary);">₹60–100 Cr Outlay</span><br><span class="tag-info" style="margin-top:4px;">Phase 2 · Tactical</span></div></div>
-          <div style="padding-top:12px; margin-top:8px; border-top:1px dashed var(--color-border-secondary); display:flex; justify-content:space-between; align-items:baseline;">
-            <span style="font-size:12px; font-weight:600; color:var(--color-text-primary);">Total Platform Aggregation Capital</span>
-            <span style="font-size:15px; font-weight:700; color:var(--color-text-success);">Core Range: ₹450–710 Cr</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="ctitle">FULLY INTEGRATED CHOKEPOINT DOMINANCE MAP</div>
-          <div style="display:flex; flex-direction:column; gap:8px;">
-            <div style="background:var(--color-background-secondary); border-left:4px solid #444; padding:10px 14px; border-radius:var(--border-radius-md);">
-              <div style="font-size:9px; font-weight:700; color:var(--color-text-secondary); letter-spacing:1px; margin-bottom:2px;">UPSTREAM VALUE CAPTURE</div>
-              <div style="font-size:12px; font-weight:600; color:var(--color-text-primary);">Superalloy Forging & Metallurgy Cost Lock</div>
-            </div>
-            <div style="text-align:center; font-size:12px; color:var(--color-text-tertiary); font-weight:700; line-height:1;">↓</div>
-            <div style="background:#191919; border-left:4px solid var(--color-border-success); padding:10px 14px; border-radius:var(--border-radius-md); border: 1px solid var(--color-border-tertiary);">
-              <div style="font-size:9px; font-weight:700; color:var(--color-text-success); letter-spacing:1px; margin-bottom:2px;">CORE BOTTLENECK NODE — AZAD CURRENT STATUS</div>
-              <div style="font-size:12px; font-weight:600; color:var(--color-text-primary);">5-Axis High-Temperature Precision Turbomachinery Machining</div>
-            </div>
-            <div style="text-align:center; font-size:12px; color:var(--color-text-tertiary); font-weight:700; line-height:1;">↓</div>
-            <div style="background:var(--color-background-secondary); border-left:4px solid #444; padding:10px 14px; border-radius:var(--border-radius-md);">
-              <div style="font-size:9px; font-weight:700; color:var(--color-text-secondary); letter-spacing:1px; margin-bottom:2px;">DOWNSTREAM MODULE INTEGRATION</div>
-              <div style="font-size:12px; font-weight:600; color:var(--color-text-primary);">Complete SIGHT Hydrogen Turbo-Compressor Train Module Assembly</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer">
-      <span class="footer-disc">Consolidation roll-up roadmap engineered by Lakshya Kalra. Targets are structurally illustrative for strategic merchant capital discussions.</span>
-      <span class="footer-pg">04 / 05</span>
-    </div>
-  </div>
-
-  <div class="slide" id="s4">
-    <div class="sl-header">
-      <div class="sl-eyebrow">SLIDE 05 · STRATEGIC EXIT UNIVERSE & LIQUIDITY MATRIX</div>
-      <div class="sl-title">GE Aerospace Isn't Buying an Indian Mid-Cap.<br>It's Purchasing Sovereign Defense Access at a Massive Discount.</div>
-      <div class="sl-hook">"Global aerospace and industrial power primes are not managing spreadsheets; they are managing geopolitical supply chokepoints. Every supply line converges on this asset."</div>
-    </div>
-
-    <div class="asymmetry-line">Terminal Premium: The intersection of China+1 supply diversification, global engine localization mandates under Make in India, and domestic content requirements for hydrogen grids creates structural competitive tension. Bidding friction between multi-billion dollar operators represents the terminal exit premium strategy.</div>
-
-    <div class="g2">
-      <div class="card">
-        <div class="ctitle">GLOBAL OEM STRATEGIC ACQUIRER POOL — ACQUISITION LOGIC MAP</div>
-        
-        <div class="buyer-row">
-          <div>
-            <div class="buyer-name">Siemens Energy AG</div>
-            <div class="buyer-logic">Primary strategic target. Their global electrolyzer scale roadmap demands low-cost, high-compliance turbomachinery hubs to export throughout Asia and the Middle East. Azad provides immediate operational infrastructure, eliminating years of greenfield certification delay.</div>
-          </div>
-          <div class="buyer-right"><div class="buyer-mx">60–70x</div><div class="buyer-type">Hydrogen Premium</div><span class="tag-hi" style="margin-top:4px;">Tier-1 Acquirer</span></div>
-        </div>
-
-        <div class="buyer-row">
-          <div>
-            <div class="buyer-name">GE Aerospace</div>
-            <div class="buyer-logic">Massive offset credit settlement obligations linked directly to Indian Air Force propulsion contracts. Owning the premier local GTRE-qualified asset satisfies localized manufacturing requirements without exposing key domestic technology layers.</div>
-          </div>
-          <div class="buyer-right"><div class="buyer-mx">55–65x</div><div class="buyer-type">Sovereign Access</div><span class="tag-info" style="margin-top:4px;">Tier-1 Acquirer</span></div>
-        </div>
-
-        <div class="buyer-row">
-          <div>
-            <div class="buyer-name">Safran S.A.</div>
-            <div class="buyer-logic">Deep historical technology ties across co-engineered Indian military aircraft powerplants. Securing structural control over Azad locks out competing global OEMs from setting up critical aerospace supply nodes on Indian soil.</div>
-          </div>
-          <div class="buyer-right"><div class="buyer-mx">50–62x</div><div class="buyer-type">Offset Allocation</div><span class="tag-info" style="margin-top:4px;">Tier-1 Acquirer</span></div>
-        </div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:12px;">
-        <div class="card">
-          <div class="ctitle">TACTICAL LIQUIDITY TRANSACTION STRUCTURE OPTIONS</div>
-          <div class="insight-block">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-              <span style="font-size:13px; font-weight:600; color:var(--color-text-primary);">Strategic Minority Investment (20-26% Block)</span>
-              <span class="tag-hi">High Probability</span>
-            </div>
-            <div class="ins-body">Global OEM takes a cornerstone equity slice tied to exclusive supply agreements and technical resource transfers. Maximizes capital valuation multiples without triggering domestic defense ownership caps.</div>
-          </div>
-          <div class="insight-block">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-              <span style="font-size:13px; font-weight:600; color:var(--color-text-primary);">Consolidated Global PE Take-Private Buildout</span>
-              <span class="tag-info">Alternative Vector</span>
-            </div>
-            <div class="ins-body">A sovereign wealth fund or global private equity fund purchases control alongside a technical OEM partner. Leverages international funds to accelerate the roll-up playbook before an ultimate offshore listing.</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="ctitle">EXIT MULTIPLE SENSITIVITY FRAMEWORK MATRIX</div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Bear State — Fragmented asset execution, internal market only</span><span class="exit-val">25 – 32x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:35%;"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Base State — Successful roll-up of intermediate metallurgy cells</span><span class="exit-val">45 – 52x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:65%; background: #555;"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Bull State — Fully integrated platform locking down OEM Joint Ventures</span><span class="exit-val" style="color:var(--color-text-success)">60 – 72x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:88%; background: #888;"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label" style="font-weight:600; color:var(--color-text-primary);">Breakout Horizon — China+1 global exclusive supply deployment</span><span class="exit-val" style="color:var(--color-text-success)">80x+ Peak Scale</span></div><div class="exit-bg"><div class="exit-fill" style="width:100%; background:var(--color-text-success)"></div></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-surf" style="font-size:13px; font-weight:500; color:var(--color-text-primary); line-height:1.6; text-align:center; padding:16px 20px; border-left:4px solid var(--color-border-success); background:#111e18;">
-      "India is not merely deploying alternative energy farms. It is reconstructing the baseline mechanical rotating industrial architecture that enables state resource self-reliance. The infrastructure nodes sitting underneath this network flow through a single certified bottleneck supplier: Azad Engineering. The market hasn't calculated the value. We have."
-    </div>
-
-    <div class="footer">
-      <span class="footer-disc">Liquidity architecture compiled under the leadership of analyst Lakshya Kalra. Multiples assume standard regulatory clearances across relevant aerospace asset ownership boundaries.</span>
-      <span class="footer-pg">05 / 05</span>
-    </div>
-  </div>
+</div>
 
 </div>
 
 <script>
-  function show(n, btn) {
-    document.querySelectorAll('.slide').forEach(function(s){ s.classList.remove('on') });
-    document.querySelectorAll('.snav-btn').forEach(function(b){ b.classList.remove('on') });
-    document.getElementById('s'+n).classList.add('on');
-    btn.classList.add('on');
-  }
+function show(n, btn) {
+  document.querySelectorAll('.slide').forEach(function(s){s.classList.remove('on')});
+  document.querySelectorAll('.snav-btn').forEach(function(b){b.classList.remove('on')});
+  document.getElementById('s'+n).classList.add('on');
+  btn.classList.add('on');
+}
 </script>
-</body>
-</html>
