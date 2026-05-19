@@ -7,77 +7,77 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* MASTER PLATFORM DESIGN SYSTEM CORES */
+    /* CLAUDE-INSPIRED MINIMALIST HIGH-FINANCE DESIGN SYSTEM */
     :root {
       --font-sans: 'Inter', sans-serif;
-      --color-background-primary: #111827;
-      --color-background-secondary: #1f2937;
-      --color-background-success: rgba(16, 185, 129, 0.1);
-      --color-background-info: rgba(59, 130, 246, 0.1);
-      --color-background-warning: rgba(245, 158, 11, 0.1);
-      --color-background-danger: rgba(239, 68, 68, 0.15);
+      --color-background-primary: #191919;
+      --color-background-secondary: #222222;
+      --color-background-success: rgba(46, 125, 50, 0.15);
+      --color-background-info: rgba(255, 255, 255, 0.05);
+      --color-background-warning: rgba(230, 81, 0, 0.15);
+      --color-background-danger: rgba(211, 47, 47, 0.15);
       
-      --color-text-primary: #f3f4f6;
-      --color-text-secondary: #9ca3af;
-      --color-text-tertiary: #6b7280;
-      --color-text-success: #10b981;
-      --color-text-info: #3b82f6;
-      --color-text-warning: #f59e0b;
-      --color-text-danger: #ef4444;
+      --color-text-primary: #F5F5F5;
+      --color-text-secondary: #A0A0A0;
+      --color-text-tertiary: #666666;
+      --color-text-success: #4CAF50;
+      --color-text-info: #E0E0E0;
+      --color-text-warning: #FF9800;
+      --color-text-danger: #D32F2F;
       
-      --color-border-primary: #3b82f6;
-      --color-border-secondary: #4b5563;
-      --color-border-tertiary: #374151;
-      --color-border-success: #10b981;
-      --color-border-warning: #f59e0b;
-      --color-border-info: #3b82f6;
+      --color-border-primary: #FFFFFF;
+      --color-border-secondary: #444444;
+      --color-border-tertiary: #2A2A2A;
+      --color-border-success: #4CAF50;
+      --color-border-warning: #FF9800;
+      --color-border-info: #888888;
       
-      --border-radius-md: 6px;
-      --border-radius-lg: 8px;
+      --border-radius-md: 4px;
+      --border-radius-lg: 6px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #0b0f19; font-family: var(--font-sans); color: var(--color-text-primary); padding: 40px var(--space-24); display: flex; justify-content: center; }
+    body { background: #111111; font-family: var(--font-sans); color: var(--color-text-primary); padding: 40px 24px; display: flex; justify-content: center; -webkit-font-smoothing: antialiased; }
     
-    .shell { width: 100%; max-width: 1100px; background: #0f172a; border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5); overflow: hidden; padding-bottom: 24px; }
+    .shell { width: 100%; max-width: 1100px; background: #161616; border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); box-shadow: 0 30px 60px -12px rgba(0,0,0,0.6); overflow: hidden; padding-bottom: 24px; }
     
-    /* TOP HEADER PORTAL */
-    .topbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; border-bottom: 1px solid var(--color-border-tertiary); background: #111c2e; }
+    /* TOP RIBBON BRANDING */
+    .topbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; border-bottom: 1px solid var(--color-border-tertiary); background: #191919; }
     .topbar-left { display: flex; align-items: center; gap: 16px; }
-    .firm-tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--color-text-info); }
+    .firm-tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--color-text-primary); }
     .sep { width: 1px; height: 14px; background: var(--color-border-tertiary); }
-    .company-tag { font-size: 12px; font-weight: 500; color: var(--color-text-primary); }
-    .conf-pill { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; background: var(--color-background-danger); color: var(--color-text-danger); padding: 4px 12px; border-radius: var(--border-radius-md); border: 1px solid rgba(239, 68, 68, 0.3); }
+    .company-tag { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); }
+    .conf-pill { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; background: var(--color-background-danger); color: var(--color-text-danger); padding: 4px 12px; border-radius: var(--border-radius-md); border: 1px solid rgba(211, 47, 47, 0.3); }
 
-    /* RUNNING NAVIGATION SWITCHERS */
-    .slide-nav { display: flex; background: var(--color-background-primary); border-bottom: 1px solid var(--color-border-tertiary); }
-    .snav-btn { flex: 1; background: transparent; border: none; border-bottom: 3px solid transparent; padding: 16px 8px; font-size: 11px; font-weight: 600; color: var(--color-text-secondary); cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s ease; font-family: var(--font-sans); text-transform: uppercase; }
-    .snav-btn:hover { color: var(--color-text-primary); background: rgba(255,255,255,0.02); }
-    .snav-btn.on { color: var(--color-text-info); border-bottom-color: var(--color-border-primary); background: #131b2e; }
+    /* CHROMATIC TAB CONTROLS */
+    .slide-nav { display: flex; background: #141414; border-bottom: 1px solid var(--color-border-tertiary); }
+    .snav-btn { flex: 1; background: transparent; border: none; border-bottom: 2px solid transparent; padding: 18px 8px; font-size: 11px; font-weight: 600; color: var(--color-text-tertiary); cursor: pointer; letter-spacing: 0.5px; transition: all 0.15s ease; font-family: var(--font-sans); text-transform: uppercase; }
+    .snav-btn:hover { color: var(--color-text-secondary); background: rgba(255,255,255,0.01); }
+    .snav-btn.on { color: var(--color-text-primary); border-bottom-color: var(--color-border-primary); background: #161616; font-weight: 700; }
 
-    /* CONTENT DECKS LAYOUT CONTAINER */
-    .slide { display: none; padding: 32px; animation: fadeIn 0.3s ease; }
+    /* CONTAINER PANEL */
+    .slide { display: none; padding: 32px; animation: fadeIn 0.2s ease-out; }
     .slide.on { display: block; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(2px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     .sl-header { margin-bottom: 28px; }
-    .sl-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 3px; color: var(--color-text-info); margin-bottom: 8px; text-transform: uppercase; }
+    .sl-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 3px; color: var(--color-text-tertiary); margin-bottom: 8px; text-transform: uppercase; }
     .sl-title { font-size: 26px; font-weight: 700; color: var(--color-text-primary); line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.5px; }
-    .sl-hook { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; max-width: 750px; padding-left: 14px; border-left: 3px solid var(--color-border-primary); font-style: italic; }
+    .sl-hook { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; max-width: 750px; padding-left: 14px; border-left: 2px solid var(--color-border-primary); font-style: italic; }
 
-    .asymmetry-line { background: #1e293b; border-left: 4px solid var(--color-text-success); border-radius: var(--border-radius-md); padding: 16px 20px; margin-bottom: 24px; font-size: 14px; font-weight: 500; color: #e2e8f0; line-height: 1.5; }
+    .asymmetry-line { background: #1C1C1C; border-left: 3px solid var(--color-text-success); border-radius: var(--border-radius-md); padding: 16px 20px; margin-bottom: 24px; font-size: 14px; font-weight: 500; color: #E0E0E0; line-height: 1.5; border: 1px solid var(--color-border-tertiary); border-left-width: 3px; }
 
-    /* CORE INTERFACE GRID MATRIX ELEMENTS */
+    /* DISPLAY GRID COMPOSITION */
     .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
     .gas { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
 
-    .card { background: var(--color-background-primary); border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 20px; box-shadow: inset 0 1px 2px rgba(255,255,255,0.05); }
-    .card-surf { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 16px; margin-top: 20px; border: 1px solid var(--color-border-tertiary); overflow: hidden; }
+    .card { background: var(--color-background-primary); border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 20px; }
+    .card-surf { background: #131313; border-radius: var(--border-radius-lg); padding: 16px; margin-top: 20px; border: 1px solid var(--color-border-tertiary); overflow: hidden; }
     .ctitle { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--color-text-tertiary); margin-bottom: 16px; padding-bottom: 6px; border-bottom: 1px solid var(--color-border-tertiary); text-transform: uppercase; }
 
-    /* TYPOGRAPHY DATA ARCHITECTURE ROWS */
+    /* DATA ARCHITECTURE SYSTEM */
     .kv-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--color-border-tertiary); font-size: 13px; }
     .kv-row:last-child { border-bottom: none; }
     .kv-label { color: var(--color-text-secondary); }
@@ -85,7 +85,7 @@
     .kv-up { font-weight: 600; color: var(--color-text-success); }
     .kv-muted { font-weight: 500; color: var(--color-text-tertiary); }
 
-    .insight-block { padding: 12px 0; border-bottom: 1px solid var(--color-border-tertiary); }
+    .insight-block { padding: 14px 0; border-bottom: 1px solid var(--color-border-tertiary); }
     .insight-block:last-child { border-bottom: none; }
     .ins-lead { font-size: 14px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 5px; }
     .ins-body { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.6; }
@@ -95,29 +95,29 @@
     .stat-val { font-size: 22px; font-weight: 700; color: var(--color-text-primary); line-height: 1; }
     .stat-sub { font-size: 10px; color: var(--color-text-tertiary); margin-top: 5px; line-height: 1.2; }
 
-    /* SYSTEM PERFORMANCE INDICATORS */
+    /* METRIC RUNNING SLIDERS */
     .signal-row { margin: 12px 0; }
     .sig-header { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
     .sig-label { color: var(--color-text-secondary); }
     .sig-val { font-weight: 600; color: var(--color-text-primary); }
-    .bar-bg { height: 6px; background: #1f2937; border-radius: 100px; overflow: hidden; }
-    .bar-fill { height: 100%; border-radius: 100px; }
+    .bar-bg { height: 4px; background: #262626; border-radius: 100px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 100px; background: #CCCCCC; }
     .bar-warn { background: var(--color-text-warning); }
     .bar-ok { background: var(--color-text-success); }
 
-    .tag { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 4px 8px; border-radius: 4px; border: 1px solid var(--color-border-secondary); color: var(--color-text-secondary); text-transform: uppercase; }
-    .tag-hi { border-color: rgba(16,185,129,0.4); color: var(--color-text-success); background: var(--color-background-success); }
-    .tag-warn { border-color: rgba(245,158,11,0.4); color: var(--color-text-warning); background: var(--color-background-warning); }
-    .tag-info { border-color: rgba(59,130,246,0.4); color: var(--color-text-info); background: var(--color-background-info); }
+    .tag { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 4px 8px; border-radius: 3px; border: 1px solid var(--color-border-secondary); color: var(--color-text-secondary); text-transform: uppercase; }
+    .tag-hi { border-color: rgba(76,175,80,0.3); color: var(--color-text-success); background: var(--color-background-success); }
+    .tag-warn { border-color: rgba(255,152,0,0.3); color: var(--color-text-warning); background: var(--color-background-warning); }
+    .tag-info { border-color: rgba(255,255,255,0.15); color: var(--color-text-info); background: var(--color-background-info); }
 
     .divider { height: 1px; background: var(--color-border-tertiary); margin: 16px 0; }
 
-    /* FINANCIAL REGIME BOX ENVELOPE MATRIX */
+    /* SYSTEM TRANSITION ENVIRONS */
     .regime-compare { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 0; align-items: center; margin-bottom: 20px; }
     .regime-box { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 20px; border: 1px solid var(--color-border-tertiary); }
     .regime-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-tertiary); margin-bottom: 12px; text-transform: uppercase; }
     .regime-label-hi { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-success); margin-bottom: 12px; text-transform: uppercase; }
-    .arr-col { text-align: center; font-size: 22px; color: var(--color-text-tertiary); font-weight: 700; }
+    .arr-col { text-align: center; font-size: 18px; color: var(--color-text-tertiary); font-weight: 500; }
 
     .buyer-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--color-border-tertiary); }
     .buyer-row:last-child { border-bottom: none; }
@@ -131,8 +131,8 @@
     .exit-header { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
     .exit-label { color: var(--color-text-secondary); }
     .exit-val { font-weight: 600; color: var(--color-text-primary); }
-    .exit-bg { height: 8px; background: #1f2937; border-radius: 100px; overflow: hidden; }
-    .exit-fill { height: 100%; border-radius: 100px; }
+    .exit-bg { height: 6px; background: #262626; border-radius: 100px; overflow: hidden; }
+    .exit-fill { height: 100%; border-radius: 100px; background: #555555; }
 
     .step-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 8px; }
     .step-box { background: var(--color-background-secondary); border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 14px; }
@@ -140,7 +140,7 @@
     .step-t { font-size: 13px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 4px; }
     .step-d { font-size: 11.5px; color: var(--color-text-secondary); line-height: 1.5; }
 
-    /* SYSTEM RUNNING FOOTERS */
+    /* CORE REACTION RUNNERS */
     .footer { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px 0; border-top: 1px solid var(--color-border-tertiary); margin-top: 24px; }
     .footer-disc { font-size: 10px; color: var(--color-text-tertiary); line-height: 1.4; max-width: 80%; }
     .footer-pg { font-size: 11px; font-weight: 600; color: var(--color-text-tertiary); }
@@ -210,12 +210,12 @@
         <div class="card">
           <div class="ctitle">CONVERGING SOVEREIGN CAPITAL VECTOR FIELDS</div>
           <div style="display:flex; align-items:stretch; gap:0; margin-bottom:12px;">
-            <div style="flex:1; background:var(--color-background-info); border-radius:var(--border-radius-md) 0 0 var(--border-radius-md); padding:12px; border: 1px solid rgba(59,130,246,0.2);">
-              <div style="font-size:9px; font-weight:700; letter-spacing:1px; color:var(--color-text-info); margin-bottom:4px;">DEFENSE INSULATED</div>
+            <div style="flex:1; background:var(--color-background-info); border-radius:var(--border-radius-md) 0 0 var(--border-radius-md); padding:12px; border: 1px solid var(--color-border-tertiary);">
+              <div style="font-size:9px; font-weight:700; letter-spacing:1px; color:var(--color-text-secondary); margin-bottom:4px;">DEFENSE INSULATED</div>
               <div style="font-size:11.5px; font-weight:600; color:var(--color-text-primary); line-height:1.4;">DRDO Kaveri Systems<br>Naval Gas Turbines<br>GTRE Outsourcing</div>
             </div>
-            <div style="width:50px; background:#1e293b; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:var(--color-text-secondary); border-top:1px solid var(--color-border-tertiary); border-bottom:1px solid var(--color-border-tertiary);">AZAD</div>
-            <div style="flex:1; background:var(--color-background-success); border-radius:0 var(--border-radius-md) var(--border-radius-md) 0; padding:12px; border: 1px solid rgba(16,185,129,0.2);">
+            <div style="width:50px; background:#222; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:var(--color-text-tertiary); border-top:1px solid var(--color-border-tertiary); border-bottom:1px solid var(--color-border-tertiary);">AZAD</div>
+            <div style="flex:1; background:var(--color-background-success); border-radius:0 var(--border-radius-md) var(--border-radius-md) 0; padding:12px; border: 1px solid rgba(76,175,80,0.2);">
               <div style="font-size:9px; font-weight:700; letter-spacing:1px; color:var(--color-text-success); margin-bottom:4px;">HYDROGEN INFRA</div>
               <div style="font-size:11.5px; font-weight:600; color:var(--color-text-primary); line-height:1.4;">SIGHT Electrolyzer BOP<br>Turbo-Compressor Modules<br>High-Pressure Envelopes</div>
             </div>
@@ -241,7 +241,7 @@
     <div class="sl-header">
       <div class="sl-eyebrow">SLIDE 02 · ALTERNATIVE DATA INSIGHT PIPELINE</div>
       <div class="sl-title">The Order Book Is Already Committed.<br>Only the Accounting P&L Hasn't Been Told Yet.</div>
-      <div class="sl-hook">"Three non-correlated informational streams prove an structural operational breakdown cycle is completely decoupled from traditional rear-view public equity screens."</div>
+      <div class="sl-hook">"Three non-correlated informational streams prove a structural operational breakdown cycle is completely decoupled from traditional rear-view public equity screens."</div>
     </div>
 
     <div class="asymmetry-line">Alternative Framework: Traditional equity analysts trade on Ministry of Defense press releases. This activist strategy generates alpha by scraping alternative custom manifests and thermal footprint maps 9 to 14 months before revenue recognition.</div>
@@ -352,7 +352,7 @@
         <div class="kv-row"><span class="kv-label">Revenue Visibility Lock Duration</span><span class="kv-muted">Short-Cycle Backlogs</span></div>
       </div>
       <div class="arr-col">➔</div>
-      <div class="regime-box" style="border-color: var(--color-border-success); background: #121e24;">
+      <div class="regime-box" style="border-color: var(--color-border-success); background: #1a1a1a;">
         <div class="regime-label-hi">ACTIVIST TARGET REGIME — "SOVEREIGN INFRASTRUCTURE"</div>
         <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-up">30 – 33% (Pricing Power)</span></div>
         <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-up">2.0 – 2.2x (Dual Utilization)</span></div>
@@ -392,17 +392,17 @@
       <div style="display:flex; flex-direction:column; gap:12px;">
         <div class="card">
           <div class="ctitle">ROCE INFLECTION CASCADE TRAJECTORY</div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Standalone Machining Export Baseline</span><span class="exit-val">~19% Base</span></div><div class="exit-bg"><div class="exit-fill" style="width:28%; background:var(--color-text-tertiary)"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">+ Defense Program Exclusivity Premium</span><span class="exit-val" style="color:var(--color-text-info)">+6% Compression</span></div><div class="exit-bg"><div class="exit-fill" style="width:44%; background:var(--color-text-info)"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">+ Hydrogen Balance-of-Plant Amortization</span><span class="exit-val" style="color:var(--color-text-info)">+8% Yield</span></div><div class="exit-bg"><div class="exit-fill" style="width:65%; background:var(--color-text-info)"></div></div></div>
+          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Standalone Machining Export Baseline</span><span class="exit-val">~19% Base</span></div><div class="exit-bg"><div class="exit-fill" style="width:28%;"></div></div></div>
+          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">+ Defense Program Exclusivity Premium</span><span class="exit-val" style="color:#CCCCCC">+6% Compression</span></div><div class="exit-bg"><div class="exit-fill" style="width:44%; background: #666;"></div></div></div>
+          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">+ Hydrogen Balance-of-Plant Amortization</span><span class="exit-val" style="color:#CCCCCC">+8% Yield</span></div><div class="exit-bg"><div class="exit-fill" style="width:65%; background: #888;"></div></div></div>
           <div class="exit-bar-row"><div class="exit-header"><span class="exit-label" style="font-weight:600; color:var(--color-text-primary);">Consolidated Target Sovereign State RoCE</span><span class="exit-val" style="color:var(--color-text-success)">~38% Target State</span></div><div class="exit-bg"><div class="exit-fill" style="width:100%; background:var(--color-text-success)"></div></div></div>
         </div>
         
         <div class="card">
           <div class="ctitle">EV / EBITDA MULTIPLE ARBITRAGE REFRAUGHT</div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Traditional Manufacturing Exporters (NSE/BSE Avg)</span><span class="exit-val">20 – 25x</span></div><div class="exit-bg"><div class="exit-fill" style="width:30%; background:var(--color-text-tertiary)"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Indian Defense System Integrators (BEL / HAL Tier)</span><span class="exit-val">32 – 40x</span></div><div class="exit-bg"><div class="exit-fill" style="width:52%; background:var(--color-text-secondary)"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Global Advanced Propulsion OEMs (Howmet Engine scale)</span><span class="exit-val">45 – 54x</span></div><div class="exit-bg"><div class="exit-fill" style="width:72%; background:var(--color-text-primary)"></div></div></div>
+          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Traditional Manufacturing Exporters (NSE/BSE Avg)</span><span class="exit-val">20 – 25x</span></div><div class="exit-bg"><div class="exit-fill" style="width:30%;"></div></div></div>
+          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Indian Defense System Integrators (BEL / HAL Tier)</span><span class="exit-val">32 – 40x</span></div><div class="exit-bg"><div class="exit-fill" style="width:52%; background: #555;"></div></div></div>
+          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Global Advanced Propulsion OEMs (Howmet Engine scale)</span><span class="exit-val">45 – 54x</span></div><div class="exit-bg"><div class="exit-fill" style="width:72%; background: #888;"></div></div></div>
           <div class="exit-bar-row"><div class="exit-header"><span class="exit-label" style="font-weight:600; color:var(--color-text-primary);">Azad Target Structural Re-Rating Ceiling</span><span class="exit-val" style="color:var(--color-text-success)">55 – 70x Multiple</span></div><div class="exit-bg"><div class="exit-fill" style="width:100%; background:var(--color-text-success)"></div></div></div>
         </div>
       </div>
@@ -417,7 +417,7 @@
   <div class="slide" id="s3">
     <div class="sl-header">
       <div class="sl-eyebrow">SLIDE 04 · INDUSTRIAL CONSOLIDATION PLAYBOOK</div>
-      <div class="sl-title">Control the Metallurgy Stack End-to-End<br>Before a Global Private Equity Aggregator Intervenes.</div>
+      <div class="sl-title">Control the Metallurgy Stack End-to-End<br>Before a Global Private Equity Aggregator Intervene.</div>
       <div class="sl-hook">"Azad owns the absolute highest-skill manufacturing step: the precision machining node. The strategic imperative is to buy out upstream and downstream gaps while multiple asymmetry is in our favor."</div>
     </div>
 
@@ -462,18 +462,18 @@
         <div class="card">
           <div class="ctitle">FULLY INTEGRATED CHOKEPOINT DOMINANCE MAP</div>
           <div style="display:flex; flex-direction:column; gap:8px;">
-            <div style="background:var(--color-background-secondary); border-left:4px solid var(--color-border-info); padding:10px 14px; border-radius:var(--border-radius-md);">
-              <div style="font-size:9px; font-weight:700; color:var(--color-text-info); letter-spacing:1px; margin-bottom:2px;">UPSTREAM VALUE CAPTURE</div>
+            <div style="background:var(--color-background-secondary); border-left:4px solid #444; padding:10px 14px; border-radius:var(--border-radius-md);">
+              <div style="font-size:9px; font-weight:700; color:var(--color-text-secondary); letter-spacing:1px; margin-bottom:2px;">UPSTREAM VALUE CAPTURE</div>
               <div style="font-size:12px; font-weight:600; color:var(--color-text-primary);">Superalloy Forging & Metallurgy Cost Lock</div>
             </div>
             <div style="text-align:center; font-size:12px; color:var(--color-text-tertiary); font-weight:700; line-height:1;">↓</div>
-            <div style="background:#13251d; border-left:4px solid var(--color-border-success); padding:10px 14px; border-radius:var(--border-radius-md); border: 1px solid rgba(16,185,129,0.2);">
+            <div style="background:#191919; border-left:4px solid var(--color-border-success); padding:10px 14px; border-radius:var(--border-radius-md); border: 1px solid var(--color-border-tertiary);">
               <div style="font-size:9px; font-weight:700; color:var(--color-text-success); letter-spacing:1px; margin-bottom:2px;">CORE BOTTLENECK NODE — AZAD CURRENT STATUS</div>
               <div style="font-size:12px; font-weight:600; color:var(--color-text-primary);">5-Axis High-Temperature Precision Turbomachinery Machining</div>
             </div>
             <div style="text-align:center; font-size:12px; color:var(--color-text-tertiary); font-weight:700; line-height:1;">↓</div>
-            <div style="background:var(--color-background-secondary); border-left:4px solid var(--color-border-info); padding:10px 14px; border-radius:var(--border-radius-md);">
-              <div style="font-size:9px; font-weight:700; color:var(--color-text-info); letter-spacing:1px; margin-bottom:2px;">DOWNSTREAM MODULE INTEGRATION</div>
+            <div style="background:var(--color-background-secondary); border-left:4px solid #444; padding:10px 14px; border-radius:var(--border-radius-md);">
+              <div style="font-size:9px; font-weight:700; color:var(--color-text-secondary); letter-spacing:1px; margin-bottom:2px;">DOWNSTREAM MODULE INTEGRATION</div>
               <div style="font-size:12px; font-weight:600; color:var(--color-text-primary);">Complete SIGHT Hydrogen Turbo-Compressor Train Module Assembly</div>
             </div>
           </div>
@@ -546,9 +546,9 @@
 
         <div class="card">
           <div class="ctitle">EXIT MULTIPLE SENSITIVITY FRAMEWORK MATRIX</div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Bear State — Fragmented asset execution, internal market only</span><span class="exit-val">25 – 32x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:35%; background:var(--color-text-tertiary)"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Base State — Successful roll-up of intermediate metallurgy cells</span><span class="exit-val">45 – 52x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:65%; background:var(--color-text-secondary)"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Bull State — Fully integrated platform locking down OEM Joint Ventures</span><span class="exit-val" style="color:var(--color-text-success)">60 – 72x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:88%; background:var(--color-text-info)"></div></div></div>
+          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Bear State — Fragmented asset execution, internal market only</span><span class="exit-val">25 – 32x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:35%;"></div></div></div>
+          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Base State — Successful roll-up of intermediate metallurgy cells</span><span class="exit-val">45 – 52x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:65%; background: #555;"></div></div></div>
+          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Bull State — Fully integrated platform locking down OEM Joint Ventures</span><span class="exit-val" style="color:var(--color-text-success)">60 – 72x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:88%; background: #888;"></div></div></div>
           <div class="exit-bar-row"><div class="exit-header"><span class="exit-label" style="font-weight:600; color:var(--color-text-primary);">Breakout Horizon — China+1 global exclusive supply deployment</span><span class="exit-val" style="color:var(--color-text-success)">80x+ Peak Scale</span></div><div class="exit-bg"><div class="exit-fill" style="width:100%; background:var(--color-text-success)"></div></div></div>
         </div>
       </div>
