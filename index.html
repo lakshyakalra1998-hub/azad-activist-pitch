@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lakshya Kalra | Activist Merchant Banking Portfolio</title>
+  <title>Lakshya Kalra | Merchant Banking & Capital Markets Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -37,7 +37,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #F1F5F9; font-family: var(--font-sans); color: var(--color-text-primary); padding: 40px 24px; display: flex; justify-content: center; -webkit-font-smoothing: antialiased; }
     
-    .shell { width: 100%; max-width: 1150px; background: var(--color-background-primary); border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.06); overflow: hidden; padding-bottom: 24px; }
+    .shell { width: 100%; max-width: 1200px; background: var(--color-background-primary); border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.06); overflow: hidden; padding-bottom: 24px; }
     
     /* MASTER PLATFORM HEADER */
     .topbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; border-bottom: 1px solid var(--color-border-tertiary); background: #0F172A; color: #FFFFFF; }
@@ -47,20 +47,20 @@
     .company-tag { font-size: 12px; font-weight: 500; color: #E2E8F0; }
     .conf-pill { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; background: rgba(239, 68, 68, 0.2); color: #F87171; padding: 4px 12px; border-radius: var(--border-radius-md); border: 1px solid rgba(239, 68, 68, 0.4); }
 
-    /* CORE THESIS INTERACTIVE HUB SELECTOR */
-    .thesis-selector { display: flex; background: var(--color-background-info); padding: 8px 16px; gap: 12px; border-bottom: 1px solid var(--color-border-tertiary); }
-    .t-sel-label { font-size: 10px; font-weight: 700; color: var(--color-text-secondary); align-self: center; letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; }
-    .t-btn { background: #FFFFFF; border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 8px 16px; font-size: 12px; font-weight: 600; color: var(--color-text-secondary); cursor: pointer; transition: all 0.15s ease; }
+    /* MASTER GLOBAL STRATEGIC MANDATE SELECTOR */
+    .thesis-selector { display: flex; background: var(--color-background-info); padding: 10px 24px; gap: 12px; border-bottom: 1px solid var(--color-border-tertiary); overflow-x: auto; white-space: nowrap; }
+    .t-sel-label { font-size: 10px; font-weight: 700; color: var(--color-text-secondary); align-self: center; letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; flex-shrink: 0; }
+    .t-btn { background: #FFFFFF; border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 8px 16px; font-size: 12px; font-weight: 600; color: var(--color-text-secondary); cursor: pointer; transition: all 0.15s ease; flex-shrink: 0; }
     .t-btn:hover { border-color: var(--color-border-secondary); color: var(--color-text-primary); }
     .t-btn.active { background: #0F172A; border-color: #0F172A; color: #FFFFFF; }
 
-    /* DECK TAB PANELS */
-    .slide-nav { display: flex; background: #FFFFFF; border-bottom: 1px solid var(--color-border-tertiary); }
-    .snav-btn { flex: 1; background: transparent; border: none; border-bottom: 2px solid transparent; padding: 16px 8px; font-size: 11px; font-weight: 600; color: var(--color-text-tertiary); cursor: pointer; letter-spacing: 0.5px; transition: all 0.15s ease; font-family: var(--font-sans); text-transform: uppercase; }
+    /* SLIDE SUB-NAVIGATION CONTROLS */
+    .slide-nav { display: flex; background: #FFFFFF; border-bottom: 1px solid var(--color-border-tertiary); overflow-x: auto; }
+    .snav-btn { flex: 1; background: transparent; border: none; border-bottom: 2px solid transparent; padding: 16px 8px; font-size: 11px; font-weight: 600; color: var(--color-text-tertiary); cursor: pointer; letter-spacing: 0.5px; transition: all 0.15s ease; font-family: var(--font-sans); text-transform: uppercase; min-width: 140px; }
     .snav-btn:hover { color: var(--color-text-secondary); background: var(--color-background-secondary); }
     .snav-btn.on { color: var(--color-text-primary); border-bottom-color: var(--color-border-primary); background: var(--color-background-secondary); font-weight: 700; }
 
-    /* CORE DISPLAY RECONCILIATIONS */
+    /* VIEW RECONCILIATION CONTAINERS */
     .thesis-container { display: none; }
     .thesis-container.active { display: block; }
     
@@ -68,14 +68,14 @@
     .slide.on { display: block; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    .sl-header { margin-bottom: 28px; }
+    .sl-header { margin-bottom: 24px; }
     .sl-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 3px; color: var(--color-text-secondary); margin-bottom: 8px; text-transform: uppercase; }
-    .sl-title { font-size: 25px; font-weight: 700; color: var(--color-text-primary); line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.5px; }
-    .sl-hook { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; max-width: 800px; padding-left: 14px; border-left: 2px solid var(--color-border-primary); font-style: italic; }
+    .sl-title { font-size: 24px; font-weight: 700; color: var(--color-text-primary); line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.5px; }
+    .sl-hook { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; max-width: 850px; padding-left: 14px; border-left: 2px solid var(--color-border-primary); font-style: italic; }
 
     .asymmetry-line { background: var(--color-background-secondary); border-left: 3px solid var(--color-text-success); border-radius: var(--border-radius-md); padding: 16px 20px; margin-bottom: 24px; font-size: 14px; font-weight: 500; color: var(--color-text-primary); line-height: 1.5; border: 1px solid var(--color-border-tertiary); }
 
-    /* GRID CORES */
+    /* TYPOGRAPHY CARD GRID LAYOUTS */
     .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
@@ -111,11 +111,6 @@
     .bar-warn { background: var(--color-text-warning); }
     .bar-ok { background: var(--color-text-success); }
 
-    .tag { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 4px 8px; border-radius: 3px; border: 1px solid var(--color-border-secondary); color: var(--color-text-secondary); text-transform: uppercase; }
-    .tag-hi { border-color: rgba(19, 115, 51, 0.3); color: var(--color-text-success); background: var(--color-background-success); }
-    .tag-warn { border-color: rgba(176, 96, 0, 0.3); color: var(--color-text-warning); background: var(--color-background-warning); }
-    .tag-info { border-color: var(--color-border-secondary); color: var(--color-text-info); background: var(--color-background-info); }
-
     .regime-compare { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 0; align-items: center; margin-bottom: 20px; }
     .regime-box { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 20px; border: 1px solid var(--color-border-tertiary); }
     .regime-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-secondary); margin-bottom: 12px; text-transform: uppercase; }
@@ -143,6 +138,23 @@
     .step-t { font-size: 13px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 4px; }
     .step-d { font-size: 11.5px; color: var(--color-text-secondary); line-height: 1.5; }
 
+    /* ==================== RETAIL REVENUE TABLE MODULE STYLING ==================== */
+    .matrix-padding { padding: 12px 32px 32px; }
+    .matrix-table { width: 100%; border-collapse: collapse; text-align: left; background: #FFFFFF; border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); }
+    .matrix-table th { background: var(--color-background-secondary); color: var(--color-text-secondary); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 16px 20px; border-bottom: 1px solid var(--color-border-tertiary); }
+    .matrix-table td { padding: 20px; border-bottom: 1px solid var(--color-border-tertiary); font-size: 13.5px; vertical-align: top; line-height: 1.5; }
+    .matrix-table tr:last-child td { border-bottom: none; }
+    
+    .ticker-name { font-size: 15px; font-weight: 700; color: var(--color-text-primary); }
+    .ticker-symbol { font-size: 11px; font-weight: 600; color: var(--color-text-tertiary); margin-top: 2px; font-family: monospace; }
+    .badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 6px 12px; border-radius: 4px; text-transform: uppercase; border: 1px solid; }
+    .badge-buy { background: var(--color-background-success); color: var(--color-text-success); border-color: rgba(19, 115, 51, 0.2); }
+    .price-main { font-size: 15px; font-weight: 700; color: var(--color-text-primary); }
+    .price-sub { font-size: 11px; color: var(--color-text-tertiary); margin-top: 2px; }
+    .price-target { font-size: 16px; font-weight: 700; color: var(--color-text-success); }
+    .why-lead { font-size: 14px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 6px; }
+    .why-body { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.6; }
+
     .footer { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px 0; border-top: 1px solid var(--color-border-tertiary); margin-top: 24px; }
     .footer-disc { font-size: 10px; color: var(--color-text-tertiary); line-height: 1.4; max-width: 80%; }
     .footer-pg { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); }
@@ -154,18 +166,20 @@
 
   <div class="topbar">
     <div class="topbar-left">
-      <span class="firm-tag">ACTIVIST MERCHANT BANK · MUMBAI</span>
+      <span class="firm-tag">LAKSHYA KALRA ARCHITECTURE PORTFOLIO</span>
       <div class="sep"></div>
-      <span class="company-tag">Lakshya Kalra Strategy Command Engine</span>
+      <span class="company-tag">Merchant Banking & Capital Markets Sovereign Strategy Engine</span>
     </div>
     <span class="conf-pill">STRICTLY CONFIDENTIAL</span>
   </div>
 
   <div class="thesis-selector">
     <span class="t-sel-label">Select Active Mandate:</span>
-    <button class="t-btn active" onclick="switchThesis('azad', this)">Azad Engineering (Turbine Chokepoint)</button>
-    <button class="t-btn" onclick="switchThesis('schneider', this)">Schneider Electric (AI Grid Chokepoint)</button>
+    <button class="t-btn active" onclick="switchThesis('azad', this)">Mandate 01: Azad Engineering (Turbine Chokepoint)</button>
+    <button class="t-btn" onclick="switchThesis('schneider', this)">Mandate 02: Schneider Electric (AI Grid Node)</button>
+    <button class="t-btn" onclick="switchThesis('retail', this)">Mandate 03: Nifty Smallcap Alpha Matrix (Retail Picks)</button>
   </div>
+
 
   <div id="thesis-azad" class="thesis-container active">
     <div class="slide-nav">
@@ -200,18 +214,18 @@
             <div class="ctitle">PERCEPTION ASYMMETRY PROFILE</div>
             <div class="kv-row"><span class="kv-label">Mainstream Market Label</span><span class="kv-muted">Precision Component Exporter</span></div>
             <div class="kv-row"><span class="kv-label">Activist Position Framing</span><span class="kv-val">Sovereign Industrial Infrastructure</span></div>
-            <div class="kv-row"><span class="kv-label">Current Entry Multiple</span><span class="kv-muted">22x EV / EBITDA</span></div>
+            <div class="kv-row"><span class="kv-label">Current Entry Multiple</span><span class="kv-muted">22x EV / EBITDA (Cyclical base)</span></div>
             <div class="kv-row"><span class="kv-label">Implied Structural Multiple</span><span class="kv-val" style="color:var(--color-text-success)">50–70x EV / EBITDA Premium</span></div>
           </div>
           <div class="g4">
-            <div class="stat-card"><div class="stat-label">ENTRY MULTIPLE</div><div class="stat-val">22x</div><div class="stat-sub">Current Market</div></div>
-            <div class="stat-card"><div class="stat-label">TARGET MULTIPLE</div><div class="stat-val" style="color:var(--color-text-success)">60x</div><div class="stat-sub">Activist Target</div></div>
+            <div class="stat-card"><div class="stat-label">ENTRY EV/EBITDA</div><div class="stat-val">22x</div><div class="stat-sub">Current Market</div></div>
+            <div class="stat-card"><div class="stat-label">TARGET RE-RATING</div><div class="stat-val" style="color:var(--color-text-success)">60x</div><div class="stat-sub">Activist Target</div></div>
             <div class="stat-card"><div class="stat-label">TARGET ROCE</div><div class="stat-val">38%</div><div class="stat-sub">Asset Multiplier</div></div>
-            <div class="stat-card"><div class="stat-label">LEAD TIME</div><div class="stat-val">12-18M</div><div class="stat-sub">P&L Realization</div></div>
+            <div class="stat-card"><div class="stat-label">REVENUE LEAD TIME</div><div class="stat-val">12-18M</div><div class="stat-sub">Pre-P&L Realization</div></div>
           </div>
         </div>
       </div>
-      <div class="footer"><span class="footer-disc">Report Authored By: Lakshya Kalra. Strictly Confidential. Independent proprietary model assumptions.</span><span class="footer-pg">01 / 05</span></div>
+      <div class="footer"><span class="footer-disc">Institutional activist research ledger compiled by Lakshya Kalra. Strictly confidential. Independent proprietary model assumptions.</span><span class="footer-pg">01 / 05</span></div>
     </div>
 
     <div class="slide" id="azad-s1">
@@ -242,12 +256,12 @@
           <div class="ctitle">STREAM 03 · CENTRAL B2B PROCUREMENT META-LOGS</div>
           <div class="insight-block">
             <div class="ins-lead">GTRE Subsystem RFPs</div>
-            <div class="ins-body">Cross-referencing unawarded tender numbers on the central procurement portal reveals Azad vendor IDs matching multiple advanced turbine rotor components across deep defense programs simultaneously. This signals a unified single-source trajectory.</div>
+            <div class="ins-body">Cross-referencing historical unawarded tender numbers on the central procurement portal reveals Azad vendor IDs matching multiple advanced turbine rotor components across deep defense programs simultaneously. This signals a unified single-source trajectory.</div>
           </div>
-          <div class="signal-row"><div class="sig-header"><span class="sig-label">DRDO Vendor Intersect Frequency</span><span class="sig-val">Sole Source</span></div><div class="bar-bg"><div class="bar-fill bar-warn" style="width:95%"></div></div></div>
+          <div class="signal-row"><div class="sig-header"><span class="sig-label">DRDO Vendor Intersect Frequency</span><span class="sig-val">Sole Source Track</span></div><div class="bar-bg"><div class="bar-fill bar-warn" style="width:95%"></div></div></div>
         </div>
       </div>
-      <div class="footer"><span class="footer-disc">Report Authored By: Lakshya Kalra. Signals derived from proprietary web scrapers tracking import terminals and procurement nodes.</span><span class="footer-pg">02 / 05</span></div>
+      <div class="footer"><span class="footer-disc">Alternative metrics analysis engineered by Lakshya Kalra. Signals derived from proprietary web scrapers tracking import terminals and procurement nodes.</span><span class="footer-pg">02 / 05</span></div>
     </div>
 
     <div class="slide" id="azad-s2">
@@ -265,14 +279,14 @@
           <div class="kv-row"><span class="kv-label">Return on Capital Employed (RoCE)</span><span class="kv-muted">18 – 20%</span></div>
         </div>
         <div class="arr-col">➔</div>
-        <div class="regime-box" style="background: var(--color-background-secondary);">
+        <div class="regime-box" style="border-color: var(--color-border-success); background: var(--color-background-secondary);">
           <div class="regime-label-hi">ACTIVIST TARGET REGIME — "SOVEREIGN INFRASTRUCTURE"</div>
-          <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-up">30 – 33%</span></div>
-          <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-up">2.0 – 2.2x</span></div>
-          <div class="kv-row"><span class="kv-label">Return on Capital Employed (RoCE)</span><span class="kv-up" style="color:var(--color-text-success)">35 – 40%</span></div>
+          <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-up">30 – 33% (Pricing Power)</span></div>
+          <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-up">2.0 – 2.2x (Dual Utilization)</span></div>
+          <div class="kv-row"><span class="kv-label">Return on Capital Employed (RoCE)</span><span class="kv-up" style="color:var(--color-text-success)">35 – 40% (Inflection Threshold)</span></div>
         </div>
       </div>
-      <div class="footer"><span class="footer-disc">Report Authored By: Lakshya Kalra. Structural projections assume strict normalization of raw materials and schedules.</span><span class="footer-pg">03 / 05</span></div>
+      <div class="footer"><span class="footer-disc">Mathematical re-rating parameters designed by Lakshya Kalra. Structural projections assume strict normalization of raw materials and baseline deployment schedules.</span><span class="footer-pg">03 / 05</span></div>
     </div>
 
     <div class="slide" id="azad-s3">
@@ -281,8 +295,8 @@
         <div class="sl-title">Control the Metallurgy Stack End-to-End Before a Global Private Equity Aggregator Intervenes.</div>
         <div class="sl-hook">"Azad owns the absolute highest-skill manufacturing step: the precision machining node. The strategic imperative is to buy out upstream and downstream gaps while multiple asymmetry is in our favor."</div>
       </div>
-      <div class="asymmetry-line">Consolidation Vector: Adjacent industrial cells can be consolidated at standard industrial multiples (6-8x EBITDA) using Azad's premium public stock as currency. The multiple arbitrage is the deal.</div>
-      <div class="g2">
+      <div class="asymmetry-line">Consolidation Vector: Adjacent industrial cells (nickel superalloy forging houses, thermal barrier spray coatings, high-pressure hydrogen face seals) can be consolidated at standard industrial multiples (6-8x EBITDA) using Azad's premium public stock as currency.</div>
+      <div class="gas">
         <div class="card">
           <div class="ctitle">PHASE 01 — UPSTREAM INTEGRATION LAYER (HORIZONTAL LOCK)</div>
           <div class="insight-block">
@@ -297,7 +311,7 @@
           <div class="kv-row"><span class="kv-label">European H₂ Face Seal Integration JV</span><span class="kv-val">₹60–100 Cr Outlay</span></div>
         </div>
       </div>
-      <div class="footer"><span class="footer-disc">Report Authored By: Lakshya Kalra. M&A consolidation strategy roadmap layout metrics.</span><span class="footer-pg">04 / 05</span></div>
+      <div class="footer"><span class="footer-disc">Consolidation roll-up roadmap engineered by Lakshya Kalra. Targets are structurally illustrative for strategic merchant capital discussions.</span><span class="footer-pg">04 / 05</span></div>
     </div>
 
     <div class="slide" id="azad-s4">
@@ -306,26 +320,26 @@
         <div class="sl-title">GE Aerospace Isn't Buying an Indian Mid-Cap. It's Purchasing Sovereign Defense Access at a Massive Discount.</div>
         <div class="sl-hook">"Global aerospace and industrial power primes are not managing spreadsheets; they are managing geopolitical supply chokepoints. Every supply line converges on this asset."</div>
       </div>
-      <div class="asymmetry-line">Terminal Premium: The intersection of China+1 supply diversification and domestic content requirements for hydrogen grids creates forced corporate bidding tension. That friction guarantees the exit premium.</div>
+      <div class="asymmetry-line">Terminal Premium: The intersection of China+1 supply diversification, global engine localization mandates under Make in India, and domestic content requirements for hydrogen grids creates forced competitive bidding tension.</div>
       <div class="g2">
         <div class="card">
           <div class="ctitle">GLOBAL OEM STRATEGIC ACQUIRER POOL</div>
           <div class="buyer-row">
-            <div><div class="buyer-name">Siemens Energy AG</div><div class="buyer-logic">Demands an active, certified South Asian manufacturing platform to scale localized hydrogen equipment arrays into high-growth Middle Eastern infrastructure corridors.</div></div>
-            <div class="buyer-right"><div class="buyer-mx">60–70x</div><span class="tag-hi">Tier-1</span></div>
+            <div><div class="buyer-name">Siemens Energy AG</div><div class="buyer-logic">Primary strategic target. Their global electrolyzer scale roadmap demands low-cost, high-compliance turbomachinery hubs to export throughout Asia and the Middle East.</div></div>
+            <div class="buyer-right"><div class="buyer-mx">60–70x</div><span class="tag-hi">Tier-1 Acquirer</span></div>
           </div>
           <div class="buyer-row">
-            <div><div class="buyer-name">GE Aerospace</div><div class="buyer-logic">Severe localized offset settlement obligations legally mandated by multi-billion dollar Indian Air Force propulsion procurement contracts force acquisition.</div></div>
-            <div class="buyer-right"><div class="buyer-mx">55–65x</div><span class="tag-info">Tier-1</span></div>
+            <div><div class="buyer-name">GE Aerospace</div><div class="buyer-logic">Massive offset credit settlement obligations linked directly to Indian Air Force propulsion contracts force acquisition. Azad represents the fastest path to defense clearance.</div></div>
+            <div class="buyer-right"><div class="buyer-mx">55–65x</div><span class="tag-info">Tier-1 Acquirer</span></div>
           </div>
         </div>
         <div class="card">
           <div class="ctitle">EXIT MULTIPLE SENSITIVITY FRAMEWORK MATRIX</div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Bull State — Fully Integrated Platform Locking OEM JVs</span><span class="exit-val">60 – 72x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:88%; background: var(--color-text-primary);"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Base State — Successful Roll-up of Metallurgy Cells</span><span class="exit-val">45 – 52x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:65%; background: var(--color-text-secondary);"></div></div></div>
+          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Bull State — Fully integrated platform locking down OEM Joint Ventures</span><span class="exit-val">60 – 72x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:88%; background: var(--color-text-primary);"></div></div></div>
+          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Base State — Successful roll-up of intermediate metallurgy cells</span><span class="exit-val">45 – 52x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:65%; background: var(--color-text-secondary);"></div></div></div>
         </div>
       </div>
-      <div class="footer"><span class="footer-disc">Report Authored By: Lakshya Kalra. Multiples assume standard regulatory clearances across aerospace asset ownership boundaries.</span><span class="footer-pg">05 / 05</span></div>
+      <div class="footer"><span class="footer-disc">Liquidity architecture compiled under the leadership of analyst Lakshya Kalra. Multiples assume standard regulatory clearances across relevant aerospace asset ownership boundaries.</span><span class="footer-pg">05 / 05</span></div>
     </div>
   </div>
 
@@ -341,7 +355,7 @@
 
     <div class="slide on" id="schneider-s0">
       <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 01 · INDUSTRIAL MATRICES</div>
+        <div class="sl-eyebrow">SLIDE 01 · STRATEGIC CORE THESIS</div>
         <div class="sl-title">Dalal Street Is Misclassifying the Asset as an Equipment Vendor. It Is Actually India's AI Grid Chokepoint.</div>
         <div class="sl-hook">"The market continues to bucket Schneider Electric Infrastructure inside the generic cyclical equipment manufacturer basket. That classification is catastrophically outdated."</div>
       </div>
@@ -404,7 +418,6 @@
           <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-muted">13% – 15%</span></div>
           <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-muted">~1.2x</span></div>
           <div class="kv-row"><span class="kv-label">Baseline RoCE Footprint</span><span class="kv-muted">~15% Baseline</span></div>
-          <div class="kv-row"><span class="kv-label">Market Multiple Anchor</span><span class="kv-muted">20x Earnings Base</span></div>
         </div>
         <div class="arr-col">➔</div>
         <div class="regime-box" style="border-color:var(--color-text-success);">
@@ -412,16 +425,12 @@
           <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-up">24% – 28%</span></div>
           <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-up">2.0x – 2.4x</span></div>
           <div class="kv-row"><span class="kv-label">Baseline RoCE Footprint</span><span class="kv-up" style="color:var(--color-text-success)">35%+ Convex Expansion</span></div>
-          <div class="kv-row"><span class="kv-label">Market Multiple Anchor</span><span class="kv-up" style="color:var(--color-text-success)">50x - 60x Scarcity Premium</span></div>
         </div>
       </div>
       <div class="card">
         <div class="ctitle">THE NON-LINEAR CONVEX ROCE EQUATION SYSTEM</div>
         <div style="font-size:15px; font-weight:600; text-align:center; padding:12px 0; font-family:monospace; background:var(--color-background-secondary); border-radius:var(--border-radius-md);">
           RoCE = [(Revenue × EBITDA Margin) - Depreciation] / [Net Working Capital + Fixed Assets]
-        </div>
-        <div style="font-size:11.5px; color:var(--color-text-secondary); line-height:1.5; margin-top:10px; text-align:center;">
-          As scarcity pricing expands the numerator, immediate hyperscale inventory turns compress receivables under strategic customer concentration. The denominator contracts dynamically while operating earnings experience explosive compounding.
         </div>
       </div>
       <div class="footer"><span class="footer-disc">Report Authored By: Lakshya Kalra. Valuation framework tracks migration from industrial manufacturing comparables to digital backbone scarcity assets.</span><span class="footer-pg">03 / 05</span></div>
@@ -450,9 +459,6 @@
           </div>
         </div>
       </div>
-      <div class="card-surf" style="text-align:center; font-weight:600; font-size:13px; padding:14px;">
-        Target State: Transforming the entity from a basic electrical hardware manufacturing node into the absolute Operating System of India's AI Power Architecture.
-      </div>
       <div class="footer"><span class="footer-disc">Report Authored By: Lakshya Kalra. Strategic target consolidation blueprints are illustrative for capital deployment discussions.</span><span class="footer-pg">04 / 05</span></div>
     </div>
 
@@ -470,10 +476,6 @@
             <div class="ins-lead">Global Hyperscale Infrastructure Primes (AWS, Microsoft, Google)</div>
             <div class="ins-body">Firms facing massive power availability limits globally require direct integration with high-voltage physical switching monopolies. Control over local substation automation architectures eliminates commissioning friction.</div>
           </div>
-          <div class="insight-block">
-            <div class="ins-lead">Sovereign Wealth & Infrastructure Pools</div>
-            <div class="ins-body">International infrastructure capital will aggressively bid a premium valuation anchor to capture core digital backbone positions inside the fastest-growing industrial grid system on earth.</div>
-          </div>
         </div>
         <div class="card">
           <div class="ctitle">CORE STRATEGIC THESIS CONCLUSION SYSTEM SUMMARY</div>
@@ -486,57 +488,132 @@
     </div>
   </div>
 
+
+  <div id="thesis-retail" class="thesis-container">
+    <div class="dashboard-header" style="padding: 28px 32px 16px;">
+      <div class="dash-eyebrow">EQUITY RESEARCH DESK · RETAIL OUTCOME INTERFACE</div>
+      <div class="dash-title">High-Conviction Nifty Smallcap Alpha Matrix</div>
+      <div class="dash-subtitle">Translating institutional alternative datasets—including maritime custom cargo streams, geospatial substation staging, and contract pipeline tracking—into crisp, actionable pick parameters for individual retail portfolio scaling.</div>
+    </div>
+
+    <div class="matrix-padding">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th style="width: 22%;">Stock Asset</th>
+            <th style="width: 13%;">Stance</th>
+            <th style="width: 13%;">Current Price</th>
+            <th style="width: 14%;">12M Target</th>
+            <th style="width: 38%;">The Structural Thesis ("Why")</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>
+              <div class="ticker-name">Shilchar Technologies</div>
+              <div class="ticker-symbol">NSE: SHILCHAR // CAPITAL GOODS</div>
+            </td>
+            <td><span class="badge badge-buy">Strong Buy</span></td>
+            <td><div class="price-main">₹3,450</div><div class="price-sub">May 2026 Baseline</div></td>
+            <td><div class="price-target">₹5,100</div><div class="price-sub" style="color:var(--color-text-success); font-weight:600;">+47.8% Upside</div></td>
+            <td>
+              <div class="why-lead">The Power Grid Transmission Chokepoint</div>
+              <div class="why-body">India's National Electricity Plan requires a ₹9.15 lakh crore transmission upgrade through 2032 to evacuate massive incoming wind and solar capacity. Shilchar produces specialized distribution transformers. While retail trades on generic infrastructure headlines, our pipeline tracks extreme domestic backlog growth alongside heavy export margin realizations to premium global channels.</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="ticker-name">eMudhra Ltd</div>
+              <div class="ticker-symbol">NSE: EMUDHRA // DIGITAL DATA</div>
+            </td>
+            <td><span class="badge badge-buy">Strong Buy</span></td>
+            <td><div class="price-main">₹820</div><div class="price-sub">May 2026 Baseline</div></td>
+            <td><div class="price-target">₹1,240</div><div class="price-sub" style="color:var(--color-text-success); font-weight:600;">+51.2% Upside</div></td>
+            <td>
+              <div class="why-lead">The Digital Identity Toll Booth</div>
+              <div class="why-body">As corporate India fully transitions from physical workflows to permanent digital encryption frameworks, eMudhra controls the leading market share in digital signatures and public key infrastructure. This creates an un-replicable switching-cost economic moat. Once a bank or enterprise integrates their identity authentication stack, removal risk drops to zero, guaranteeing highly visible recurring cash flows.</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="ticker-name">Ion Exchange (India)</div>
+              <div class="ticker-symbol">NSE: IONEXCHANG // ECO INFRA</div>
+            </td>
+            <td><span class="badge badge-buy">Strong Buy</span></td>
+            <td><div class="price-main">₹392</div><div class="price-sub">May 2026 Baseline</div></td>
+            <td><div class="price-target">₹610</div><div class="price-sub" style="color:var(--color-text-success); font-weight:600;">+55.6% Upside</div></td>
+            <td>
+              <div class="why-lead">The Industrial Water Scarcity Monopoly</div>
+              <div class="why-body">Stringent environmental legislation now legally forces new manufacturing clusters, pharmaceutical plants, and green energy facilities to achieve Zero Liquid Discharge (ZLD). Ion Exchange is the premier technical provider for industrial wastewater recycling. Tracking unawarded municipal and corporate engineering B2B tender queues reveals a multi-year backlog surge that has yet to hit standard retail screens.</div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+      
+      <div class="footer" style="padding-left:0; padding-right:0;">
+        <span class="footer-disc">Disclaimer: Compiled by analyst Lakshya Kalra for public retail data visualization tracking purposes. Not direct financial asset allocation advice. All performance metrics track public market metrics across the National Stock Exchange of India (NSE).</span>
+        <span class="footer-pg">Retail Desk</span>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script>
-  // 1. Core Mandate Toggle Switcher Engine
+  // 1. Global Mandate Container Selector
   function switchThesis(thesisId, buttonElement) {
-    // Hide all thesis containers
+    // Hide all main containers
     var containers = document.querySelectorAll('.thesis-container');
     for (var i = 0; i < containers.length; i++) {
       containers[i].classList.remove('active');
     }
     
-    // Deactivate all selector buttons
+    // Deactivate all top-level selector tabs
     var selectButtons = document.querySelectorAll('.t-btn');
     for (var j = 0; j < selectButtons.length; j++) {
       selectButtons[j].classList.remove('active');
     }
     
-    // Activate target container and button
+    // Activate targeted container and highlighted button
     document.getElementById('thesis-' + thesisId).classList.add('active');
     buttonElement.classList.add('active');
     
-    // Reset targeted container to show its slide 1 natively
-    var targetContainer = document.getElementById('thesis-' + thesisId);
-    var targetSlides = targetContainer.querySelectorAll('.slide');
-    var targetNavBtns = targetContainer.querySelectorAll('.snav-btn');
-    
-    for (var k = 0; k < targetSlides.length; k++) {
-      targetSlides[k].classList.remove('on');
-      targetNavBtns[k].classList.remove('on');
+    // If it's a slide-based mandate (azad or schneider), automatically reset view to slide 1
+    if (thesisId !== 'retail') {
+      var targetContainer = document.getElementById('thesis-' + thesisId);
+      var targetSlides = targetContainer.querySelectorAll('.slide');
+      var targetNavBtns = targetContainer.querySelectorAll('.snav-btn');
+      
+      for (var k = 0; k < targetSlides.length; k++) {
+        targetSlides[k].classList.remove('on');
+        targetNavBtns[k].classList.remove('on');
+      }
+      targetSlides[0].classList.add('on');
+      targetNavBtns[0].classList.add('on');
     }
-    targetSlides[0].classList.add('on');
-    targetNavBtns[0].classList.add('on');
   }
 
-  // 2. Intra-Thesis Slide Running Toggle Engine
+  // 2. Intra-Thesis Slide Navigation Selector
   function showSlide(thesisPrefix, slideIndex, buttonElement) {
     var parentContainer = document.getElementById('thesis-' + thesisPrefix);
     
-    // Hide all slides within this specific container
+    // Hide all slide view divisions within this specific container
     var slides = parentContainer.querySelectorAll('.slide');
     for (var i = 0; i < slides.length; i++) {
       slides[i].classList.remove('on');
     }
     
-    // Deactivate all sub-nav buttons within this specific container
+    // Deactivate all navigation tabs within this specific container
     var buttons = parentContainer.querySelectorAll('.snav-btn');
     for (var j = 0; j < buttons.length; j++) {
       buttons[j].classList.remove('on');
     }
     
-    // Activate target slide and sub-nav button
+    // Trigger active states on targets
     document.getElementById(thesisPrefix + '-s' + slideIndex).classList.add('on');
     buttonElement.classList.add('on');
   }
