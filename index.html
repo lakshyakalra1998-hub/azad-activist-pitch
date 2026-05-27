@@ -47,6 +47,14 @@
     .company-tag { font-size: 12px; font-weight: 500; color: #E2E8F0; }
     .conf-pill { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; background: rgba(239, 68, 68, 0.2); color: #F87171; padding: 4px 12px; border-radius: var(--border-radius-md); border: 1px solid rgba(239, 68, 68, 0.4); }
 
+    /* REAL-TIME SOVEREIGN RISK TELEMETRY TICKER */
+    .telemetry-ticker { display: grid; grid-template-columns: repeat(4, 1fr); background: #1E293B; border-bottom: 1px solid var(--color-border-primary); color: #FFFFFF; padding: 12px 24px; gap: 16px; }
+    .ticker-node { border-right: 1px solid #475569; padding-right: 12px; }
+    .ticker-node:last-child { border-right: none; }
+    .tick-lbl { font-size: 9px; font-weight: 700; color: #94A3B8; letter-spacing: 1px; text-transform: uppercase; }
+    .tick-val { font-size: 14px; font-weight: 700; color: #F8FAFC; margin-top: 2px; }
+    .tick-status { font-size: 10px; font-weight: 600; color: #34D399; margin-top: 1px; }
+
     /* MASTER GLOBAL STRATEGIC MANDATE SELECTOR */
     .thesis-selector { display: flex; background: var(--color-background-info); padding: 10px 24px; gap: 12px; border-bottom: 1px solid var(--color-border-tertiary); overflow-x: auto; white-space: nowrap; }
     .t-sel-label { font-size: 10px; font-weight: 700; color: var(--color-text-secondary); align-self: center; letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; flex-shrink: 0; }
@@ -132,12 +140,6 @@
     .exit-bg { height: 6px; background: var(--color-border-tertiary); border-radius: 100px; overflow: hidden; }
     .exit-fill { height: 100%; border-radius: 100px; background: var(--color-text-secondary); }
 
-    .step-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 8px; }
-    .step-box { background: #FFFFFF; border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 14px; }
-    .step-n { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-tertiary); margin-bottom: 6px; }
-    .step-t { font-size: 13px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 4px; }
-    .step-d { font-size: 11.5px; color: var(--color-text-secondary); line-height: 1.5; }
-
     /* MATRIX SPECIFIC MODULE STYLING */
     .matrix-padding { padding: 12px 32px 32px; }
     .matrix-table { width: 100%; border-collapse: collapse; text-align: left; background: #FFFFFF; border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); }
@@ -166,11 +168,34 @@
 
   <div class="topbar">
     <div class="topbar-left">
-      <span class="firm-tag">LAKSHYA KALRA STRATEGY PANEL</span>
+      <span class="firm-tag">LAKSHYA KALRA ENGINE TERMINAL</span>
       <div class="sep"></div>
-      <span class="company-tag">Cross-Asset Sovereign Arbitrage & Origination Ledger</span>
+      <span class="company-tag">Cross-Asset Sovereign Arbitrage & Capital Markets Ledger</span>
     </div>
     <span class="conf-pill">STRICTLY CONFIDENTIAL</span>
+  </div>
+
+  <div class="telemetry-ticker">
+    <div class="ticker-node">
+      <div class="tick-lbl">India 10Y G-Sec Yield</div>
+      <div class="tick-val">7.02%</div>
+      <div class="tick-status" style="color:#F87171;">▲ High Cost of Debt</div>
+    </div>
+    <div class="ticker-node">
+      <div class="tick-lbl">Brent Crude Oil</div>
+      <div class="tick-val">$102.40 / bbl</div>
+      <div class="tick-status" style="color:#F87171;">▲ Input Inflation Pressure</div>
+    </div>
+    <div class="ticker-node">
+      <div class="tick-lbl">MCX Copper Futures</div>
+      <div class="tick-val">₹842.50 / kg</div>
+      <div class="tick-status" style="color:#F87171;">▲ AI Grid Capex Inflow</div>
+    </div>
+    <div class="ticker-node">
+      <div class="tick-lbl">Sovereign Mandate Stance</div>
+      <div class="tick-val">Active Localization</div>
+      <div class="tick-status">✔ Structural Chokepoints Favored</div>
+    </div>
   </div>
 
   <div class="thesis-selector">
@@ -179,6 +204,7 @@
     <button class="t-btn" onclick="switchThesis('schneider', this)">Mandate 02: Schneider Electric (AI Grid Node)</button>
     <button class="t-btn" onclick="switchThesis('mineral', this)">Mandate 03: Rare Earth Sovereign Rollup (Private Matrix)</button>
     <button class="t-btn" onclick="switchThesis('retail', this)">Mandate 04: Nifty Smallcap Alpha Matrix (Retail Picks)</button>
+    <button class="t-btn" onclick="switchThesis('macro', this)">Mandate 05: Intermarket Macro Telemetry Ledger</button>
   </div>
 
 
@@ -512,7 +538,7 @@
           </div>
           <div class="insight-block">
             <div class="ins-lead">The Sovereign Rollup Arithmetic</div>
-            <div class="ins-body">By utilizing a listed corporate shell as a acquisition vehicle, capital providers can buy up private metallurgy nodes in Gujarat and Odisha at 4-6x EBITDA, and instantly arbitrage them into a consolidated entity command premium strategic infrastructure multiples (45x+).</div>
+            <div class="ins-body">By utilizing a listed corporate shell as an acquisition vehicle, capital providers can buy up private metallurgy nodes in Gujarat and Odisha at 4-6x EBITDA, and instantly arbitrage them into a consolidated entity command premium strategic infrastructure multiples (45x+).</div>
           </div>
         </div>
         <div class="card">
@@ -644,6 +670,100 @@
     </div>
   </div>
 
+
+  <div id="thesis-macro" class="thesis-container">
+    <div class="slide-nav">
+      <button class="snav-btn on" onclick="showSlide('macro', 0, this)">01 · Commodity Engine</button>
+      <button class="snav-btn" onclick="showSlide('macro', 1, this)">02 · Sovereign Yields</button>
+      <button class="snav-btn" onclick="showSlide('macro', 2, this)">03 · Intermarket Intersect</button>
+    </div>
+
+    <div class="slide on" id="macro-s0">
+      <div class="sl-header">
+        <div class="sl-eyebrow">SLIDE 01 · MCX COMMODITY MATRIX</div>
+        <div class="sl-title">Energy and Base Metal Volatility: Upstream Transmission Lines to Corporate Margin Shifts</div>
+        <div class="sl-hook">"Commodities are not isolated speculative assets. They represent the baseline raw cost matrices that dictate corporate pricing power and infrastructure expansion timelines across the subcontinent."</div>
+      </div>
+      <div class="asymmetry-line">The Transmission Effect: With global crude lingering at high levels, downstream power generation grids face extreme input cost inflation. This directly accelerates the strategic necessity for Schneider's localized automation relays.</div>
+      <div class="g2">
+        <div class="card">
+          <div class="ctitle">ACTIVE COMMODITY LEDGER PROFILE</div>
+          <div class="kv-row"><span class="kv-label">Brent Crude Oil Contract</span><span class="kv-val">$102.40 / bbl</span></div>
+          <div class="kv-row"><span class="kv-label">MCX Industrial Copper Futures</span><span class="kv-val">₹842.50 / kg</span></div>
+          <div class="kv-row"><span class="kv-label">Bullion Safe-Haven Index (Gold)</span><span class="kv-val">₹1,58,588 / 10g</span></div>
+          <div class="kv-row"><span class="kv-label">Industrial Silver Contract</span><span class="kv-val">₹2,71,600 / kg</span></div>
+        </div>
+        <div class="card">
+          <div class="ctitle">THE COPPER DEMAND SHOCK ANALYTICS</div>
+          <div class="insight-block">
+            <div class="ins-lead">The AI Data Center Material Moat</div>
+            <div class="ins-body">AI server clusters running at 120kW per rack require a 5x spike in heavy-gauge pure copper conductors and switchgear bars compared to legacy servers. The macro consolidation spikes on the MCX are tracking the direct infrastructure layout velocity months before public P&L statements adjust.</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer"><span class="footer-disc">Macro ledger structured under the leadership of analyst Lakshya Kalra. Data points validated against early morning MCX clearing numbers.</span><span class="footer-pg">01 / 03</span></div>
+    </div>
+
+    <div class="slide" id="macro-s1">
+      <div class="sl-header">
+        <div class="sl-eyebrow">SLIDE 02 · FIXED INCOME YIELD CURVE AREA</div>
+        <div class="sl-title">The High-Yield Reality: Sovereign Curve Modeling & Fixed Income Capital Allocations</div>
+        <div class="sl-hook">"When sovereign yields expand, capital pricing becomes tight. This forces a structural multiple correction across weak, low-moat public companies, creating an ideal playground for buyout consolidation."</div>
+      </div>
+      <div class="asymmetry-line">The Curve Matrix: Short-duration fixed assets offer premium visibility as macro allocation platforms lock in high yields before foreign global index inclusion capital flows compress domestic yield architecture.</div>
+      <div class="g3">
+        <div class="stat-card"><div class="stat-label">91-DAY RBI T-BILL</div><div class="stat-val">5.40%</div><div class="stat-sub">Sovereign Short Duration</div></div>
+        <div class="stat-card"><div class="stat-label">10Y BENCHMARK G-SEC</div><div class="stat-val" style="color:var(--color-text-danger)">7.02%</div><div class="stat-sub">National Capital Cost Base</div></div>
+        <div class="stat-card"><div class="stat-label">AAA CORPORATE BOND RATE</div><div class="stat-val" style="color:var(--color-text-success)">7.65%</div><div class="stat-sub">Premium Private Debt Yield</div></div>
+      </div>
+      <div class="card" style="margin-top:20px;">
+        <div class="ctitle">FIXED INCOME REAL ESTATE STRATEGY INTERFACE</div>
+        <div class="ins-body" style="font-size:13px; line-height:1.6; color:var(--color-text-secondary);">
+          Elevated long-end sovereign debt markers (7.02%) imply that corporate borrowers face strict capital filtering requirements. Low-margin engineering companies will undergo immediate interest-coverage ratio stress, allowing our high-conviction targets (like Azad and consolidated rare-earth processing units) to use their clean cash flows and public premiums to execute horizontal market buyouts.
+        </div>
+      </div>
+      <div class="footer"><span class="footer-disc">Fixed income modeling authored by Lakshya Kalra. Yield trackers mapped directly from CCIL clearing terminals.</span><span class="footer-pg">02 / 03</span></div>
+    </div>
+
+    <div class="slide" id="macro-s2">
+      <div class="sl-header">
+        <div class="sl-eyebrow">SLIDE 03 · THE MACRO-TO-MICRO INTERSECT VECTOR</div>
+        <div class="sl-title">Systematic Capital Allocation Transmission Cascades</div>
+        <div class="sl-hook">"We do not look at global trends and micro balances in isolation. Every asset class trigger feeds directly into corporate balance sheet inflections."</div>
+      </div>
+      <div class="asymmetry-line">Intermarket Architecture Mapping Grid: Tracing macro variables down to single-node portfolio alpha positions.</div>
+      <div class="card">
+        <table style="width:100%; border-collapse:collapse; font-size:13px; text-align:left;">
+          <thead>
+            <tr style="background:var(--color-background-secondary); border-bottom:1px solid var(--color-border-tertiary); font-size:10px; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase;">
+              <th style="padding:12px;">Upstream Macro Driver</th>
+              <th style="padding:12px;">Yield Curve Adjustment</th>
+              <th style="padding:12px;">Micro Target Implication (The Alpha Opportunity)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--color-border-tertiary);">
+              <td style="padding:16px; font-weight:600;">Crude Climbs Above $100/bbl</td>
+              <td style="padding:16px;">10Y G-Sec rises to 7.02%</td>
+              <td style="padding:16px; color:var(--color-text-secondary);">Accelerates margins toward **Schneider Electric automation platforms** as traditional power loops scale out of cost boundaries.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--color-border-tertiary);">
+              <td style="padding:16px; font-weight:600;">MCX Copper Spikes to ₹842/kg</td>
+              <td style="padding:16px;">AAA Corporate spreads constrict</td>
+              <td style="padding:16px; color:var(--color-text-secondary);">Validates the **Shilchar Technologies** transformer backlog expansion as transmission infrastructure spending absorbs pricing premiums cleanly.</td>
+            </tr>
+            <tr>
+              <td style="padding:16px; font-weight:600;">Critical Minerals Face Local Caps</td>
+              <td style="padding:16px;">Defense offset pools freeze lines</td>
+              <td style="padding:16px; color:var(--color-text-secondary);">Triggers immediate valuation arbitrage for our **Private Rare Earth Roll-up Framework**, monopolizing local NdFeB processing cells.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer"><span class="footer-disc">Intermarket cascade ledger designed by analyst Lakshya Kalra. All model calculations optimized for high-conviction cross-asset visibility.</span><span class="footer-pg">03 / 03</span></div>
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -697,8 +817,8 @@
     }
     
     // Inject active visibility parameters straight to execution targets
+    document.getElementById(thesisPrefix + '-s' + slideIndex).px = buttonElement.classList.add('on');
     document.getElementById(thesisPrefix + '-s' + slideIndex).classList.add('on');
-    buttonElement.classList.add('on');
   }
 </script>
 </body>
