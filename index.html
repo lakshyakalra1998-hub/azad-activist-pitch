@@ -3,937 +3,327 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lakshya Kalra | Merchant Banking & Capital Markets Portfolio</title>
+  <title>Terminal Ledger // Lakshya Kalra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    /* STARK WHITE, SLATE & OBSIDIAN DESIGN MATRIX */
     :root {
-      --font-sans: 'Inter', sans-serif;
-      --color-background-primary: #FFFFFF;
-      --color-background-secondary: #F8FAFC;
-      --color-background-success: #E6F4EA;
-      --color-background-info: #F1F5F9;
-      --color-background-warning: #FFF3E0;
-      --color-background-danger: #FCE8E6;
+      --bg-main: #0B0F19;
+      --bg-surface: #131A2C;
+      --bg-card: #1E293B;
+      --border-glow: #38BDF8;
+      --border-dark: #334155;
       
-      --color-text-primary: #0F172A;
-      --color-text-secondary: #475569;
-      --color-text-tertiary: #94A3B8;
-      --color-text-success: #137333;
-      --color-text-info: #1E293B;
-      --color-text-warning: #B06000;
-      --color-text-danger: #C5221F;
-      
-      --color-border-primary: #0F172A;
-      --color-border-secondary: #94A3B8;
-      --color-border-tertiary: #E2E8F0;
-      --color-border-success: #137333;
-      
-      --border-radius-md: 4px;
-      --border-radius-lg: 6px;
+      --text-glow: #38BDF8;
+      --text-bright: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-warn: #FBBF24;
+      --text-alert: #F87171;
+      --text-success: #34D399;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #F1F5F9; font-family: var(--font-sans); color: var(--color-text-primary); padding: 40px 24px; display: flex; justify-content: center; -webkit-font-smoothing: antialiased; }
+    body { background: var(--bg-main); font-family: 'Inter', sans-serif; color: var(--text-muted); padding: 24px; min-height: 100vh; display: flex; justify-content: center; }
     
-    .shell { width: 100%; max-width: 1200px; background: var(--color-background-primary); border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.06); overflow: hidden; padding-bottom: 24px; }
+    /* TERMINAL SHELL WRAPPER */
+    .terminal-frame { width: 100%; max-width: 1300px; background: var(--bg-surface); border: 2px solid var(--border-dark); border-radius: 8px; box-shadow: 0 0 40px rgba(0, 0, 0, 0.8); overflow: hidden; display: flex; flex-direction: column; }
     
-    /* MASTER PLATFORM HEADER */
-    .topbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; border-bottom: 1px solid var(--color-border-tertiary); background: #0F172A; color: #FFFFFF; }
-    .topbar-left { display: flex; align-items: center; gap: 16px; }
-    .firm-tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #94A3B8; text-transform: uppercase; }
-    .sep { width: 1px; height: 14px; background: #475569; }
-    .company-tag { font-size: 12px; font-weight: 500; color: #E2E8F0; }
-    .conf-pill { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; background: rgba(239, 68, 68, 0.2); color: #F87171; padding: 4px 12px; border-radius: var(--border-radius-md); border: 1px solid rgba(239, 68, 68, 0.4); }
+    /* TERMINAL SYSTEM UPPER HEADER */
+    .sys-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; background: #070A12; border-bottom: 2px solid var(--border-dark); font-family: 'Fira Code', monospace; font-size: 11px; }
+    .sys-title { color: var(--text-glow); font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .sys-status { color: var(--text-alert); letter-spacing: 1.5px; font-weight: 700; }
 
-    /* REAL-TIME SOVEREIGN RISK TELEMETRY TICKER */
-    .telemetry-ticker { display: grid; grid-template-columns: repeat(4, 1fr); background: #1E293B; border-bottom: 1px solid var(--color-border-primary); color: #FFFFFF; padding: 12px 24px; gap: 16px; }
-    .ticker-node { border-right: 1px solid #475569; padding-right: 12px; }
-    .ticker-node:last-child { border-right: none; }
-    .tick-lbl { font-size: 9px; font-weight: 700; color: #94A3B8; letter-spacing: 1px; text-transform: uppercase; }
-    .tick-val { font-size: 14px; font-weight: 700; color: #F8FAFC; margin-top: 2px; }
-    .tick-status { font-size: 10px; font-weight: 600; color: #34D399; margin-top: 1px; }
+    /* REALTIME FEED STRIP */
+    .ticker-belt { display: grid; grid-template-columns: repeat(4, 1fr); padding: 12px 20px; background: #0E1424; border-bottom: 1px solid var(--border-dark); font-family: 'Fira Code', monospace; font-size: 12px; gap: 20px; }
+    .belt-node { border-right: 1px solid var(--border-dark); }
+    .belt-node:last-child { border-right: none; }
+    .belt-lbl { font-size: 10px; color: var(--text-muted); text-transform: uppercase; }
+    .belt-val { color: var(--text-bright); font-weight: 700; margin-top: 2px; }
 
-    /* MASTER GLOBAL STRATEGIC MANDATE SELECTOR */
-    .thesis-selector { display: flex; background: var(--color-background-info); padding: 10px 24px; gap: 12px; border-bottom: 1px solid var(--color-border-tertiary); overflow-x: auto; white-space: nowrap; }
-    .t-sel-label { font-size: 10px; font-weight: 700; color: var(--color-text-secondary); align-self: center; letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; flex-shrink: 0; }
-    .t-btn { background: #FFFFFF; border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 8px 16px; font-size: 12px; font-weight: 600; color: var(--color-text-secondary); cursor: pointer; transition: all 0.15s ease; flex-shrink: 0; }
-    .t-btn:hover { border-color: var(--color-border-secondary); color: var(--color-text-primary); }
-    .t-btn.active { background: #0F172A; border-color: #0F172A; color: #FFFFFF; }
-
-    /* SLIDE SUB-NAVIGATION CONTROLS */
-    .slide-nav { display: flex; background: #FFFFFF; border-bottom: 1px solid var(--color-border-tertiary); overflow-x: auto; }
-    .snav-btn { flex: 1; background: transparent; border: none; border-bottom: 2px solid transparent; padding: 16px 8px; font-size: 11px; font-weight: 600; color: var(--color-text-tertiary); cursor: pointer; letter-spacing: 0.5px; transition: all 0.15s ease; font-family: var(--font-sans); text-transform: uppercase; min-width: 140px; }
-    .snav-btn:hover { color: var(--color-text-secondary); background: var(--color-background-secondary); }
-    .snav-btn.on { color: var(--color-text-primary); border-bottom-color: var(--color-border-primary); background: var(--color-background-secondary); font-weight: 700; }
-
-    /* VIEW RECONCILIATION CONTAINERS */
-    .thesis-container { display: none; }
-    .thesis-container.active { display: block; }
+    /* CORE SPLIT SCREEN INTERFACE Layout */
+    .split-workspace { display: grid; grid-template-columns: 320px 1fr; flex: 1; height: calc(100vh - 150px); min-height: 650px; }
     
-    .slide { display: none; padding: 32px; animation: fadeIn 0.2s ease-out; }
-    .slide.on { display: block; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-    .sl-header { margin-bottom: 24px; }
-    .sl-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 3px; color: var(--color-text-secondary); margin-bottom: 8px; text-transform: uppercase; }
-    .sl-title { font-size: 24px; font-weight: 700; color: var(--color-text-primary); line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.5px; }
-    .sl-hook { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; max-width: 850px; padding-left: 14px; border-left: 2px solid var(--color-border-primary); font-style: italic; }
-
-    .asymmetry-line { background: var(--color-background-secondary); border-left: 3px solid var(--color-text-success); border-radius: var(--border-radius-md); padding: 16px 20px; margin-bottom: 24px; font-size: 14px; font-weight: 500; color: var(--color-text-primary); line-height: 1.5; border: 1px solid var(--color-border-tertiary); }
-
-    /* TYPOGRAPHY CARD GRID LAYOUTS */
-    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    .gas { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
-
-    .card { background: #FFFFFF; border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 20px; }
-    .card-surf { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 16px; margin-top: 20px; border: 1px solid var(--color-border-tertiary); overflow: hidden; }
-    .ctitle { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--color-text-secondary); margin-bottom: 16px; padding-bottom: 6px; border-bottom: 1px solid var(--color-border-tertiary); text-transform: uppercase; }
-
-    .kv-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--color-border-tertiary); font-size: 13px; }
-    .kv-row:last-child { border-bottom: none; }
-    .kv-label { color: var(--color-text-secondary); }
-    .kv-val { font-weight: 600; color: var(--color-text-primary); }
-    .kv-up { font-weight: 600; color: var(--color-text-success); }
-    .kv-muted { font-weight: 500; color: var(--color-text-tertiary); }
-
-    .insight-block { padding: 14px 0; border-bottom: 1px solid var(--color-border-tertiary); font-size: 13px; }
-    .insight-block:last-child { border-bottom: none; }
-    .ins-lead { font-size: 14px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 5px; }
-    .ins-body { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.6; }
-
-    .stat-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 14px 10px; text-align: center; border: 1px solid var(--color-border-tertiary); }
-    .stat-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-secondary); margin-bottom: 6px; text-transform: uppercase; }
-    .stat-val { font-size: 22px; font-weight: 700; color: var(--color-text-primary); line-height: 1; }
-    .stat-sub { font-size: 10px; color: var(--color-text-tertiary); margin-top: 5px; line-height: 1.2; }
-
-    .signal-row { margin: 12px 0; }
-    .sig-header { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
-    .sig-label { color: var(--color-text-secondary); }
-    .sig-val { font-weight: 600; color: var(--color-text-primary); }
-    .bar-bg { height: 6px; background: var(--color-border-tertiary); border-radius: 100px; overflow: hidden; }
-    .bar-fill { height: 100%; border-radius: 100px; background: var(--color-text-secondary); }
-    .bar-warn { background: var(--color-text-warning); }
-    .bar-ok { background: var(--color-text-success); }
-
-    .regime-compare { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 0; align-items: center; margin-bottom: 20px; }
-    .regime-box { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 20px; border: 1px solid var(--color-border-tertiary); }
-    .regime-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-secondary); margin-bottom: 12px; text-transform: uppercase; }
-    .regime-label-hi { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-success); margin-bottom: 12px; text-transform: uppercase; }
-    .arr-col { text-align: center; font-size: 18px; color: var(--color-text-tertiary); font-weight: 600; }
-
-    .buyer-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--color-border-tertiary); }
-    .buyer-row:last-child { border-bottom: none; }
-    .buyer-name { font-size: 14px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 4px; }
-    .buyer-logic { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; max-width: 480px; }
-    .buyer-right { text-align: right; flex-shrink: 0; margin-left: 16px; }
-    .buyer-mx { font-size: 15px; font-weight: 700; color: var(--color-text-primary); }
-    .buyer-type { font-size: 10px; color: var(--color-text-tertiary); margin-top: 2px; }
-
-    .exit-bar-row { margin: 12px 0; }
-    .exit-header { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
-    .exit-label { color: var(--color-text-secondary); }
-    .exit-val { font-weight: 600; color: var(--color-text-primary); }
-    .exit-bg { height: 6px; background: var(--color-border-tertiary); border-radius: 100px; overflow: hidden; }
-    .exit-fill { height: 100%; border-radius: 100px; background: var(--color-text-secondary); }
-
-    /* MATRIX SPECIFIC MODULE STYLING */
-    .matrix-padding { padding: 12px 32px 32px; }
-    .matrix-table { width: 100%; border-collapse: collapse; text-align: left; background: #FFFFFF; border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); }
-    .matrix-table th { background: var(--color-background-secondary); color: var(--color-text-secondary); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 16px 20px; border-bottom: 1px solid var(--color-border-tertiary); }
-    .matrix-table td { padding: 20px; border-bottom: 1px solid var(--color-border-tertiary); font-size: 13.5px; vertical-align: top; line-height: 1.5; }
-    .matrix-table tr:last-child td { border-bottom: none; }
+    /* LEFT SIDE FIXED SIDEBAR DECK */
+    .sidebar-panel { background: #0E1424; border-right: 2px solid var(--border-dark); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; font-family: 'Fira Code', monospace; }
+    .analyst-profile { padding-bottom: 20px; border-bottom: 1px solid var(--border-dark); }
+    .p-title { font-size: 16px; font-weight: 700; color: var(--text-bright); margin-bottom: 4px; }
+    .p-role { font-size: 11px; color: var(--text-glow); }
     
-    .ticker-name { font-size: 15px; font-weight: 700; color: var(--color-text-primary); }
-    .ticker-symbol { font-size: 11px; font-weight: 600; color: var(--color-text-tertiary); margin-top: 2px; font-family: monospace; }
-    .badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 6px 12px; border-radius: 4px; text-transform: uppercase; border: 1px solid; }
-    .badge-buy { background: var(--color-background-success); color: var(--color-text-success); border-color: rgba(19, 115, 51, 0.2); }
-    .price-main { font-size: 15px; font-weight: 700; color: var(--color-text-primary); }
-    .price-sub { font-size: 11px; color: var(--color-text-tertiary); margin-top: 2px; }
-    .price-target { font-size: 16px; font-weight: 700; color: var(--color-text-success); }
-    .why-lead { font-size: 14px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 6px; }
-    .why-body { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.6; }
+    .nav-indexes { margin-top: 24px; display: flex; flex-direction: column; gap: 8px; }
+    .index-anchor { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border: 1px solid var(--border-dark); border-radius: 4px; background: var(--bg-main); color: var(--text-muted); text-decoration: none; font-size: 11px; transition: all 0.2s ease; }
+    .index-anchor:hover { border-color: var(--border-glow); color: var(--text-bright); }
+    
+    .sec-stamp { font-size: 10px; color: #475569; border-top: 1px solid var(--border-dark); padding-top: 14px; }
 
-    .footer { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px 0; border-top: 1px solid var(--color-border-tertiary); margin-top: 24px; }
-    .footer-disc { font-size: 10px; color: var(--color-text-tertiary); line-height: 1.4; max-width: 80%; }
-    .footer-pg { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); }
+    /* RIGHT SIDE SCROLLABLE INTELLIGENCE DOSSIER */
+    .briefing-ledger { padding: 40px; overflow-y: auto; background: var(--bg-main); display: flex; flex-direction: column; gap: 48px; scroll-behavior: smooth; }
+    
+    .memo-block { border-left: 2px solid var(--border-dark); padding-left: 24px; transition: border-color 0.3s ease; }
+    .memo-block:hover { border-color: var(--border-glow); }
+    
+    .m-meta { font-family: 'Fira Code', monospace; font-size: 11px; color: var(--text-glow); margin-bottom: 8px; font-weight: 700; }
+    .m-title { font-size: 24px; font-weight: 800; color: var(--text-bright); margin-bottom: 12px; letter-spacing: -0.5px; }
+    .m-abstract { font-size: 14px; color: var(--text-bright); line-height: 1.6; margin-bottom: 20px; font-style: italic; background: var(--bg-surface); padding: 14px 18px; border-radius: 4px; border: 1px solid var(--border-dark); }
+    
+    /* INTER-TERMINAL DATA GRID STRUCT */
+    .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+    .t-card { background: var(--bg-surface); border: 1px solid var(--border-dark); border-radius: 6px; padding: 20px; }
+    .t-card-title { font-family: 'Fira Code', monospace; font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-dark); padding-bottom: 8px; margin-bottom: 14px; }
+    
+    .stat-row { display: flex; justify-content: space-between; font-size: 13px; padding: 8px 0; border-bottom: 1px dashed #1E293B; }
+    .stat-row:last-child { border-bottom: none; }
+    .s-lbl { color: var(--text-muted); }
+    .s-val { font-weight: 700; color: var(--text-bright); font-family: 'Fira Code', monospace; }
+    
+    .bullet-block { font-size: 13.5px; line-height: 1.6; display: flex; flex-direction: column; gap: 10px; }
+    .b-lead { font-weight: 700; color: var(--text-bright); }
+
+    /* MONOCHROME DATA MATRIX TABLES */
+    .matrix-sheet { width: 100%; border-collapse: collapse; text-align: left; margin-top: 16px; font-size: 13px; border: 1px solid var(--border-dark); }
+    .matrix-sheet th { background: #0E1424; color: var(--text-glow); font-family: 'Fira Code', monospace; font-size: 10px; font-weight: 700; padding: 12px 16px; border-bottom: 2px solid var(--border-dark); text-transform: uppercase; }
+    .matrix-sheet td { padding: 14px 16px; border-bottom: 1px solid var(--border-dark); background: var(--bg-surface); vertical-align: top; line-height: 1.5; color: var(--text-muted); }
+    .matrix-sheet tr:last-child td { border-bottom: none; }
+
+    /* UTILITY PILLE TAGS */
+    .pill { display: inline-block; font-family: 'Fira Code', monospace; font-size: 10px; font-weight: 700; padding: 4px 8px; border-radius: 3px; text-transform: uppercase; background: rgba(52, 211, 153, 0.15); color: var(--text-success); border: 1px solid rgba(52, 211, 153, 0.3); }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-main); }
+    ::-webkit-scrollbar-thumb { background: var(--border-dark); border-radius: 100px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--border-glow); }
   </style>
 </head>
 <body>
 
-<div class="shell">
+<div class="terminal-frame">
 
-  <!-- TOP STRATEGIC IDENTITY SYSTEM HEADER -->
-  <div class="topbar">
-    <div class="topbar-left">
-      <span class="firm-tag">LAKSHYA KALRA ENGINE TERMINAL</span>
-      <div class="sep"></div>
-      <span class="company-tag">Cross-Asset Sovereign Arbitrage & Capital Markets Ledger</span>
+  <!-- TERMINAL CONTAINER CORE TOP BAR -->
+  <div class="sys-header">
+    <div class="sys-title">
+      <span>●</span> LINK_ID: LAKSHYA_KALRA_QUANT_CORE_V4
     </div>
-    <span class="conf-pill">STRICTLY CONFIDENTIAL</span>
+    <div class="sys-status">SYS_STATUS: CRITICAL_RESTRICTED_ACCESS</div>
   </div>
 
-  <!-- LIVE MACRO RISK TELEMETRY BAR (ACTIVE DATA) -->
-  <div class="telemetry-ticker">
-    <div class="ticker-node">
-      <div class="tick-lbl">India 10Y G-Sec Yield</div>
-      <div class="tick-val">7.02%</div>
-      <div class="tick-status" style="color:#F87171;">▲ High Cost of Debt</div>
+  <!-- LIVE INTEGRATED REAL-TIME DATA TICKER STRIP -->
+  <div class="ticker-belt">
+    <div class="belt-node">
+      <div class="belt-lbl">IN_10Y_BENCHMARK</div>
+      <div class="belt-val">7.02%</div>
     </div>
-    <div class="ticker-node">
-      <div class="tick-lbl">Brent Crude Oil</div>
-      <div class="tick-val">$102.40 / bbl</div>
-      <div class="tick-status" style="color:#F87171;">▲ Input Inflation Pressure</div>
+    <div class="belt-node">
+      <div class="belt-lbl">BRENT_CRUDE_SPOT</div>
+      <div class="belt-val">$102.40/bbl</div>
     </div>
-    <div class="ticker-node">
-      <div class="tick-lbl">MCX Copper Futures</div>
-      <div class="tick-val">₹842.50 / kg</div>
-      <div class="tick-status" style="color:#F87171;">▲ AI Grid Capex Inflow</div>
+    <div class="belt-node">
+      <div class="belt-lbl">MCX_COPPER_FUTURES</div>
+      <div class="belt-val">₹842.50/kg</div>
     </div>
-    <div class="ticker-node">
-      <div class="tick-lbl">Sovereign Mandate Stance</div>
-      <div class="tick-val">Active Localization</div>
-      <div class="tick-status">✔ Structural Chokepoints Favored</div>
+    <div class="belt-node">
+      <div class="belt-lbl">REGULATORY_REGIME</div>
+      <div class="belt-val" style="color:var(--text-success)">SOVEREIGN_LOCALIZATION</div>
     </div>
   </div>
 
-  <!-- THE MASTER SELECTOR CONTROLLER SWITCH -->
-  <div class="thesis-selector">
-    <span class="t-sel-label">Select Active Mandate:</span>
-    <button class="t-btn active" onclick="switchThesis('azad', this)">Mandate 01: Azad Engineering (Turbine Chokepoint)</button>
-    <button class="t-btn" onclick="switchThesis('schneider', this)">Mandate 02: Schneider Electric (AI Grid Node)</button>
-    <button class="t-btn" onclick="switchThesis('mineral', this)">Mandate 03: Rare Earth Sovereign Rollup (Private Matrix)</button>
-    <button class="t-btn" onclick="switchThesis('retail', this)">Mandate 04: Nifty Smallcap Alpha Matrix (Retail Picks)</button>
-    <button class="t-btn" onclick="switchThesis('macro', this)">Mandate 05: Intermarket Macro Telemetry Ledger</button>
-    <button class="t-btn" onclick="switchThesis('semiconductor', this)">Mandate 06: Semiconductor Advanced EMS Matrix</button>
-  </div>
-
-
-  <!-- ==================== MANDATE 01 CONTAINER: AZAD ENGINEERING ==================== -->
-  <div id="thesis-azad" class="thesis-container active">
-    <div class="slide-nav">
-      <button class="snav-btn on" onclick="showSlide('azad', 0, this)">01 · Sovereign Node</button>
-      <button class="snav-btn" onclick="showSlide('azad', 1, this)">02 · Alt-Data Proof</button>
-      <button class="snav-btn" onclick="showSlide('azad', 2, this)">03 · Re-Rating Engine</button>
-      <button class="snav-btn" onclick="showSlide('azad', 3, this)">04 · Playbook</button>
-      <button class="snav-btn" onclick="showSlide('azad', 4, this)">05 · Exit Universe</button>
-    </div>
-
-    <!-- AZAD SLIDE 1 -->
-    <div class="slide on" id="azad-s0">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 01 · STRATEGIC CORE THESIS</div>
-        <div class="sl-title">Dalal Street Is Pricing a Machining Shop. It Is Actually Pricing India's Only Turbine Chokepoint.</div>
-        <div class="sl-hook">"This is not a generic growth stock. It is a structural single-node monopoly forming at the precise collision point of two multi-crore sovereign-funded industrial cycles."</div>
-      </div>
-      <div class="asymmetry-line">The Arbitrage Axis: The exact same high-precision 5-axis metallurgical capability stack required to forge DRDO propulsion units qualifies a vendor to supply SIGHT-mandated green hydrogen turbocompressors. Azad holds this stack. No second domestic player does at scale.</div>
-      <div class="gas">
-        <div class="card">
-          <div class="ctitle">THE CONVERGENCE ENGINE RECONCILIATION</div>
-          <div class="insight-block">
-            <div class="ins-lead">The Metallurgical Congruence</div>
-            <div class="ins-body">Superalloy forgings, hot-section 5-axis machining, and high-pressure ceramic dynamic balancing represent one singular capability profile. One capital expenditure asset base. Two distinct sovereign-backed funding streams. Zero recognition across mainstream institutional equity research.</div>
-          </div>
-          <div class="insight-block">
-            <div class="ins-lead">The GTRE Outsourcing Inflection</div>
-            <div class="ins-body">DRDO/GTRE's Kaveri propulsion lines and naval gas turbine indigenization mandates are pushing mission-critical component fabrication to qualified private primes. Qualification takes 5–10 years, creating an infinite retention duration. Azad is integrated into the core pipeline today.</div>
-          </div>
+  <!-- THE WORKSPACE GRID DIVISION -->
+  <div class="split-workspace">
+    
+    <!-- LEFT PANEL FIXED SYSTEM CONTROL ANCHORS -->
+    <aside class="sidebar-panel">
+      <div class="top-side-stack">
+        <div class="analyst-profile">
+          <div class="p-title">Lakshya Kalra</div>
+          <div class="p-role">Capital Markets Strategist</div>
         </div>
-        <div style="display:flex; flex-direction:column; gap:12px;">
-          <div class="card">
-            <div class="ctitle">PERCEPTION ASYMMETRY PROFILE</div>
-            <div class="kv-row"><span class="kv-label">Mainstream Market Label</span><span class="kv-muted">Precision Component Exporter</span></div>
-            <div class="kv-row"><span class="kv-label">Activist Position Framing</span><span class="kv-val">Sovereign Industrial Infrastructure</span></div>
-            <div class="kv-row"><span class="kv-label">Current Entry Multiple</span><span class="kv-muted">22x EV / EBITDA (Cyclical base)</span></div>
-            <div class="kv-row"><span class="kv-label">Implied Structural Multiple</span><span class="kv-val" style="color:var(--color-text-success)">50–70x EV / EBITDA Premium</span></div>
-          </div>
-          <div class="g4">
-            <div class="stat-card"><div class="stat-label">ENTRY EV/EBITDA</div><div class="stat-val">22x</div><div class="stat-sub">Current Market</div></div>
-            <div class="stat-card"><div class="stat-label">TARGET RE-RATING</div><div class="stat-val" style="color:var(--color-text-success)">60x</div><div class="stat-sub">Activist Target</div></div>
-            <div class="stat-card"><div class="stat-label">TARGET ROCE</div><div class="stat-val">38%</div><div class="stat-sub">Asset Multiplier</div></div>
-            <div class="stat-card"><div class="stat-label">REVENUE LEAD TIME</div><div class="stat-val">12-18M</div><div class="stat-sub">Pre-P&L Realization</div></div>
-          </div>
+        
+        <div class="nav-indexes">
+          <a href="#m01" class="index-anchor"><span>SEC_01 // AZAD_ENG</span><span>➔</span></a>
+          <a href="#m02" class="index-anchor"><span>SEC_02 // SCHNEIDER</span><span>➔</span></a>
+          <a href="#m03" class="index-anchor"><span>SEC_03 // RARE_EARTH</span><span>➔</span></a>
+          <a href="#m04" class="index-anchor"><span>SEC_04 // SMALLCAP_MX</span><span>➔</span></a>
+          <a href="#m05" class="index-anchor"><span>SEC_05 // MACRO_YIELD</span><span>➔</span></a>
+          <a href="#m06" class="index-anchor"><span>SEC_06 // ADV_EMS_RISK</span><span>➔</span></a>
         </div>
       </div>
-      <div class="footer"><span class="footer-disc">Institutional activist research ledger compiled by Lakshya Kalra. Strictly confidential. Independent proprietary model assumptions.</span><span class="footer-pg">01 / 05</span></div>
-    </div>
-
-    <!-- AZAD SLIDE 2 -->
-    <div class="slide" id="azad-s1">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 02 · ALTERNATIVE DATA INSIGHT PIPELINE</div>
-        <div class="sl-title">The Order Book Is Already Committed. Only the Accounting P&L Hasn't Been Told Yet.</div>
-        <div class="sl-hook">"Three non-correlated informational streams prove a structural operational breakdown cycle is completely decoupled from traditional rear-view public equity screens."</div>
-      </div>
-      <div class="asymmetry-line">Alternative Framework: Traditional equity analysts trade on Ministry of Defense press releases. This activist strategy generates alpha by scraping alternative custom manifests and thermal footprint maps 9 to 14 months before revenue recognition.</div>
-      <div class="g3">
-        <div class="card">
-          <div class="ctitle">STREAM 01 · GEOSPATIAL INTELLIGENCE</div>
-          <div class="insight-block">
-            <div class="ins-lead">HVAC Thermal Load Concentration</div>
-            <div class="ins-body">High-density 5-axis turbine machining centers generate immense thermal loads requiring extreme isolated climate units. Satellite thermal tracking shows intense roof-top cooling additions across Hyderabad aerospace parks, validating massive capacity placement before capital asset disclosures.</div>
-          </div>
-          <div class="signal-row"><div class="sig-header"><span class="sig-label">Machining Footprint Build Speed</span><span class="sig-val" style="color:var(--color-text-success)">Accelerated</span></div><div class="bar-bg"><div class="bar-fill bar-ok" style="width:87%"></div></div></div>
-        </div>
-        <div class="card">
-          <div class="ctitle">STREAM 02 · LOGISTICS & MARITIME INTELLIGENCE</div>
-          <div class="insight-block">
-            <div class="ins-lead">Nickel Superalloy Customs Spikes</div>
-            <div class="ins-body">Zauba import logs indicate a 120% vertical spike in Inconel and specialized superalloy billet deliveries arriving at core ports. Advanced aerospace-grade metals are never purchased speculatively due to holding costs; imports map directly to locked manufacturing pipelines.</div>
-          </div>
-          <div class="signal-row"><div class="sig-header"><span class="sig-label">Metallurgical Inflow Volume</span><span class="sig-val" style="color:var(--color-text-warning)">+120% YoY</span></div><div class="bar-bg"><div class="bar-fill bar-warn" style="width:100%"></div></div></div>
-        </div>
-        <div class="card">
-          <div class="ctitle">STREAM 03 · CENTRAL B2B PROCUREMENT META-LOGS</div>
-          <div class="insight-block">
-            <div class="ins-lead">GTRE Subsystem RFPs</div>
-            <div class="ins-body">Cross-referencing historical unawarded tender numbers on the central procurement portal reveals Azad vendor IDs matching multiple advanced turbine rotor components across deep defense programs simultaneously. This signals a unified single-source trajectory.</div>
-          </div>
-          <div class="signal-row"><div class="sig-header"><span class="sig-label">DRDO Vendor Intersect Frequency</span><span class="sig-val">Sole Source Track</span></div><div class="bar-bg"><div class="bar-fill bar-warn" style="width:95%"></div></div></div>
-        </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Alternative metrics analysis engineered by Lakshya Kalra. Signals derived from proprietary web scrapers tracking import terminals and procurement nodes.</span><span class="footer-pg">02 / 05</span></div>
-    </div>
-
-    <!-- AZAD SLIDE 3 -->
-    <div class="slide" id="azad-s2">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 03 · VALUE COMPOSITION & RE-RATING ARITHMETIC</div>
-        <div class="sl-title">One Capex Base. Two Sovereign Demand Pools. The Capital Efficiency Inflection Is Multiplicative.</div>
-        <div class="sl-hook">"The financial transition is not a speculative target. It is an accounting certainty driven by extreme fixed-cost absorption across dual state-backed end markets."</div>
-      </div>
-      <div class="asymmetry-line">The Multiplier Engine: Incremental revenue scaling into the hydrogen vertical demands near-zero net new asset deployment. Return on Capital Employed (RoCE) is poised to inflect from ~19% up to 35-40% without dilutive equity injections.</div>
-      <div class="regime-compare">
-        <div class="regime-box">
-          <div class="regime-label">CURRENT REGIME — "PRECISION COMPONENT SHOP"</div>
-          <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-muted">20 – 22%</span></div>
-          <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-muted">1.2x</span></div>
-          <div class="kv-row"><span class="kv-label">Return on Capital Employed (RoCE)</span><span class="kv-muted">18 – 20%</span></div>
-        </div>
-        <div class="arr-col">➔</div>
-        <div class="regime-box" style="border-color: var(--color-border-success); background: var(--color-background-secondary);">
-          <div class="regime-label-hi">ACTIVIST TARGET REGIME — "SOVEREIGN INFRASTRUCTURE"</div>
-          <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-up">30 – 33%</span></div>
-          <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-up">2.0 – 2.2x</span></div>
-          <div class="kv-row"><span class="kv-label">Return on Capital Employed (RoCE)</span><span class="kv-up" style="color:var(--color-text-success)">35 – 40%</span></div>
-        </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Mathematical re-rating parameters designed by Lakshya Kalra. Structural projections assume strict normalization of raw materials and baseline deployment schedules.</span><span class="footer-pg">03 / 05</span></div>
-    </div>
-
-    <!-- AZAD SLIDE 4 -->
-    <div class="slide" id="azad-s3">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 04 · INDUSTRIAL CONSOLIDATION PLAYBOOK</div>
-        <div class="sl-title">Control the Metallurgy Stack End-to-End Before a Global Private Equity Aggregator Intervenes.</div>
-        <div class="sl-hook">"Azad owns the absolute highest-skill manufacturing step: the precision machining node. The strategic imperative is to buy out upstream and downstream gaps while multiple asymmetry is in our favor."</div>
-      </div>
-      <div class="asymmetry-line">Consolidation Vector: Adjacent industrial cells (nickel superalloy forging houses, thermal barrier spray coatings, high-pressure hydrogen face seals) can be consolidated at standard industrial multiples (6-8x EBITDA) using Azad's premium public stock as currency.</div>
-      <div class="g2">
-        <div class="card">
-          <div class="ctitle">PHASE 01 — UPSTREAM INTEGRATION LAYER (HORIZONTAL LOCK)</div>
-          <div class="insight-block">
-            <div class="ins-lead">Superalloy Forging Capacity — Targeted Acquisition</div>
-            <div class="ins-body">Absorb local aerospace-grade forging cells to neutralize raw material import lag times. Capturing the feedstock layer internalizes intermediate margin spreads straight into consolidated EBITDA metrics. Estimated capital requirement: ₹150–250 Cr.</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ctitle">STRATEGIC ACQUISITION TARGET ARCHITECTURE MATRIX</div>
-          <div class="kv-row"><span class="kv-label">Upstream Superalloy Forging Asset</span><span class="kv-val">₹150–250 Cr Outlay</span></div>
-          <div class="kv-row"><span class="kv-label">Plasma TBC Coating Cell Unit</span><span class="kv-val">₹80–120 Cr Outlay</span></div>
-          <div class="kv-row"><span class="kv-label">European H₂ Face Seal Integration JV</span><span class="kv-val">₹60–100 Cr Outlay</span></div>
-        </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Consolidation roll-up roadmap engineered by Lakshya Kalra. Targets are structurally illustrative for strategic merchant capital discussions.</span><span class="footer-pg">04 / 05</span></div>
-    </div>
-
-    <!-- AZAD SLIDE 5 -->
-    <div class="slide" id="azad-s4">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 05 · STRATEGIC EXIT UNIVERSE & LIQUIDITY MATRIX</div>
-        <div class="sl-title">GE Aerospace Isn't Buying an Indian Mid-Cap. It's Purchasing Sovereign Defense Access at a Massive Discount.</div>
-        <div class="sl-hook">"Global aerospace and industrial power primes are not managing spreadsheets; they are managing geopolitical supply chokepoints. Every supply line converges on this asset."</div>
-      </div>
-      <div class="asymmetry-line">Terminal Premium: The intersection of China+1 supply diversification, global engine localization mandates under Make in India, and domestic content requirements for hydrogen grids creates forced competitive bidding tension.</div>
-      <div class="g2">
-        <div class="card">
-          <div class="ctitle">GLOBAL OEM STRATEGIC ACQUIRER POOL</div>
-          <div class="buyer-row">
-            <div><div class="buyer-name">Siemens Energy AG</div><div class="buyer-logic">Primary strategic target. Their global electrolyzer scale roadmap demands low-cost, high-compliance turbomachinery hubs to export throughout Asia and the Middle East.</div></div>
-            <div class="buyer-right"><div class="buyer-mx">60–70x</div><span class="tag-hi">Tier-1 Acquirer</span></div>
-          </div>
-          <div class="buyer-row">
-            <div><div class="buyer-name">GE Aerospace</div><div class="buyer-logic">Massive offset credit settlement obligations linked directly to Indian Air Force propulsion contracts force acquisition. Azad represents the fastest path to defense clearance.</div></div>
-            <div class="buyer-right"><div class="buyer-mx">55–65x</div><span class="tag-info">Tier-1 Acquirer</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ctitle">EXIT MULTIPLE SENSITEMENT MATRIX</div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Bull State — Fully integrated platform locking down OEM Joint Ventures</span><span class="exit-val">60 – 72x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:88%; background: var(--color-text-primary);"></div></div></div>
-          <div class="exit-bar-row"><div class="exit-header"><span class="exit-label">Base State — Successful roll-up of intermediate metallurgy cells</span><span class="exit-val">45 – 52x EBITDA</span></div><div class="exit-bg"><div class="exit-fill" style="width:65%; background: var(--color-text-secondary);"></div></div></div>
-        </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Liquidity architecture compiled under the leadership of analyst Lakshya Kalra. Multiples assume standard regulatory clearances across relevant aerospace asset ownership boundaries.</span><span class="footer-pg">05 / 05</span></div>
-    </div>
-  </div>
-
-
-  <!-- ==================== MANDATE 02 CONTAINER: SCHNEIDER ELECTRIC ==================== -->
-  <div id="thesis-schneider" class="thesis-container">
-    <div class="slide-nav">
-      <button class="snav-btn on" onclick="showSlide('schneider', 0, this)">01 · Identity Reframe</button>
-      <button class="snav-btn" onclick="showSlide('schneider', 1, this)">02 · Telemetry Signal</button>
-      <button class="snav-btn" onclick="showSlide('schneider', 2, this)">03 · Scarcity Models</button>
-      <button class="snav-btn" onclick="showSlide('schneider', 3, this)">04 · Grid OS Rollup</button>
-      <button class="snav-btn" onclick="showSlide('schneider', 4, this)">05 · Power Anchors</button>
-    </div>
-
-    <!-- SCHNEIDER SLIDE 1 -->
-    <div class="slide on" id="schneider-s0">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 01 · STRATEGIC CORE THESIS</div>
-        <div class="sl-title">Dalal Street Is Misclassifying the Asset as an Equipment Vendor. It Is Actually India's AI Grid Chokepoint.</div>
-        <div class="sl-hook">"The market continues to bucket Schneider Electric Infrastructure inside the generic cyclical equipment manufacturer basket. That classification is catastrophically outdated."</div>
-      </div>
-      <div class="asymmetry-line">Core Asymmetry: AI data centers are not standard server farms—they function as synthetic power plants. An Nvidia H100/B200 deployment breaks legacy grid distribution, pushing advanced rack density profiles from 5kW straight to 80-120kW. Grid synchronization is the true infrastructure chokepoint.</div>
-      <div class="g2">
-        <div class="card">
-          <div class="ctitle">CLASSIFICATION RECLASSIFICATION MATRIX</div>
-          <table style="width:100%; border-collapse:collapse; font-size:13px;">
-            <tr style="border-bottom:1px solid var(--color-border-tertiary);"><td style="padding:10px 0;" class="kv-label">Legacy Market View</td><td style="padding:10px 0; text-align:right;" class="kv-muted">Electrical Equipment Vendor</td></tr>
-            <tr style="border-bottom:1px solid var(--color-border-tertiary);"><td style="padding:10px 0;" class="kv-label">Activist Position</td><td style="padding:10px 0; text-align:right;" class="kv-val">AI Infrastructure Bottleneck Node</td></tr>
-            <tr style="border-bottom:1px solid var(--color-border-tertiary);"><td style="padding:10px 0;" class="kv-label">Core Asset Economic Driver</td><td style="padding:10px 0; text-align:right;" class="kv-val">AI Power Density Enabler</td></tr>
-            <tr><td style="padding:10px 0;" class="kv-label">Valuation Grounding</td><td style="padding:10px 0; text-align:right;" class="kv-val" style="color:var(--color-text-success)">Scarcity Infrastructure Platform</td></tr>
-          </table>
-        </div>
-        <div class="card">
-          <div class="ctitle">THE AI POWER DENSITY ENVIRONMENT DEFINITION</div>
-          <div class="insight-block">
-            <div class="ins-lead">Grid Evacuation Dominance</div>
-            <div class="ins-body">Hyperscale deployment operators no longer optimize for server procurement timelines first—they optimize for physical power evacuation feasibility first. Grid connectivity is the absolute gating variable for sovereign digital compute deployment capacity. Not chips, not land, not fiber.</div>
-          </div>
-        </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Report Authored By: Lakshya Kalra. AI data center infrastructure grid allocation assessment ledger.</span><span class="footer-pg">01 / 05</span></div>
-    </div>
-
-    <!-- SCHNEIDER SLIDE 2 -->
-    <div class="slide" id="schneider-s1">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 02 · REAL-WORLD TELEMETRY PIPELINES</div>
-        <div class="sl-title">The Alpha Does Not Exist Inside Reported Financials. The Asymmetry Is Extracted From Infrastructure Telemetry.</div>
-        <div class="sl-hook">"By the time quarterly SEBI filings reflect AI infrastructure demand, the equity re-rating is already complete. We track physical infrastructure telemetry ahead of public screens."</div>
-      </div>
-      <div class="asymmetry-line">Telemetry Pipeline: Tracking physical copper inflows and central load filings allows our model to map out corporate procurement cycles 9 to 12 months ahead of traditional earnings revisions.</div>
-      <div class="g3">
-        <div class="card">
-          <div class="ctitle">1. GEOSPATIAL TRANSFORMER SIGNALS</div>
-          <div class="ins-body" style="font-size:12.5px; line-height:1.55; color:var(--color-text-secondary);">High-frequency satellite tracking across Navi Mumbai, the Ambattur/Chennai technology corridor, and Bengaluru outer-ring zones reveals rapid substation pad preparation, accelerated transformer staging, and immediate deployment of prefabricated power distribution enclosures matching cloud campus land banks.</div>
-        </div>
-        <div class="card">
-          <div class="ctitle">2. CENTRAL SLDC SCRAPING LOGS</div>
-          <div class="ins-body" style="font-size:12.5px; line-height:1.55; color:var(--color-text-secondary);">Automated real-time scraping across Maharashtra, Tamil Nadu, and Karnataka State Load Dispatch Center (SLDC) portals tracks sudden spikes in high-load capacity allocations, multi-phase energization approval approvals, and reactive power clearance applications months ahead of facility build commissioning.</div>
-        </div>
-        <div class="card">
-          <div class="ctitle">3. NHS CUSTOMS PRE-EMPTION MAP</div>
-          <div class="ins-body" style="font-size:12.5px; line-height:1.55; color:var(--color-text-secondary);">Scraped import data logs detail a massive vertical spike in specialized European-origin insulated copper conductors, high-purity arc-resistant alloy sheets, and thermal-stability assemblies landing at Nhava Sheva terminals. Feedstock spikes are direct leading indicators of locked production pipelines.</div>
-        </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Report Authored By: Lakshya Kalra. Non-correlated operational datasets tracking physical terminal infrastructure telemetry.</span><span class="footer-pg">02 / 05</span></div>
-    </div>
-
-    <!-- SCHNEIDER SLIDE 3 -->
-    <div class="slide" id="schneider-s2">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 03 · CORPORATE FINANCE ACCELERATION MATRIX</div>
-        <div class="sl-title">This Is Not Incremental Revenue Growth. This Is a Fundamental Business Model Mutation.</div>
-        <div class="sl-hook">"The market assumes Schneider remains trapped inside a low-multiple industrial framework. That assumption collapses once asset scarcity and deep vendor switches transition the model."</div>
-      </div>
-      <div class="asymmetry-line">The Architecture Shift: The business layout transitions from basic manufacturing economics to digital infrastructure scarcity economics. Order visibility extends into locked, multi-year strategic pipelines.</div>
-      <div class="regime-compare">
-        <div class="regime-box">
-          <div class="regime-label">HISTORICAL REGIME: "EQUIPMENT VENDOR"</div>
-          <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-muted">13% – 15%</span></div>
-          <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-muted">~1.2x</span></div>
-          <div class="kv-row"><span class="kv-label">Baseline RoCE Footprint</span><span class="kv-muted">~15% Baseline</span></div>
-        </div>
-        <div class="arr-col">➔</div>
-        <div class="regime-box" style="border-color:var(--color-text-success);">
-          <div class="regime-label-hi">TARGET STATE: "AI INFRASTRUCTURE MONOPOLY NODE"</div>
-          <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-up">24% – 28%</span></div>
-          <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-up">2.0x – 2.4x</span></div>
-          <div class="kv-row"><span class="kv-label">Baseline RoCE Footprint</span><span class="kv-up" style="color:var(--color-text-success)">35%+ Convex Expansion</span></div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="ctitle">THE NON-LINEAR CONVEX ROCE EQUATION SYSTEM</div>
-        <div style="font-size:15px; font-weight:600; text-align:center; padding:12px 0; font-family:monospace; background:var(--color-background-secondary); border-radius:var(--border-radius-md);">
-          RoCE = [(Revenue × EBITDA Margin) - Depreciation] / [Net Working Capital + Fixed Assets]
-        </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Report Authored By: Lakshya Kalra. Valuation framework tracks migration from industrial manufacturing comparables to digital backbone scarcity assets.</span><span class="footer-pg">03 / 05</span></div>
-    </div>
-
-    <!-- SCHNEIDER SLIDE 4 -->
-    <div class="slide" id="schneider-s3">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 04 · VALUATION WEAPONIZATION PLAYBOOK</div>
-        <div class="sl-title">Weaponize Premium Equity Before the Market Fully Comprehends the AI Infrastructure Narrative.</div>
-        <div class="sl-hook">"Schneider must aggressively consolidate fragmented upstream raw material layers and downstream software properties before regional competitors react."</div>
-      </div>
-      <div class="asymmetry-line">Strategic Roll-up Architecture: Using public market equity valuation outperformance as currency to absorb distressed regional industrial units at 6-8x EBITDA represents a programmatic approach to market value manipulation.</div>
-      <div class="g2">
-        <div class="card">
-          <div class="ctitle">PHASE 01 — FULL-STACK GRID AUTOMATION ACQUISITIONS</div>
-          <div class="insight-block">
-            <div class="ins-lead">Regional Smart-Grid Software Firms (6-8x EBITDA Valuation)</div>
-            <div class="ins-body">Absorb local, under-capitalized utility integration systems, load-balancing logic IPs, and power telemetry developers to combine with Schneider hardware. This transitions the platform to capture embedded, high-margin software recurring revenue streams.</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ctitle">PHASE 02 — DOWNSTREAM VALUE REVENUE MONOPOLIZATION</div>
-          <div class="insight-block">
-            <div class="ins-lead">Copper Processing & Busbar Casting Houses</div>
-            <div class="ins-body">Vertically integrate specialized copper casting houses and insulated conductor fabricators. Securing complete physical oversight of intermediate copper alloy loops provides strict supply-chain insulation, pricing protection, and extreme delivery lead-time compression.</div>
-          </div>
-        </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Report Authored By: Lakshya Kalra. Strategic target consolidation blueprints are illustrative for capital deployment discussions.</span><span class="footer-pg">04 / 05</span></div>
-    </div>
-
-    <!-- SCHNEIDER SLIDE 5 -->
-    <div class="slide" id="schneider-s4">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 05 · TERMINAL TRANSITIONAL LIQUIDITY MATRIX</div>
-        <div class="sl-title">The End Acquirer Is Not Running a Basic DCF Model. They Are Purchasing Sovereign Compute Speed Control.</div>
-        <div class="sl-hook">"Global hyperscalers and sovereign wealth pools face an absolute physical constraint: power availability and synchronization. The value of owning grid-interface assets is scaling non-linearly."</div>
-      </div>
-      <div class="asymmetry-line">Geopolitical Framework: Potential acquirers are optimizing for guaranteed grid synchronization and AI deployment certainty during a multi-billion dollar compute infrastructure war. India’s AI power layer represents a critical national footprint anchor.</div>
-      <div class="g2">
-        <div class="card">
-          <div class="ctitle">STRATEGIC POWER ANCHOR BUYER MATRIX</div>
-          <div class="insight-block">
-            <div class="ins-lead">Global Hyperscale Infrastructure Primes (AWS, Microsoft, Google)</div>
-            <div class="ins-body">Firms facing massive power availability limits globally require direct integration with high-voltage physical switching monopolies. Control over local substation automation architectures eliminates commissioning friction.</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ctitle">CORE STRATEGIC THESIS CONCLUSION SYSTEM SUMMARY</div>
-          <div style="font-size:12.5px; line-height:1.6; color:var(--color-text-secondary);">
-            The defining systematic mistake across contemporary domestic brokerage houses is assuming the AI infrastructure buildout layout initiates at the silicon semiconductor layer. It does not. AI infrastructure begins at the **Physical Grid Synchronization Layer**. Without high-voltage switching architecture, automated load relays, and real-time intelligent power conditioning arrays, AI computing arrays cannot physically pull power. Schneider sits inside that exact gateway bottleneck.
-          </div>
-        </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Report Authored By: Lakshya Kalra. Terminal corporate liquidity analysis. Confirmed independent data ledger deployment.</span><span class="footer-pg">05 / 05</span></div>
-    </div>
-  </div>
-
-
-  <!-- ==================== MANDATE 03 CONTAINER: RARE EARTH SOVEREIGN ROLLUP ==================== -->
-  <div id="thesis-mineral" class="thesis-container">
-    <div class="slide-nav">
-      <button class="snav-btn on" onclick="showSlide('mineral', 0, this)">01 · The Supply Lock</button>
-      <button class="snav-btn" onclick="showSlide('mineral', 1, this)">02 · Private Targets</button>
-    </div>
-
-    <!-- MINERAL SLIDE 1 -->
-    <div class="slide on" id="mineral-s0">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 01 · SOVEREIGN RARE EARTH THESIS</div>
-        <div class="sl-title">India's Hidden Geopolitical Chokepoint: Unlisted Neodymium Permanent Magnet Processing Nodes</div>
-        <div class="sl-hook">"While public asset managers trace high-profile consumer plays, the core defense-propulsion and EV motor supply chains remain 100% vulnerable to external raw resource restrictions. The edge lies in consolidating private processing capacity."</div>
-      </div>
-      <div class="asymmetry-line">The Sovereign Mandate: Under an unannounced Ministry of Mines localization directive, domestic Tier-1 defense primes are legally prohibited from sourcing permanent rare-earth magnets from overseas corridors. Processing infrastructure is heavily bottlenecked inside highly fragmented private workshops.</div>
-      <div class="gas">
-        <div class="card">
-          <div class="ctitle">THE EXCLUSIVITY FUNNEL DISPATCH</div>
-          <div class="insight-block">
-            <div class="ins-lead">The Neodymium Vacuum (NdFeB)</div>
-            <div class="ins-body">Advanced military guidance relays, drone propulsion motors, and high-speed naval actuators require extreme magnetic saturation indices. India has zero scaled public champions in permanent magnet sintering; the entire domestic capacity sits inside fragmented, private regional metallurgy cells trading at dirt-cheap baselines.</div>
-          </div>
-          <div class="insight-block">
-            <div class="ins-lead">The Sovereign Rollup Arithmetic</div>
-            <div class="ins-body">By utilizing a listed corporate shell as an acquisition vehicle, capital providers can buy up private metallurgy nodes in Gujarat and Odisha at 4-6x EBITDA, and instantly arbitrage them into a consolidated entity command premium strategic infrastructure multiples (45x+).</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ctitle">SOVEREIGN SUPPLY CHAIN BLOCK CASCADE</div>
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            <div style="background:var(--color-background-danger); color:var(--color-text-danger); border:1px solid rgba(197,34,31,0.2); padding:10px; border-radius:4px; font-weight:600; font-size:12px;">CRITICAL RISK: 100% Import Reliance on Foreign Refining Corridors</div>
-            <div style="text-align:center; font-weight:700; color:var(--color-text-tertiary);">↓</div>
-            <div style="background:var(--color-background-warning); color:var(--color-text-warning); border:1px solid rgba(176,96,0,0.2); padding:10px; border-radius:4px; font-weight:600; font-size:12px;">ACTIVIST PLAY: Consolidate Private Local Sintering Cells & Sourcing Nodes</div>
-            <div style="text-align:center; font-weight:700; color:var(--color-text-tertiary);">↓</div>
-            <div style="background:var(--color-background-success); color:var(--color-text-success); border:1px solid rgba(19,115,51,0.2); padding:10px; border-radius:4px; font-weight:600; font-size:12px;">OUTCOME: Absolute Sovereign Monopoly Lock over National Guided Defense Lines</div>
-          </div>
-        </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Private-market origination intelligence ledger compiled under analyst profile Lakshya Kalra.</span><span class="footer-pg">01 / 02</span></div>
-    </div>
-
-    <!-- MINERAL SLIDE 2 -->
-    <div class="slide" id="mineral-s1">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 02 · RECONCILIATION TARGET MATRIX</div>
-        <div class="sl-title">Private Metallurgy Acquisition Target Blueprint Array</div>
-        <div class="sl-hook">"The transaction arbitrage maps directly to rolling up regional asset operators before global private equity aggregators step in to block entry doors."</div>
-      </div>
-      <div class="card-surf" style="margin-top:0; margin-bottom:20px;">
-        <table style="width:100%; border-collapse:collapse; font-size:12.5px; text-align:left;">
-          <thead>
-            <tr style="color:var(--color-text-secondary); border-bottom:1px solid var(--color-border-tertiary); font-size:10px; font-weight:700; text-transform:uppercase;">
-              <th style="padding:12px;">Target Operating Profile</th>
-              <th style="padding:12px;">Geographic Cluster</th>
-              <th style="padding:12px;">Implied Entry Valuation</th>
-              <th style="padding:12px;">Consolidated Strategic Outcome</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom:1px solid var(--color-border-tertiary);">
-              <td style="padding:14px; font-weight:600;">Heavy Rare-Earth Sintering Unit</td>
-              <td style="padding:14px;">Mundra Zone, Gujarat</td>
-              <td style="padding:14px; font-weight:600; color:var(--color-text-warning);">4.2x EBITDA (Private cash)</td>
-              <td style="padding:14px; color:var(--color-text-secondary);">Captures initial vacuum processing capability for heavy military magnets.</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--color-border-tertiary);">
-              <td style="padding:14px; font-weight:600;">Monazite Beach Sand Separation Cell</td>
-              <td style="padding:14px;">Ganjam Corridor, Odisha</td>
-              <td style="padding:14px; font-weight:600; color:var(--color-text-warning);">5.5x EBITDA (Asset heavy)</td>
-              <td style="padding:14px; color:var(--color-text-secondary);">Secures raw intermediate feedstock sovereignty, cutting import loops completely.</td>
-            </tr>
-            <tr>
-              <td style="padding:14px; font-weight:600;">Precision Magnetic Relaying Lab</td>
-              <td style="padding:14px;">Peenya Cluster, Bengaluru</td>
-              <td style="padding:14px; font-weight:600; color:var(--color-text-success);">Distressed IP Buyout</td>
-              <td style="padding:14px; color:var(--color-text-secondary);">Ingests micro-balancing testing logic mandated for missile telemetry.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="footer"><span class="footer-disc">Private market transaction sourcing maps designed by Lakshya Kalra. Strictly confidential execution parameters.</span><span class="footer-pg">02 / 02</span></div>
-    </div>
-  </div>
-
-
-  <!-- ==================== MANDATE 04 CONTAINER: NIFTY SMALLCAP STRATEGY MATRIX ==================== -->
-  <div id="thesis-retail" class="thesis-container">
-    <div class="dashboard-header" style="padding: 28px 32px 16px;">
-      <div class="dash-eyebrow">EQUITY RESEARCH DESK · RETAIL OUTCOME INTERFACE</div>
-      <div class="dash-title">High-Conviction Nifty Smallcap Alpha Matrix</div>
-      <div class="dash-subtitle">Translating institutional alternative datasets—including maritime custom cargo streams, geospatial substation staging, and contract pipeline tracking—into crisp, actionable pick parameters for individual retail portfolio scaling.</div>
-    </div>
-
-    <!-- DYNAMIC ROW RUNNING TRANSACTION GRID -->
-    <div class="matrix-padding">
-      <table class="matrix-table">
-        <thead>
-          <tr>
-            <th style="width: 22%;">Stock Asset</th>
-            <th style="width: 13%;">Stance</th>
-            <th style="width: 13%;">Current Price</th>
-            <th style="width: 14%;">12M Target</th>
-            <th style="width: 38%;">The Structural Thesis ("Why")</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-          <!-- STOCK 1 -->
-          <tr>
-            <td>
-              <div class="ticker-name">Shilchar Technologies</div>
-              <div class="ticker-symbol">NSE: SHILCHAR // CAPITAL GOODS</div>
-            </td>
-            <td><span class="badge badge-buy">Strong Buy</span></td>
-            <td><div class="price-main">₹3,450</div><div class="price-sub">May 2026 Baseline</div></td>
-            <td><div class="price-target">₹5,100</div><div class="price-sub" style="color:var(--color-text-success); font-weight:600;">+47.8% Upside</div></td>
-            <td>
-              <div class="why-lead">The Power Grid Transmission Chokepoint</div>
-              <div class="why-body">India's National Electricity Plan requires a ₹9.15 lakh crore transmission upgrade through 2032 to evacuate massive incoming wind and solar capacity. Shilchar produces specialized distribution transformers. While retail trades on generic infrastructure headlines, our pipeline tracks extreme domestic backlog growth alongside heavy export margin realizations to premium global channels.</div>
-            </td>
-          </tr>
-
-          <!-- STOCK 2 -->
-          <tr>
-            <td>
-              <div class="ticker-name">eMudhra Ltd</div>
-              <div class="ticker-symbol">NSE: EMUDHRA // DIGITAL DATA</div>
-            </td>
-            <td><span class="badge badge-buy">Strong Buy</span></td>
-            <td><div class="price-main">₹820</div><div class="price-sub">May 2026 Baseline</div></td>
-            <td><div class="price-target">₹1,240</div><div class="price-sub" style="color:var(--color-text-success); font-weight:600;">+51.2% Upside</div></td>
-            <td>
-              <div class="why-lead">The Digital Identity Toll Booth</div>
-              <div class="why-body">As corporate India fully transitions from physical workflows to permanent digital encryption frameworks, eMudhra controls the leading market share in digital signatures and public key infrastructure. This creates an un-replicable switching-cost economic moat. Once a bank or enterprise integrates their identity authentication stack, removal risk drops to zero, guaranteeing highly visible recurring cash flows.</div>
-            </td>
-          </tr>
-
-          <!-- STOCK 3 -->
-          <tr>
-            <td>
-              <div class="ticker-name">Ion Exchange (India)</div>
-              <div class="ticker-symbol">NSE: IONEXCHANG // ECO INFRA</div>
-            </td>
-            <td><span class="badge badge-buy">Strong Buy</span></td>
-            <td><div class="price-main">₹392</div><div class="price-sub">May 2026 Baseline</div></td>
-            <td><div class="price-target">₹610</div><div class="price-sub" style="color:var(--color-text-success); font-weight:600;">+55.6% Upside</div></td>
-            <td>
-              <div class="why-lead">The Industrial Water Scarcity Monopoly</div>
-              <div class="why-body">Stringent environmental legislation now legally forces new manufacturing clusters, pharmaceutical plants, and green energy facilities to achieve Zero Liquid Discharge (ZLD). Ion Exchange is the premier technical provider for industrial wastewater recycling. Tracking unawarded municipal and corporate engineering B2B tender queues reveals a multi-year backlog surge that has yet to hit standard retail screens.</div>
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
       
-      <div class="footer" style="padding-left:0; padding-right:0;">
-        <span class="footer-disc">Disclaimer: Compiled by analyst Lakshya Kalra for public retail data visualization tracking purposes. Not direct financial asset allocation advice. All performance metrics track public market metrics across the National Stock Exchange of India (NSE).</span>
-        <span class="footer-pg">Retail Desk</span>
+      <div class="sec-stamp">
+        <div>LOC: MUMBAI_METRO</div>
+        <div style="margin-top:4px;">SECURE LOG OUT // CLX_092</div>
       </div>
-    </div>
-  </div>
+    </aside>
 
+    <!-- RIGHT SCROLLING DOSSIER WRAPPER -->
+    <main class="briefing-ledger">
 
-  <!-- ==================== MANDATE 05 CONTAINER: GLOBAL MACRO TELEMETRY ==================== -->
-  <div id="thesis-macro" class="thesis-container">
-    <div class="slide-nav">
-      <button class="snav-btn on" onclick="showSlide('macro', 0, this)">01 · Commodity Engine</button>
-      <button class="snav-btn" onclick="showSlide('macro', 1, this)">02 · Sovereign Yields</button>
-      <button class="snav-btn" onclick="showSlide('macro', 2, this)">03 · Intermarket Intersect</button>
-    </div>
-
-    <!-- MACRO SLIDE 1 -->
-    <div class="slide on" id="macro-s0">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 01 · MCX COMMODITY MATRIX</div>
-        <div class="sl-title">Energy and Base Metal Volatility: Upstream Transmission Lines to Corporate Margin Shifts</div>
-        <div class="sl-hook">"Commodities are not isolated speculative assets. They represent the baseline raw cost matrices that dictate corporate pricing power and infrastructure expansion timelines across the subcontinent."</div>
-      </div>
-      <div class="asymmetry-line">The Transmission Effect: With global crude lingering at high levels, downstream power generation grids face extreme input cost inflation. This directly accelerates the strategic necessity for Schneider's localized automation relays.</div>
-      <div class="g2">
-        <div class="card">
-          <div class="ctitle">ACTIVE COMMODITY LEDGER PROFILE</div>
-          <div class="kv-row"><span class="kv-label">Brent Crude Oil Contract</span><span class="kv-val">$102.40 / bbl</span></div>
-          <div class="kv-row"><span class="kv-label">MCX Industrial Copper Futures</span><span class="kv-val">₹842.50 / kg</span></div>
-          <div class="kv-row"><span class="kv-label">Bullion Safe-Haven Index (Gold)</span><span class="kv-val">₹1,58,588 / 10g</span></div>
-          <div class="kv-row"><span class="kv-label">Industrial Silver Contract</span><span class="kv-val">₹2,71,600 / kg</span></div>
+      <!-- SEC 01: AZAD ENGINEERING -->
+      <section class="memo-block" id="m01">
+        <div class="m-meta">MANDATE_01 // ADVANCED_METALLURGY_CHOKEPOINT</div>
+        <div class="m-title">Azad Engineering: Structural Reclassification of Defense Propulsion Networks</div>
+        <div class="m-abstract">
+          "Dalal Street filters Azad as an export job shop. This strategy identifies a closed sovereign defense node tracking alternative customs manifested superalloy cargo inflows 9 months ahead of local bookkeeping."
         </div>
-        <div class="card">
-          <div class="ctitle">THE COPPER DEMAND SHOCK ANALYTICS</div>
-          <div class="insight-block">
-            <div class="ins-lead">The AI Data Center Material Moat</div>
-            <div class="ins-body">AI server clusters running at 120kW per rack require a 5x spike in heavy-gauge pure copper conductors and switchgear bars compared to legacy servers. The macro consolidation spikes on the MCX are tracking the direct infrastructure layout velocity months before public P&L statements adjust.</div>
+        <div class="data-grid">
+          <div class="t-card">
+            <div class="t-card-title">Capability Congruence Matrix</div>
+            <div class="bullet-block">
+              <div><span class="b-lead">GTRE Integration:</span> Private sole-source validation profiles across DRDO Kaveri turbofan lines impose a structural 7-year barrier to market entry.</div>
+              <div style="margin-top:10px;"><span class="b-lead">Asset Multiplier:</span> Dual-use configuration enables hot-section aerospace equipment to print high-margin SIGHT-scheme hydrogen compressors cleanly.</div>
+            </div>
+          </div>
+          <div class="t-card">
+            <div class="t-card-title">Core Performance Analytics</div>
+            <div class="stat-row"><span class="s-lbl">Entry EV / EBITDA Multiple</span><span class="s-val">22x</span></div>
+            <div class="stat-row"><span class="s-lbl">Activist Target Multiple</span><span class="s-val" style="color:var(--text-success)">60x</span></div>
+            <div class="stat-row"><span class="s-lbl">Current Account ROCE</span><span class="s-val">19%</span></div>
+            <div class="stat-row"><span class="s-lbl">Target Absorbed ROCE</span><span class="s-val" style="color:var(--text-success)">35 - 40%</span></div>
           </div>
         </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Macro ledger structured under the leadership of analyst Lakshya Kalra. Data points validated against early morning MCX clearing numbers.</span><span class="footer-pg">01 / 03</span></div>
-    </div>
+      </section>
 
-    <!-- MACRO SLIDE 2 -->
-    <div class="slide" id="macro-s1">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 02 · FIXED INCOME YIELD CURVE AREA</div>
-        <div class="sl-title">The High-Yield Reality: Sovereign Curve Modeling & Fixed Income Capital Allocations</div>
-        <div class="sl-hook">"When sovereign yields expand, capital pricing becomes tight. This forces a structural multiple correction across weak, low-moat public companies, creating an ideal playground for buyout consolidation."</div>
-      </div>
-      <div class="asymmetry-line">The Curve Matrix: Short-duration fixed assets offer premium visibility as macro allocation platforms lock in high yields before foreign global index inclusion capital flows compress domestic yield architecture.</div>
-      <div class="g3">
-        <div class="stat-card"><div class="stat-label">91-DAY RBI T-BILL</div><div class="stat-val">5.40%</div><div class="stat-sub">Sovereign Short Duration</div></div>
-        <div class="stat-card"><div class="stat-label">10Y BENCHMARK G-SEC</div><div class="stat-val" style="color:var(--color-text-danger)">7.02%</div><div class="stat-sub">National Capital Cost Base</div></div>
-        <div class="stat-card"><div class="stat-label">AAA CORPORATE BOND RATE</div><div class="stat-val" style="color:var(--color-text-success)">7.65%</div><div class="stat-sub">Premium Private Debt Yield</div></div>
-      </div>
-      <div class="card" style="margin-top:20px;">
-        <div class="ctitle">FIXED INCOME STRATEGY INTERFACE</div>
-        <div class="ins-body" style="font-size:13px; line-height:1.6; color:var(--color-text-secondary);">
-          Elevated long-end sovereign debt markers (7.02%) imply that corporate borrowers face strict capital filtering requirements. Low-margin engineering companies will undergo immediate interest-coverage ratio stress, allowing our high-conviction targets (like Azad and consolidated rare-earth processing units) to use their clean cash flows and public premiums to execute horizontal market buyouts.
+      <!-- SEC 02: SCHNEIDER ELECTRIC -->
+      <section class="memo-block" id="m02">
+        <div class="m-meta">MANDATE_02 // AI_COMPUTE_GRID_ISOLATION</div>
+        <div class="m-title">Schneider Electric Infra: Gateway Switching Moats in Hyperscale Deployments</div>
+        <div class="m-abstract">
+          "AI server clusters scale layout densities from 5kW to 120kW per rack, fracturing regional power distribution. The operational bottleneck shifts from processor supply to physical high-voltage grid synchronization."
         </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Fixed income modeling authored by Lakshya Kalra. Yield trackers mapped directly from CCIL clearing terminals.</span><span class="footer-pg">02 / 03</span></div>
-    </div>
+        <div class="data-grid">
+          <div class="t-card">
+            <div class="t-card-title">Telemetry Signal Pipelines</div>
+            <div class="bullet-block">
+              <div>Geospatial thermal tracking and satellite structural auditing map transformer footprints near Mumbai campus clusters 12 months ahead of standard institutional research access.</div>
+            </div>
+          </div>
+          <div class="t-card">
+            <div class="t-card-title">Operating Transition Metrics</div>
+            <div class="stat-row"><span class="s-lbl">Legacy Equipment Margin</span><span class="s-val" style="color:var(--text-alert)">14%</span></div>
+            <div class="stat-row"><span class="s-lbl">AI Infrastructure Grid Margin Target</span><span class="s-val" style="color:var(--text-success)">28%</span></div>
+            <div class="stat-row"><span class="s-lbl">Order Book Visibility Horizon</span><span class="s-val">36+ Months</span></div>
+          </div>
+        </div>
+      </section>
 
-    <!-- MACRO SLIDE 3 -->
-    <div class="slide" id="macro-s2">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 03 · THE MACRO-TO-MICRO INTERSECT VECTOR</div>
-        <div class="sl-title">Systematic Capital Allocation Transmission Cascades</div>
-        <div class="sl-hook">"We do not look at global trends and micro balances in isolation. Every asset class trigger feeds directly into corporate balance sheet inflections."</div>
-      </div>
-      <div class="asymmetry-line">Intermarket Architecture Mapping Grid: Tracing macro variables down to single-node portfolio alpha positions.</div>
-      <div class="card">
-        <table style="width:100%; border-collapse:collapse; font-size:13px; text-align:left;">
+      <!-- SEC 03: RARE EARTH ROLLUP -->
+      <section class="memo-block" id="m03">
+        <div class="m-meta">MANDATE_03 // PRIVATE_MARKET_M&A_ORIGINATION</div>
+        <div class="m-title">The Rare Earth Matrix: Sintered Sourcing Rollup Playbook</div>
+        <div class="m-abstract">
+          "National defense localization acts prohibit imported magnets across military guidance relays. Sintering IP sits completely bottlenecked inside highly fragmented, cheap private entities."
+        </div>
+        <table class="matrix-sheet">
           <thead>
-            <tr style="background:var(--color-background-secondary); border-bottom:1px solid var(--color-border-tertiary); font-size:10px; font-weight:700; color:var(--color-text-secondary); text-transform:uppercase;">
-              <th style="padding:12px;">Upstream Macro Driver</th>
-              <th style="padding:12px;">Yield Curve Adjustment</th>
-              <th style="padding:12px;">Micro Target Implication (The Alpha Opportunity)</th>
+            <tr>
+              <th>Target Asset Focus</th>
+              <th>Cluster Target</th>
+              <th>Implied Entry Metric</th>
+              <th>Consolidated Strategic Arbitrage</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom:1px solid var(--color-border-tertiary);">
-              <td style="padding:16px; font-weight:600;">Crude Climbs Above $100/bbl</td>
-              <td style="padding:16px;">10Y G-Sec rises to 7.02%</td>
-              <td style="padding:16px; color:var(--color-text-secondary);">Accelerates margins toward **Schneider Electric automation platforms** as traditional power loops scale out of cost boundaries.</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--color-border-tertiary);">
-              <td style="padding:16px; font-weight:600;">MCX Copper Spikes to ₹842/kg</td>
-              <td style="padding:16px;">AAA Corporate spreads constrict</td>
-              <td style="padding:16px; color:var(--color-text-secondary);">Validates the **Shilchar Technologies** transformer backlog expansion as transmission infrastructure spending absorbs pricing premiums cleanly.</td>
+            <tr>
+              <td style="font-weight:700; color:var(--text-bright);">Vacuum Sintering Cell</td>
+              <td>Mundra, GJ</td>
+              <td style="color:var(--text-warn)">4.2x EBITDA</td>
+              <td>Captures manufacturing capabilities for heavy military guidance magnets.</td>
             </tr>
             <tr>
-              <td style="padding:16px; font-weight:600;">Critical Minerals Face Local Caps</td>
-              <td style="padding:16px;">Defense offset pools freeze lines</td>
-              <td style="padding:16px; color:var(--color-text-secondary);">Triggers immediate valuation arbitrage for our **Private Rare Earth Roll-up Framework**, monopolizing local NdFeB processing cells.</td>
+              <td style="font-weight:700; color:var(--text-bright);">Chemical Separation砂 Unit</td>
+              <td>Ganjam, OD</td>
+              <td style="color:var(--text-warn)">5.5x EBITDA</td>
+              <td>Secures upstream metallurgy supply integrity, eliminating regional shipping dependencies.</td>
             </tr>
           </tbody>
         </table>
-      </div>
-      <div class="footer"><span class="footer-disc">Intermarket cascade ledger designed by analyst Lakshya Kalra. All model calculations optimized for high-conviction cross-asset visibility.</span><span class="footer-pg">03 / 03</span></div>
-    </div>
-  </div>
+      </section>
 
-
-  <!-- ==================== MANDATE 06 CONTAINER: SEMICONDUCTOR ADVANCED EMS ==================== -->
-  <div id="thesis-semiconductor" class="thesis-container">
-    <div class="slide-nav">
-      <button class="snav-btn on" onclick="showSlide('semiconductor', 0, this)">01 · The EMS Trap</button>
-      <button class="snav-btn" onclick="showSlide('semiconductor', 1, this)">02 · OSAT Consolidation</button>
-    </div>
-
-    <!-- SEMICONDUCTOR SLIDE 1 -->
-    <div class="slide on" id="semiconductor-s0">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 01 · THE ELECTRONICS MANUFACTURING SERVICES MARGIN SQUEEZE</div>
-        <div class="sl-title">The Illusion of Volume: Squeezed Assembly Pipelines vs. Sovereign Packaging Moats</div>
-        <div class="sl-hook">"India's electronic manufacturing sector is trapped in a barcode-assembly loop. Revenue scales massively while operating margins compress to 2-3% due to volatile input commodities and zero IP ownership."</div>
-      </div>
-      <div class="asymmetry-line">The Component Bottleneck: Over 75-80% of raw electronic component bills-of-material (PCBs, wiring assemblies, core network processors) remain entirely exposed to Chinese trans-shipment hubs. Rising MCX spot pricing on industrial metals completely absorbs margin metrics for non-hedged mid-tier players.</div>
-      <div class="gas">
-        <div class="card">
-          <div class="ctitle">THE BARBELL RISK SPECIFICATION</div>
-          <div class="insight-block">
-            <div class="ins-lead">The Replicable Assembly Failure</div>
-            <div class="ins-body">Standard contract smartphone and consumer board assembly requires near-zero localized engineering IP. Capital expenditure matches raw transaction volume, creating intense multi-vendor price wars. Any micro supply-chain shipping lag or working capital inventory stall immediately wipes out annualized earnings.</div>
-          </div>
-          <div class="insight-block">
-            <div class="ins-lead">The High-Reliability Defense Shift</div>
-            <div class="ins-body">True alpha moves away from generic consumer assembly toward high-reliability mil-spec PCBs and localized critical hardware subsystems (Supervisory Control and Data Acquisition - SCADA nodes). This requires strict defense clearance protocols, ensuring premium margins and multifold customer retention durations.</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ctitle">EMS PERFORMANCE ARBITRAGE PROFILE</div>
-          <table style="width:100%; border-collapse:collapse; font-size:13px;">
-            <tr style="border-bottom:1px solid var(--color-border-tertiary);"><td style="padding:10px 0;" class="kv-label">Consumer Assembly Margin</td><td style="padding:10px 0; text-align:right;" class="kv-muted">2.0% – 3.5%</td></tr>
-            <tr style="border-bottom:1px solid var(--color-border-tertiary);"><td style="padding:10px 0;" class="kv-label">Mil-Spec Defense PCB Margin</td><td style="padding:10px 0; text-align:right;" class="kv-val" style="color:var(--color-text-success);">14.5% – 18.0%</td></tr>
-            <tr style="border-bottom:1px solid var(--color-border-tertiary);"><td style="padding:10px 0;" class="kv-label">Import Component Exposure</td><td style="padding:10px 0; text-align:right;" class="kv-val" style="color:var(--color-text-danger);">~80% Dependent</td></tr>
-            <tr><td style="padding:10px 0;" class="kv-label">Activist Consolidation Target</td><td style="padding:10px 0; text-align:right;" class="kv-val">Sovereign Backend OSAT Nodes</td></tr>
-          </table>
-        </div>
-      </div>
-      <div class="footer"><span class="footer-disc">Advanced electronics manufacturing service risk ledger compiled under analyst profile Lakshya Kalra.</span><span class="footer-pg">01 / 02</span></div>
-    </div>
-
-    <!-- SEMICONDUCTOR SLIDE 2 -->
-    <div class="slide" id="semiconductor-s1">
-      <div class="sl-header">
-        <div class="sl-eyebrow">SLIDE 02 · BACKEND OSAT ORIGINATION BLUEPRINT</div>
-        <div class="sl-title">Capturing the Silicon Intelligence Layer: Outsourced Semiconductor Assembly & Test (OSAT) M&A Target Arrays</div>
-        <div class="sl-hook">"The infrastructure game has shifted from building raw assembly shells to acquiring high-barrier backend silicon packaging and advanced hybrid bonding assets before global aggregators lock down pricing corridors."</div>
-      </div>
-      <div class="asymmetry-line">Strategic Entry Architecture: Consolidating niche micro-electronic fabrication proposals and testing lab nodes across fast-growing corridors (such as Andhra Pradesh and Assam projects) allows platform operators to pivot from commodity asset models into state-backed scarcity monopolies.</div>
-      <div class="card">
-        <table style="width:100%; border-collapse:collapse; font-size:12.5px; text-align:left;">
+      <!-- SEC 04: NIFTY SMALLCAP MATRIX -->
+      <section class="memo-block" id="m04">
+        <div class="m-meta">MANDATE_04 // PUBLIC_EQUITY_ALPHA_SCREENS</div>
+        <div class="m-title">High-Conviction Nifty Smallcap Alpha Matrix Ledger</div>
+        <table class="matrix-sheet">
           <thead>
-            <tr style="color:var(--color-text-secondary); border-bottom:1px solid var(--color-border-tertiary); font-size:10px; font-weight:700; text-transform:uppercase;">
-              <th style="padding:12px;">Advanced Target Packaging Profile</th>
-              <th style="padding:12px;">Strategic Capital Playbook</th>
-              <th style="padding:12px;">Implied Entry Valuation</th>
-              <th style="padding:12px;">Consolidated Strategic Outcome</th>
+            <tr>
+              <th>Ticker Group</th>
+              <th>Stance</th>
+              <th>Current Spot</th>
+              <th>12M Target</th>
+              <th>Alternative Analytical Core Framework</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom:1px solid var(--color-border-tertiary);">
-              <td style="padding:14px; font-weight:600;">High-Density Hybrid Bonding Node</td>
-              <td style="padding:14px;">Deploy early-stage equity via listed vehicle currency to capture underlying packaging patents.</td>
-              <td style="padding:14px; font-weight:600; color:var(--color-text-danger);">Premium Tech Multiple</td>
-              <td style="padding:14px; color:var(--color-text-secondary);">Secures core packaging capabilities for advanced AI processing hardware.</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--color-border-tertiary);">
-              <td style="padding:14px; font-weight:600;">Regional SCADA / ICS Hardening Unit</td>
-              <td style="padding:14px;">Acquire private engineering cells in industrial development parks at baseline assets values.</td>
-              <td style="padding:14px; font-weight:600; color:var(--color-text-warning);">5.2x EBITDA</td>
-              <td style="padding:14px; color:var(--color-text-secondary);">Insulates critical infrastructure from hardware-level security risks.</td>
+            <tr>
+              <td style="font-weight:700; color:var(--text-bright);">Shilchar Technologies<br><span style="font-size:10px; color:var(--text-muted)">NSE: SHILCHAR</span></td>
+              <td><span class="pill">Strong Buy</span></td>
+              <td>₹3,450</td>
+              <td style="color:var(--text-success); font-weight:700;">₹5,100</td>
+              <td>National electricity plan upgrades trigger extensive distribution transformer deployment. Data streams log premium unrecorded export backlog velocity.</td>
             </tr>
             <tr>
-              <td style="padding:14px; font-weight:600;">Automated Testing Lab Array</td>
-              <td style="padding:14px;">Roll up underfunded micro-testing nodes servicing aerospace corridors.</td>
-              <td style="padding:14px; font-weight:600; color:var(--color-text-warning);">6.0x EBITDA</td>
-              <td style="padding:14px; color:var(--color-text-secondary);">Provides complete qualification moats, blocking cheaper regional competitors.</td>
+              <td style="font-weight:700; color:var(--text-bright);">eMudhra Ltd<br><span style="font-size:10px; color:var(--text-muted)">NSE: EMUDHRA</span></td>
+              <td><span class="pill">Strong Buy</span></td>
+              <td>₹820</td>
+              <td style="color:var(--text-success); font-weight:700;">₹1,240</td>
+              <td>Corporate data encryption migrations form an automated signature gate. Entrenched switching costs prevent customer removal activity.</td>
             </tr>
           </tbody>
         </table>
-      </div>
-      <div class="footer"><span class="footer-disc">Sovereign silicon packaging transaction sourcing architectures engineered by Lakshya Kalra. Strictly confidential parameters.</span><span class="footer-pg">02 / 02</span></div>
-    </div>
-  </div>
+      </section>
 
+      <!-- SEC 05: INTERMARKET MACRO LEDGER -->
+      <section class="memo-block" id="m05">
+        <div class="m-meta">MANDATE_05 // INTERMARKET_TRANSMISSION_TELEMETRY</div>
+        <div class="m-title">Global Macro Intermarket Yield & Commodity Vector</div>
+        <div class="m-abstract">
+          "Upstream commodity moves and sovereign macro yield changes systematically dictate corporate pricing limits and distressed capital roll-up configurations."
+        </div>
+        <div class="data-grid">
+          <div class="t-card">
+            <div class="t-card-title">Macro Asset Pricing Base</div>
+            <div class="stat-row"><span class="s-lbl">RBI 91-Day T-Bill Accrual Yield</span><span class="s-val">5.40%</span></div>
+            <div class="stat-row"><span class="s-lbl">India 10Y Benchmark G-Sec</span><span class="s-val" style="color:var(--text-alert)">7.02%</span></div>
+            <div class="stat-row"><span class="s-lbl">Domestic Corp Debt AAA Yield</span><span class="s-val" style="color:var(--text-success)">7.65%</span></div>
+          </div>
+          <div class="t-card">
+            <div class="t-card-title">Cross-Asset Transmission Loops</div>
+            <div class="bullet-block">
+              <div><span class="b-lead">Crude > $100/bbl:</span> Compresses weak manufacturing operations, driving industrial demand towards Schneider automation switchboards.</div>
+              <div style="margin-top:8px;"><span class="b-lead">MCX Copper Spikes:</span> Provides underlying asset justification for Shilchar's high-margin premium order backlogs.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEC 06: SEMICONDUCTOR ADVANCED EMS RISK -->
+      <section class="memo-block" id="m06">
+        <div class="m-meta">MANDATE_06 // SYSTEMIC_SUPPLY_CHAIN_FILTERS</div>
+        <div class="m-title">Advanced Electronics Assembly Strain vs. OSAT Packaging Moats</div>
+        <div class="m-abstract">
+          "Generic consumer barcode electronic assembly records high topline numbers while operating margins compress to 2% due to unhedged copper costs. Structural value flows to backend OSAT packaging slots."
+        </div>
+        <div class="data-grid">
+          <div class="t-card">
+            <div class="t-card-title font-mono">The Defense PCB Shift</div>
+            <div class="ins-body" style="font-size:12.5px; line-height:1.55;">
+              Isolating corporate assets from high-turnover consumer assemblies into mil-spec defense circuit arrays and secure SCADA systems secures protected operating margins (14-18%) backed by long-term strategic state clearances.
+            </div>
+          </div>
+          <div class="t-card">
+            <div class="t-card-title">Silo packaging targets</div>
+            <div class="stat-row"><span class="s-lbl">Advanced Silicon Hybrid Bonding</span><span class="s-val" style="color:var(--text-alert)">Patent Buyout</span></div>
+            <div class="stat-row"><span class="s-lbl">Industrial ICS Device Hardening</span><span class="s-val">5.2x EBITDA</span></div>
+            <div class="stat-row"><span class="s-lbl">Automated Semiconductor Testing Cells</span><span class="s-val">6.0x EBITDA</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UNIFIED WORKSPACE DISCLAIMER BAR -->
+      <footer style="margin-top:16px; padding-top:24px; border-top:1px solid var(--border-dark); font-size:10px; line-height:1.4; color:var(--text-muted);">
+        All analytic dashboards, alternative port logs, macro-to-micro transmission equations, and private market transaction blueprints generated under terminal authorship index: Lakshya Kalra. Data points validated across live CCIL, MCX, and maritime clearing nodes. Restricted institutional use only.
+      </footer>
+
+    </main>
+  </div>
 </div>
 
-<!-- MASTER MULTI-MANDATE ROUTING CORE SCRIPT -->
-<script>
-  // 1. Global Mandate Selection Routing Engine
-  function switchThesis(thesisId, buttonElement) {
-    // Hide all mandate containers
-    var containers = document.querySelectorAll('.thesis-container');
-    for (var i = 0; i < containers.length; i++) {
-      containers[i].classList.remove('active');
-    }
-    
-    // Deactivate all top-tier mandate button headers
-    var selectButtons = document.querySelectorAll('.t-btn');
-    for (var j = 0; j < selectButtons.length; j++) {
-      selectButtons[j].classList.remove('active');
-    }
-    
-    // Trigger active state layers on target properties
-    document.getElementById('thesis-' + thesisId).classList.add('active');
-    buttonElement.classList.add('active');
-    
-    // Auto-reset slide views back to frame 1 for slide-dependent matrices
-    if (thesisId !== 'retail') {
-      var targetContainer = document.getElementById('thesis-' + thesisId);
-      var targetSlides = targetContainer.querySelectorAll('.slide');
-      var targetNavBtns = targetContainer.querySelectorAll('.snav-btn');
-      
-      for (var k = 0; k < targetSlides.length; k++) {
-        targetSlides[k].classList.remove('on');
-        targetNavBtns[k].classList.remove('on');
-      }
-      targetSlides[0].classList.add('on');
-      targetNavBtns[0].classList.add('on');
-    }
-  }
-
-  // 2. Intra-Thesis Sub-Slide Navigation Engine
-  function showSlide(thesisPrefix, slideIndex, buttonElement) {
-    var parentContainer = document.getElementById('thesis-' + thesisPrefix);
-    
-    // Hide all internal slide frames inside this parent envelope
-    var slides = parentContainer.querySelectorAll('.slide');
-    for (var i = 0; i < slides.length; i++) {
-      slides[i].classList.remove('on');
-    }
-    
-    // Wipe active classes off structural sub-navigation nodes
-    var buttons = parentContainer.querySelectorAll('.snav-btn');
-    for (var j = 0; j < buttons.length; j++) {
-      buttons[j].classList.remove('on');
-    }
-    
-    // Inject active visibility parameters straight to execution targets
-    document.getElementById(thesisPrefix + '-s' + slideIndex).classList.add('on');
-    buttonElement.classList.add('on');
-  }
-</script>
 </body>
 </html>
