@@ -21,6 +21,7 @@
       --color-text-muted: #94A3B8;
       --color-text-success: #137333;
       --color-text-danger: #C5221F;
+      --color-text-warning: #B06000;
       
       --color-border: #E2E8F0;
     }
@@ -30,12 +31,12 @@
     
     .shell { width: 100%; max-width: 1200px; background: var(--color-bg-main); border: 1px solid var(--color-border); border-radius: 8px; box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.06); overflow: hidden; }
     
-    /* SYSTEM TOP STRIP */
+    /* SYSTEM NAVIGATION TOP BAR */
     .topbar { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; background: var(--color-bg-dark); color: #FFFFFF; border-bottom: 1px solid var(--color-border); }
     .topbar-left { display: flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-muted); }
     .conf-pill { font-size: 10px; font-weight: 700; letter-spacing: 1px; background: rgba(239, 68, 68, 0.15); color: #F87171; padding: 3px 10px; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.3); }
 
-    /* ==================== VIEW 1: PORTAL LANDING PAGE VIEW ==================== */
+    /* ==================== VIEW 1: PORTAL CENTRAL HUB LANDING ==================== */
     #portal-landing-view { display: block; }
     
     .hero-landing { padding: 56px 40px; background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg-surf) 100%); border-bottom: 1px solid var(--color-border); }
@@ -51,7 +52,7 @@
     .philosophy-item { display: flex; gap: 12px; font-size: 13.5px; line-height: 1.5; color: var(--color-text-sub); }
     .philosophy-item strong { color: var(--color-bg-dark); font-weight: 600; display: block; }
 
-    /* May 2026 BENCHMARK TELEMETRY TICKER */
+    /* ACTIVE MACRO DATA MATRIX BELT */
     .telemetry-ticker { display: grid; grid-template-columns: repeat(4, 1fr); background: #1E293B; border-bottom: 1px solid var(--color-text-main); color: #FFFFFF; padding: 12px 24px; gap: 16px; }
     .ticker-node { border-right: 1px solid #475569; padding-right: 12px; }
     .ticker-node:last-child { border-right: none; }
@@ -59,7 +60,7 @@
     .tick-val { font-size: 14px; font-weight: 700; color: #F8FAFC; margin-top: 2px; }
     .tick-status { font-size: 10px; font-weight: 600; color: #34D399; margin-top: 1px; }
 
-    /* MANDATE INDEX DIRECTORY SEALS */
+    /* CORE TARGET INDEX CARDS DIRECTORY */
     .portal-directory { padding: 48px 40px; background: var(--color-bg-main); }
     .dir-header { font-size: 11px; font-weight: 800; color: var(--color-text-muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; border-bottom: 1px solid var(--color-border); padding-bottom: 8px; }
     .dir-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -72,60 +73,75 @@
     .dir-btn { background: var(--color-bg-dark); color: #FFFFFF; border: none; padding: 10px 16px; font-size: 12px; font-weight: 600; border-radius: 4px; cursor: pointer; align-self: flex-start; transition: background 0.15s ease; }
     .dir-btn:hover { background: #1E293B; }
 
-    /* ==================== VIEW 2: FULL-SCREEN REPORT CONTAINER PANEL ==================== */
-    #full-report-display-view { display: none; padding: 48px 40px; background: var(--color-bg-main); animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
-    @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    /* ==================== VIEW 2: MULTI-CHAPTER DOSSIER WRAPPER LAYER ==================== */
+    #full-report-display-view { display: none; padding: 48px 40px; background: var(--color-bg-main); animation: slideUp 0.22s ease-out; }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-    .back-btn-strip { margin-bottom: 32px; display: flex; align-items: center; }
-    .back-btn { background: var(--color-bg-surf); border: 1px solid var(--color-border); color: var(--color-text-main); padding: 10px 20px; font-size: 12.5px; font-weight: 700; border-radius: 4px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.15s ease; }
-    .back-btn:hover { background: var(--color-bg-accent); border-color: var(--color-text-main); }
+    .back-btn-strip { margin-bottom: 36px; }
+    .back-btn { background: var(--color-bg-surf); border: 1px solid var(--color-border); color: var(--color-text-main); padding: 10px 20px; font-size: 12.5px; font-weight: 700; border-radius: 4px; cursor: pointer; transition: all 0.15s ease; }
+    .back-btn:hover { background: var(--color-bg-accent); }
 
-    /* REPORT TYPOGRAPHY */
-    .rep-eyebrow { font-size: 11px; font-weight: 700; color: #64748B; letter-spacing: 2px; text-transform: uppercase; font-family: var(--font-mono); margin-bottom: 8px; }
-    .rep-title { font-size: 28px; font-weight: 800; color: var(--color-bg-dark); margin-bottom: 14px; letter-spacing: -0.5px; line-height: 1.25; }
-    .rep-hook { font-size: 15px; color: var(--color-text-sub); line-height: 1.6; padding-left: 16px; border-left: 3px solid var(--color-bg-dark); font-style: italic; margin-bottom: 32px; }
+    /* DEEP DOSSIER STRUCTURAL FLOW DESIGN */
+    .dossier-chapter { margin-bottom: 56px; padding-bottom: 48px; border-bottom: 1px solid var(--color-border); }
+    .dossier-chapter:last-of-type { margin-bottom: 16px; padding-bottom: 0; border-bottom: none; }
     
-    .asymmetry-box { background: var(--color-bg-surf); border: 1px solid var(--color-border); border-left: 4px solid var(--color-text-success); border-radius: 6px; padding: 20px; margin-bottom: 32px; font-size: 14px; font-weight: 500; line-height: 1.6; color: var(--color-text-main); }
+    .rep-eyebrow { font-size: 10px; font-weight: 700; color: #64748B; letter-spacing: 2px; text-transform: uppercase; font-family: var(--font-mono); margin-bottom: 6px; }
+    .rep-title { font-size: 26px; font-weight: 800; color: var(--color-bg-dark); margin-bottom: 12px; letter-spacing: -0.5px; line-height: 1.3; }
+    .rep-hook { font-size: 14.5px; color: var(--color-text-sub); line-height: 1.6; padding-left: 14px; border-left: 3px solid var(--color-bg-dark); font-style: italic; margin-bottom: 24px; }
+    
+    .asymmetry-box { background: var(--color-bg-surf); border: 1px solid var(--color-border); border-left: 4px solid var(--color-text-success); border-radius: 6px; padding: 18px; margin-bottom: 24px; font-size: 13.5px; font-weight: 500; line-height: 1.55; }
 
-    /* REPORT GRID GRAPHICS */
+    /* LAYOUT MATRIX PANELS */
     .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .gas { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
 
-    .card { background: #FFFFFF; border: 1px solid var(--color-border); border-radius: 6px; padding: 24px; }
-    .ctitle { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-sub); margin-bottom: 16px; padding-bottom: 6px; border-bottom: 1px solid var(--color-border); text-transform: uppercase; }
+    .card { background: #FFFFFF; border: 1px solid var(--color-border); border-radius: 6px; padding: 22px; }
+    .ctitle { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-sub); margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--color-border); text-transform: uppercase; }
 
-    .kv-row { display: flex; justify-content: space-between; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--color-border); font-size: 13.5px; }
+    .kv-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 13px; }
     .kv-row:last-child { border-bottom: none; }
     .kv-label { color: var(--color-text-sub); }
     .kv-val { font-weight: 600; color: var(--color-text-main); }
     .kv-up { font-weight: 600; color: var(--color-text-success); }
     .kv-muted { font-weight: 500; color: var(--color-text-muted); }
 
-    .insight-block { padding: 14px 0; border-bottom: 1px solid var(--color-border); font-size: 13.5px; }
+    .insight-block { padding: 12px 0; border-bottom: 1px solid var(--color-border); font-size: 13px; }
     .insight-block:last-child { border-bottom: none; }
-    .ins-lead { font-size: 14.5px; font-weight: 600; color: var(--color-text-main); margin-bottom: 4px; }
-    .ins-body { font-size: 13px; color: var(--color-text-sub); line-height: 1.6; }
+    .ins-lead { font-size: 14px; font-weight: 600; color: var(--color-text-main); margin-bottom: 4px; }
+    .ins-body { font-size: 12.5px; color: var(--color-text-sub); line-height: 1.55; }
 
-    .stat-card { background: var(--color-bg-surf); border-radius: 4px; padding: 14px 10px; text-align: center; border: 1px solid var(--color-border); }
+    .stat-card { background: var(--color-bg-surf); border-radius: 4px; padding: 12px 8px; text-align: center; border: 1px solid var(--color-border); }
     .stat-lbl { font-size: 9px; font-weight: 700; color: var(--color-text-sub); text-transform: uppercase; margin-bottom: 4px; }
-    .stat-val { font-size: 20px; font-weight: 700; color: var(--color-text-main); }
+    .stat-val { font-size: 18px; font-weight: 700; color: var(--color-text-main); }
+    .stat-sub { font-size: 10px; color: var(--color-text-muted); margin-top: 4px; }
 
     .regime-compare { display: grid; grid-template-columns: 1fr 30px 1fr; gap: 0; align-items: center; margin-bottom: 20px; }
     .regime-box { background: var(--color-bg-surf); border-radius: 6px; padding: 16px; border: 1px solid var(--color-border); }
+    .regime-label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: var(--color-text-sub); margin-bottom: 10px; text-transform: uppercase; }
+    .regime-label-hi { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: var(--color-text-success); margin-bottom: 10px; text-transform: uppercase; }
 
-    .data-sheet { width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px; border: 1px solid var(--color-border); border-radius: 6px; overflow: hidden; margin-top: 12px; }
+    .buyer-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--color-border); }
+    .buyer-row:last-child { border-bottom: none; }
+    .buyer-name { font-size: 14px; font-weight: 600; color: var(--color-text-main); margin-bottom: 3px; }
+    .buyer-logic { font-size: 12.5px; color: var(--color-text-sub); line-height: 1.5; max-width: 460px; }
+    .buyer-right { text-align: right; margin-left: 16px; }
+    .buyer-mx { font-size: 15px; font-weight: 700; color: var(--color-text-main); }
+    .buyer-type { font-size: 10px; color: var(--color-text-muted); margin-top: 1px; }
+
+    /* MATRIX SHEETS */
+    .data-sheet { width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; border: 1px solid var(--color-border); border-radius: 6px; overflow: hidden; }
     .data-sheet th { background: var(--color-bg-surf); color: var(--color-text-sub); font-size: 10px; font-weight: 700; padding: 14px 18px; border-bottom: 1px solid var(--color-border); text-transform: uppercase; letter-spacing: 1px; }
     .data-sheet td { padding: 16px 18px; border-bottom: 1px solid var(--color-border); vertical-align: top; line-height: 1.55; color: var(--color-text-sub); }
     
-    .ticker-title { font-size: 15px; font-weight: 700; color: var(--color-text-main); }
-    .ticker-code { font-size: 11px; font-weight: 600; color: var(--color-text-muted); margin-top: 2px; font-family: var(--font-mono); }
+    .ticker-title { font-size: 14.5px; font-weight: 700; color: var(--color-text-main); }
+    .ticker-code { font-size: 11px; font-weight: 600; color: var(--color-text-muted); margin-top: 1px; font-family: var(--font-mono); }
     .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 4px 8px; border-radius: 3px; text-transform: uppercase; background: var(--color-bg-surf); border: 1px solid var(--color-border); }
     .badge-buy { background: #E6F4EA; color: var(--color-text-success); border-color: rgba(19,115,51,0.2); }
     .target-val { font-size: 16px; font-weight: 700; color: var(--color-text-success); }
 
-    /* PANEL REPORTS HIDDEN STACK */
-    .report-content-panel { display: none; }
+    .report-group-container { display: none; }
 
     .footer { display: flex; justify-content: space-between; align-items: center; padding: 24px 40px; border-top: 1px solid var(--color-border); background: var(--color-bg-surf); font-size: 11px; color: var(--color-text-muted); line-height: 1.5; }
   </style>
@@ -134,58 +150,58 @@
 
 <div class="shell">
 
-  <!-- IDENTITY TOP NAV HUB -->
+  <!-- TOP STRATEGIC BAR -->
   <div class="topbar">
     <div class="topbar-left">
-      <span>INSTITUTIONAL CORE TERMINAL // ARCHITECTURE ENGINES</span>
+      <span>WORKSPACE TERMINAL LEDGER // AUTHORIZED AUTH: LAKSHYA KALRA</span>
     </div>
-    <span class="conf-pill">STRICTLY RESTRICTED ACCESS</span>
+    <span class="conf-pill">CONFIDENTIAL DATA BANK</span>
   </div>
 
-  <!-- ==================== VIEW 1: PORTAL MASTER LANDING LAYER ==================== -->
+  <!-- ==================== VIEW 1: MASTER DIRECTORY CENTRAL HUB ==================== -->
   <div id="portal-landing-view">
     
     <header class="hero-landing">
-      <div class="hero-eyebrow">STRATEGIC DISCLOSURE PLATFORM</div>
+      <div class="hero-eyebrow">STRATEGIC PRESENTATION PORTFOLIO</div>
       <h1 class="hero-title">Lakshya Kalra</h1>
       
       <div class="hero-grid">
         <div class="hero-box-left">
           <h3>The Operational Directive</h3>
           <p>
-            I analyze structural capital deployment cycles across the Indian industrial landscape, focusing on core infrastructure capex, precision engineering metallurgy, and defense localization lanes. Rather than screening public listings using lagging, rear-view trailing accounting multiples, my platform tracks alternative data signals to expose single-node manufacturing bottlenecks 9 to 12 months ahead of standard public consensus disclosures.
+            I extract alpha from structural capital deployment cycles across the Indian industrial ecosystem, targeting precision core capex, defense engineering metallurgy, and grid localization infrastructure. Rather than screening the public domain using trailing, backward-looking accounting valuations, my repository tracks alternative data loops to isolate corporate balance sheet inflections 9 to 12 months ahead of mainstream market disclosures.
           </p>
         </div>
         <div class="hero-box-right">
           <div class="philosophy-item">
             <span>🎯</span>
             <div>
-              <strong>The Strategy Chokepoint Moat</strong>
-              Alpha clusters entirely at hidden industrial crossroads where dual state-backed spending pipelines collide, triggering sharp asset re-ratings.
+              <strong>The Single-Node Monopoly Edge</strong>
+              Value pools form entirely at hidden industrial chokepoints where dual state-funded capital spending streams collide, generating sharp asset re-ratings.
             </div>
           </div>
           <div class="philosophy-item">
             <span>📊</span>
             <div>
-              <strong>Intermarket Alignment Layer</strong>
-              Bridging raw upstream catalysts—such as sovereign yield curve movements and MCX commodity spikes—directly down to single-asset equity returns.
+              <strong>Cross-Asset Transmission Core</strong>
+              Bridging raw upstream factors—like macro yield curve spreads and MCX commodity clearing spikes—directly down to localized micro equity performance metrics.
             </div>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- LIVE ACTIVE TELEMETRY TICKER BAR -->
+    <!-- LIVE CONSOLIDATED MACRO RISK TICKER -->
     <div class="telemetry-ticker">
       <div class="ticker-node">
         <div class="tick-lbl">India 10Y G-Sec Yield</div>
         <div class="tick-val">7.02%</div>
-        <div class="tick-status" style="color:#F87171;">▲ Elevated Capital Costs</div>
+        <div class="tick-status" style="color:#F87171;">▲ High Base Capital Cost</div>
       </div>
       <div class="ticker-node">
         <div class="tick-lbl">Brent Crude Spot</div>
         <div class="tick-val">$102.40 / bbl</div>
-        <div class="tick-status" style="color:#F87171;">▲ Input Margin Headwind</div>
+        <div class="tick-status" style="color:#F87171;">▲ Input Margin Compression</div>
       </div>
       <div class="ticker-node">
         <div class="tick-lbl">MCX Copper Futures</div>
@@ -195,73 +211,73 @@
       <div class="ticker-node">
         <div class="tick-lbl">Sovereign Focus Regime</div>
         <div class="tick-val">Active Localization</div>
-        <div class="tick-status">✔ Core Bottlenecks Prioritized</div>
+        <div class="tick-status">✔ Core Infrastructure Favored</div>
       </div>
     </div>
 
-    <!-- MAIN PORTFOLIO DIRECTORY GRID -->
+    <!-- MAIN CENTRAL HUB SEALS LIST -->
     <section class="portal-directory">
-      <div class="dir-header">Active Strategic Investment Mandates</div>
+      <div class="dir-header">Active Multi-Mandate Investment Strategies</div>
       <div class="dir-grid">
         
-        <!-- DIRECTORY MANDATE 01 -->
+        <!-- BLOCK 01 -->
         <div class="dir-card">
           <div>
-            <div class="dir-meta">MANDATE_01 // DEFENSE METALLURGY</div>
+            <div class="dir-meta">MANDATE_01 // HIGH-PRECISION METALLURGY</div>
             <div class="dir-title">Azad Engineering Ltd</div>
-            <div class="dir-abstract">Reframing a cyclical component exporter into an absolute single-node monopoly locking up domestic military turbomachinery indigenization.</div>
+            <div class="dir-abstract">Complete 5-chapter institutional activist dossier reframing the asset into India's single-node military turbomachinery chokepoint.</div>
           </div>
-          <button class="dir-btn" onclick="loadFullReport('rep-azad')">View Full Institutional Report ➔</button>
+          <button class="dir-btn" onclick="openCompleteDossier('group-azad')">Open Full Multi-Slide Report ➔</button>
         </div>
 
-        <!-- DIRECTORY MANDATE 02 -->
+        <!-- BLOCK 02 -->
         <div class="dir-card">
           <div>
-            <div class="dir-meta">MANDATE_02 // AI GRID MATRIX</div>
+            <div class="dir-meta">MANDATE_02 // AI TECHNOLOGY POWER NETWORKS</div>
             <div class="dir-title">Schneider Electric Infrastructure</div>
-            <div class="dir-abstract">Capturing the physical gateway switching moats forming at the bottleneck of advanced high-density AI data center power evacuation loops.</div>
+            <div class="dir-abstract">Complete 5-chapter research ledger tracking physical gateway switching moats forming at high-density data center grid connections.</div>
           </div>
-          <button class="dir-btn" onclick="loadFullReport('rep-schneider')">View Full Institutional Report ➔</button>
+          <button class="dir-btn" onclick="openCompleteDossier('group-schneider')">Open Full Multi-Slide Report ➔</button>
         </div>
 
-        <!-- DIRECTORY MANDATE 03 -->
+        <!-- BLOCK 03 -->
         <div class="dir-card">
           <div>
             <div class="dir-meta">MANDATE_03 // PRIVATE M&A ORIGINATION</div>
             <div class="dir-title">The Rare Earth Sovereign Rollup</div>
-            <div class="dir-abstract">Sourcing blueprint for rolling up and consolidating unlisted, highly fragmented permanent Neodymium (NdFeB) sintering processing cells.</div>
+            <div class="dir-abstract">Unhidden transaction sourcing matrix mapping rollup targets across unlisted, fragmented domestic Neodymium (NdFeB) sintering cells.</div>
           </div>
-          <button class="dir-btn" onclick="loadFullReport('rep-mineral')">View Full Institutional Report ➔</button>
+          <button class="dir-btn" onclick="openCompleteDossier('group-mineral')">Open Full Multi-Slide Report ➔</button>
         </div>
 
-        <!-- DIRECTORY MANDATE 04 -->
+        <!-- BLOCK 04 -->
         <div class="dir-card">
           <div>
-            <div class="dir-meta">MANDATE_04 // SMALLCAP ALPHA</div>
+            <div class="dir-meta">MANDATE_04 // RETAIL ALLOCATION SCREENS</div>
             <div class="dir-title">Nifty Smallcap Alpha Matrix Ledger</div>
-            <div class="dir-abstract">Translating complex infrastructure alternative dataset telemetry into crisp, high-upside positions for specialized retail portfolio outperformance.</div>
+            <div class="dir-abstract">Translating complex operational dataset alternative telemetry directly into high-conviction small-cap picks for individual retail scaling.</div>
           </div>
-          <button class="dir-btn" onclick="loadFullReport('rep-retail')">View Full Institutional Report ➔</button>
+          <button class="dir-btn" onclick="openCompleteDossier('group-retail')">Open Full Multi-Slide Report ➔</button>
         </div>
 
-        <!-- DIRECTORY MANDATE 05 -->
+        <!-- BLOCK 05 -->
         <div class="dir-card">
           <div>
-            <div class="dir-meta">MANDATE_05 // INTERMARKET TELEMETRY</div>
+            <div class="dir-meta">MANDATE_05 // INTERMARKET LEAD MODELING</div>
             <div class="dir-title">Global Macro Intermarket Yield Ledger</div>
-            <div class="dir-abstract">Systematic mapping models linking upstream base metal movements and G-Sec curve shifts directly down to single-asset micro equity balances.</div>
+            <div class="dir-abstract">Full asset cascade mapping showing how upstream commodity movements and sovereign bond curve changes systematically shift equity return metrics.</div>
           </div>
-          <button class="dir-btn" onclick="loadFullReport('rep-macro')">View Full Institutional Report ➔</button>
+          <button class="dir-btn" onclick="openCompleteDossier('group-macro')">Open Full Multi-Slide Report ➔</button>
         </div>
 
-        <!-- DIRECTORY MANDATE 06 -->
+        <!-- BLOCK 06 -->
         <div class="dir-card">
           <div>
-            <div class="dir-meta">MANDATE_06 // SUPPLY CHAIN FILTERS</div>
-            <div class="dir-title">Semiconductor EMS Strain Matrix</div>
-            <div class="dir-abstract">Risk assessment modeling mapping the operational margin crunch across contract consumer builders vs. high-barrier silicon packaging IP.</div>
+            <div class="dir-meta">MANDATE_06 // SUPPLY CHAIN ASSESSMENTS</div>
+            <div class="dir-title">Semiconductor Advanced EMS Matrix</div>
+            <div class="dir-abstract">Operational margin strain risk assessment evaluating barcode consumer assembly loops against backend silicon packaging moats.</div>
           </div>
-          <button class="dir-btn" onclick="loadFullReport('rep-semiconductor')">View Full Institutional Report ➔</button>
+          <button class="dir-btn" onclick="openCompleteDossier('group-semiconductor')">Open Full Multi-Slide Report ➔</button>
         </div>
 
       </div>
@@ -269,208 +285,360 @@
   </div>
 
 
-  <!-- ==================== VIEW 2: FULL-SCREEN DEEP DIVE DISPLAY CONTAINER ==================== -->
+  <!-- ==================== VIEW 2: FULL-SCREEN DEEP DOSSIER CONTAINER ==================== -->
   <div id="full-report-display-view">
     
-    <!-- SYSTEM BACK ACTION NAVIGATION BUTTON -->
     <div class="back-btn-strip">
-      <button class="back-btn" onclick="closeFullReport()">← Return to Master Portal Overview</button>
+      <button class="back-btn" onclick="closeCompleteDossier()">← Close Report & Return to Portal Overview</button>
     </div>
 
-    <!-- DYNAMIC REPORT PANELS STACK HEADER TARGETS -->
-    <div class="report-content-flow-envelope">
+    <!-- DYNAMIC GROUPS FRAMEWORK TARGET HOOK -->
+    <div class="dossier-scroll-envelope">
 
-      <!-- REPORT MANDATE 01: AZAD ENGINEERING -->
-      <div id="rep-azad" class="report-content-panel">
-        <div class="rep-eyebrow">SEC_01 // ADVANCED DEFENSE TURBINOMACHINERY</div>
-        <div class="rep-title">Azad Engineering: Structural Reclassification of National Propulsion Infrastructure</div>
-        <div class="rep-hook">"Dalal Street miscalculates the asset as a cyclical component parts maker. This activist framework isolates a single-node high-barrier monopoly positioning locking up domestic engine indigenization."</div>
+      <!-- ==================== GROUP: AZAD ENGINEERING DOSSIER ==================== -->
+      <div id="group-azad" class="report-group-container">
         
-        <div class="asymmetry-box">
-          <strong>Proprietary Alternative Data Pipeline:</strong> 
-          Scraped maritime customs cargo manifests track a +120% YoY vertical spike in raw Nickel Superalloy (Inconel) billets hitting domestic ports 9 months ahead of quarterly SEBI earnings statements. High-grade metallurgical feedstock is never held speculatively due to capital carrying costs; import volume directly validates locked manufacturing cycles.
-        </div>
-
-        <div class="g2">
-          <div class="card">
-            <div class="ctitle">The Structural Congruence Moat</div>
-            <div class="insight-block">
-              <div class="ins-lead">GTRE Outsource Lock-ins</div>
-              <div class="ins-body">Private validation cycles across DRDO Kaveri turbofan assemblies require 5-10 years of audit clearings. Azad controls the clearance lines, keeping new entrants completely locked out.</div>
+        <!-- CHAPTER 1 -->
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">CHAPTER 01 · STRATEGIC CORE THESIS</div>
+          <div class="rep-title">Dalal Street Is Pricing a Machining Shop. It Is Actually Pricing India's Only Turbine Chokepoint.</div>
+          <div class="rep-hook">"This is not a generic growth stock. It is a structural single-node monopoly forming at the precise collision point of two multi-crore sovereign-funded industrial cycles."</div>
+          <div class="asymmetry-box">The Arbitrage Axis: The exact same high-precision 5-axis metallurgical capability stack required to forge DRDO propulsion units qualifies a vendor to supply SIGHT-mandated green hydrogen turbocompressors. Azad holds this stack. No second domestic player does at scale.</div>
+          <div class="gas">
+            <div class="card">
+              <div class="ctitle">THE CONVERGENCE ENGINE RECONCILIATION</div>
+              <div class="insight-block">
+                <div class="ins-lead">The Metallurgical Congruence</div>
+                <div class="ins-body">Superalloy forgings, hot-section 5-axis machining, and high-pressure ceramic dynamic balancing represent one singular capability profile. One capital expenditure asset base. Two distinct sovereign-backed funding streams. Zero recognition across mainstream institutional equity research.</div>
+              </div>
             </div>
-            <div class="insight-block">
-              <div class="ins-lead">Dual Vertical Utilization</div>
-              <div class="ins-body">The exact same 5-axis precision machinery asset base used for military aircraft rotors enables Azad to forge high-margin SIGHT-scheme hydrogen compressors with near-zero added net capital asset deployment.</div>
+            <div class="card">
+              <div class="ctitle">PERCEPTION ASYMMETRY PROFILE</div>
+              <div class="kv-row"><span class="kv-label">Mainstream Market Label</span><span class="kv-muted">Precision Component Exporter</span></div>
+              <div class="kv-row"><span class="kv-label">Activist Position Framing</span><span class="kv-val">Sovereign Industrial Infrastructure</span></div>
+              <div class="kv-row"><span class="kv-label">Current Entry Multiple</span><span class="kv-muted">22x EV / EBITDA (Cyclical base)</span></div>
+              <div class="kv-row"><span class="kv-label">Implied Structural Multiple</span><span class="kv-val" style="color:var(--color-text-success)">60x EV / EBITDA Premium</span></div>
             </div>
           </div>
+        </div>
+
+        <!-- CHAPTER 2 -->
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">CHAPTER 02 · ALTERNATIVE DATA INSIGHT PIPELINE</div>
+          <div class="rep-title">The Order Book Is Already Committed. Only the Accounting P&L Hasn't Been Told Yet.</div>
+          <div class="asymmetry-box">Alternative Framework: Traditional equity analysts trade on Ministry of Defense press releases. This activist strategy generates alpha by scraping alternative custom manifests and thermal footprint maps 9 to 14 months before revenue recognition.</div>
+          <div class="g3">
+            <div class="card">
+              <div class="ctitle">STREAM 01 · GEOSPATIAL INTELLIGENCE</div>
+              <div class="ins-body" style="font-size:13px; line-height:1.6;">High-density 5-axis turbine machining centers generate immense thermal loads requiring extreme isolated climate units. Satellite thermal tracking shows intense roof-top cooling additions across Hyderabad aerospace parks, validating massive capacity placement before capital asset disclosures.</div>
+            </div>
+            <div class="card">
+              <div class="ctitle">STREAM 02 · MARITIME LOGISTICS</div>
+              <div class="ins-body" style="font-size:13px; line-height:1.6;">Zauba import logs indicate a 120% vertical spike in Inconel and specialized superalloy billet deliveries arriving at core ports. Advanced aerospace-grade metals are never purchased speculatively due to holding costs; imports map directly to locked manufacturing pipelines.</div>
+            </div>
+            <div class="card">
+              <div class="ctitle">STREAM 03 · CENTRAL PROCUREMENT PORTALS</div>
+              <div class="ins-body" style="font-size:13px; line-height:1.6;">Cross-referencing historical unawarded tender numbers on the central procurement portal reveals Azad vendor IDs matching multiple advanced turbine rotor components across deep defense programs simultaneously. This signals a unified single-source trajectory.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 3 -->
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">CHAPTER 03 · VALUE COMPOSITION & RE-RATING ARITHMETIC</div>
+          <div class="rep-title">One Capex Base. Two Sovereign Demand Pools. The Capital Efficiency Inflection Is Multiplicative.</div>
+          <div class="asymmetry-box">The Multiplier Engine: Incremental revenue scaling into the hydrogen vertical demands near-zero net new asset deployment. Return on Capital Employed (RoCE) is poised to inflect from ~19% up to 35-40% without dilutive equity injections.</div>
+          <div class="regime-compare">
+            <div class="regime-box">
+              <div class="regime-label">CURRENT REGIME — "PRECISION COMPONENT SHOP"</div>
+              <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-muted">20 – 22%</span></div>
+              <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-muted">1.2x</span></div>
+              <div class="kv-row"><span class="kv-label">Return on Capital Employed (RoCE)</span><span class="kv-muted">18 – 20%</span></div>
+            </div>
+            <div style="text-align:center; font-weight:700;">➔</div>
+            <div class="regime-box" style="border-color: var(--color-text-success);">
+              <div class="regime-label-hi">ACTIVIST TARGET REGIME — "SOVEREIGN INFRASTRUCTURE"</div>
+              <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-up">30 – 33%</span></div>
+              <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-up">2.0 – 2.2x</span></div>
+              <div class="kv-row"><span class="kv-label">Return on Capital Employed (RoCE)</span><span class="kv-up" style="color:var(--color-text-success)">35 – 40%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 4 -->
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">CHAPTER 04 · INDUSTRIAL CONSOLIDATION PLAYBOOK</div>
+          <div class="rep-title">Control the Metallurgy Stack End-to-End Before a Global Private Equity Aggregator Intervenes.</div>
+          <div class="asymmetry-box">Consolidation Vector: Adjacent industrial cells (nickel superalloy forging houses, thermal barrier spray coatings, high-pressure hydrogen face seals) can be consolidated at standard industrial multiples (6-8x EBITDA) using Azad's premium public stock as currency.</div>
+          <div class="g2">
+            <div class="card">
+              <div class="ctitle">PHASE 01 — UPSTREAM INTEGRATION LAYER (HORIZONTAL LOCK)</div>
+              <div class="ins-body" style="font-size:13px; line-height:1.6;">Absorb local aerospace-grade forging cells to neutralize raw material import lag times. Capturing the feedstock layer internalizes intermediate margin spreads straight into consolidated EBITDA metrics. Estimated capital requirement: ₹150–250 Cr.</div>
+            </div>
+            <div class="card">
+              <div class="ctitle">STRATEGIC ACQUISITION TARGET ARCHITECTURE MATRIX</div>
+              <div class="kv-row"><span class="kv-label">Upstream Superalloy Forging Asset</span><span class="kv-val">₹150–250 Cr Outlay</span></div>
+              <div class="kv-row"><span class="kv-label">Plasma TBC Coating Cell Unit</span><span class="kv-val">₹80–120 Cr Outlay</span></div>
+              <div class="kv-row"><span class="kv-label">European H₂ Face Seal Integration JV</span><span class="kv-val">₹60–100 Cr Outlay</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 5 -->
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">CHAPTER 05 · STRATEGIC EXIT UNIVERSE & LIQUIDITY MATRIX</div>
+          <div class="rep-title">GE Aerospace Isn't Buying an Indian Mid-Cap. It's Purchasing Sovereign Defense Access at a Massive Discount.</div>
+          <div class="asymmetry-box">Terminal Premium: The intersection of China+1 supply diversification, global engine localization mandates under Make in India, and domestic content requirements for hydrogen grids creates forced competitive bidding tension.</div>
           <div class="card">
-            <div class="ctitle">Corporate Finance Re-Rating Models</div>
-            <div class="kv-row"><span class="kv-label">Current Entry EV / EBITDA Multiplier</span><span class="kv-val">22x</span></div>
-            <div class="kv-row"><span class="kv-label">Activist Target Re-Rating Premium Multiple</span><span class="kv-up" style="color:var(--color-text-success);">60x</span></div>
-            <div class="kv-row"><span class="kv-label">Historical Baseline Return on Capital (ROCE)</span><span class="kv-muted">19%</span></div>
-            <div class="kv-row"><span class="kv-label">Projected Post-Absorption ROCE Target</span><span class="kv-up">35 - 40%</span></div>
-            <div class="g4" style="margin-top:16px;">
-              <div class="stat-card"><div class="stat-lbl">BACKLOG</div><div class="stat-val">36 Mo</div></div>
-              <div class="stat-card"><div class="stat-lbl">UPSIDE</div><div class="stat-val" style="color:var(--color-text-success);">+140%</div></div>
-              <div class="stat-card"><div class="stat-lbl">LEAD TIME</div><div class="stat-val">9-12M</div></div>
+            <div class="ctitle">GLOBAL OEM STRATEGIC ACQUIRER POOL</div>
+            <div class="buyer-row">
+              <div><div class="buyer-name">Siemens Energy AG</div><div class="buyer-logic">Primary strategic target. Their global electrolyzer scale roadmap demands low-cost, high-compliance turbomachinery hubs to export throughout Asia and the Middle East.</div></div>
+              <div class="buyer-right"><div class="buyer-mx">60–70x</div><div class="buyer-type">Tier-1 Acquirer</div></div>
+            </div>
+            <div class="buyer-row">
+              <div><div class="buyer-name">GE Aerospace</div><div class="buyer-logic">Massive offset credit settlement obligations linked directly to Indian Air Force propulsion contracts force acquisition. Azad represents the fastest path to defense clearance.</div></div>
+              <div class="buyer-right"><div class="buyer-mx">55–65x</div><div class="buyer-type">Tier-1 Acquirer</div></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- REPORT MANDATE 02: SCHNEIDER ELECTRIC -->
-      <div id="rep-schneider" class="report-content-panel">
-        <div class="rep-eyebrow">SEC_02 // AI COMPUTE POWER DISPATCH</div>
-        <div class="rep-title">Schneider Electric Infra: Gateway Switching Moats in Advanced Cloud Infrastructures</div>
-        <div class="rep-hook">"Consensus models fail to trace physical power realities: High-density AI server modules shift allocation constraints completely from chip sourcing to automated load evacuation loops."</div>
+
+      <!-- ==================== GROUP: SCHNEIDER ELECTRIC DOSSIER ==================== -->
+      <div id="group-schneider" class="report-group-container">
         
-        <div class="asymmetry-box">
-          <strong>Geospatial Intelligence Telemetry:</strong> 
-          High-frequency satellite monitoring tracking heavy foundation pad preparations for high-voltage transformers near Navi Mumbai and Chennai technological parks flags localized infrastructure build-out speeds 12 months before public consensus brokerage screens catch the shifts.
+        <!-- CHAPTER 1 -->
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">CHAPTER 01 · STRATEGIC CORE THESIS</div>
+          <div class="rep-title">Dalal Street Is Misclassifying the Asset as an Equipment Vendor. It Is Actually India's AI Grid Chokepoint.</div>
+          <div class="rep-hook">"The market continues to bucket Schneider Electric Infrastructure inside the generic cyclical equipment manufacturer basket. That classification is catastrophically outdated."</div>
+          <div class="asymmetry-box">Core Asymmetry: AI data centers are not standard server farms—they function as synthetic power plants. An Nvidia H100/B200 deployment breaks legacy grid distribution, pushing advanced rack density profiles from 5kW straight to 80-120kW. Grid synchronization is the true infrastructure chokepoint.</div>
+          <div class="g2">
+            <div class="card">
+              <div class="ctitle">CLASSIFICATION RECLASSIFICATION MATRIX</div>
+              <div class="kv-row"><span class="kv-label">Legacy Market View</span><span class="kv-muted">Electrical Equipment Vendor</span></div>
+              <div class="kv-row"><span class="kv-label">Activist Position</span><span class="kv-val">AI Infrastructure Bottleneck Node</span></div>
+              <div class="kv-row"><span class="kv-label">Current Entry Multiple</span><span class="kv-muted">Industrial Equipment Baseline</span></div>
+              <div class="kv-row"><span class="kv-label">Valuation Grounding</span><span class="kv-up" style="color:var(--color-text-success)">Scarcity Infrastructure Platform</span></div>
+            </div>
+            <div class="card">
+              <div class="ctitle">THE AI POWER DENSITY ENVIRONMENT DEFINITION</div>
+              <div class="ins-body" style="font-size:13px; line-height:1.6;">Hyperscale deployment operators no longer optimize for server procurement timelines first—they optimize for physical power evacuation feasibility first. Grid connectivity is the absolute gating variable for sovereign digital compute deployment capacity. Not chips, not land, not fiber.</div>
+            </div>
+          </div>
         </div>
 
-        <div class="g2">
-          <div class="card">
-            <div class="ctitle">The Power Evacuation Toll Gate</div>
-            <div class="insight-block">
-              <div class="ins-lead">Rack Density Scaling Moats</div>
-              <div class="ins-body">Deploying advanced Nvidia H100 arrays forces rack requirements from 5kW to 120kW. This power draw fractures traditional industrial distribution nodes. Capturing the physical high-voltage switching layer allows Schneider to function as an irreplaceable infrastructure toll-gate.</div>
+        <!-- CHAPTER 2 -->
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">CHAPTER 02 · REAL-WORLD TELEMETRY PIPELINES</div>
+          <div class="rep-title">The Alpha Does Not Exist Inside Reported Financials. The Asymmetry Is Extracted From Infrastructure Telemetry.</div>
+          <div class="asymmetry-box">Telemetry Pipeline: Tracking physical copper inflows and central load filings allows our model to map out corporate procurement cycles 9 to 12 months ahead of traditional earnings revisions.</div>
+          <div class="g3">
+            <div class="card">
+              <div class="ctitle">1. GEOSPATIAL TRANSFORMER SIGNALS</div>
+              <div class="ins-body" style="font-size:12.5px; line-height:1.55; color:var(--color-text-secondary);">High-frequency satellite tracking across Navi Mumbai, the Ambattur technology corridor, and Bengaluru zones reveals rapid substation pad preparation, accelerated transformer staging, and immediate deployment of prefabricated power distribution enclosures.</div>
+            </div>
+            <div class="card">
+              <div class="ctitle">2. CENTRAL SLDC SCRAPING LOGS</div>
+              <div class="ins-body" style="font-size:12.5px; line-height:1.55; color:var(--color-text-secondary);">Automated real-time scraping across State Load Dispatch Center (SLDC) portals tracks sudden spikes in high-load capacity allocations, multi-phase energization approvals, and reactive power clearance applications months ahead of facility commissioning.</div>
+            </div>
+            <div class="card">
+              <div class="ctitle">3. NHS CUSTOMS PRE-EMPTION MAP</div>
+              <div class="ins-body" style="font-size:12.5px; line-height:1.55; color:var(--color-text-secondary);">Scraped import data logs detail a massive vertical spike in specialized European-origin insulated copper conductors and thermal-stability assemblies landing at Nhava Sheva terminals. Feedstock spikes are direct leading indicators of production pipelines.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 3 -->
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">CHAPTER 03 · CORPORATE FINANCE ACCELERATION MATRIX</div>
+          <div class="rep-title">This Is Not Incremental Revenue Growth. This Is a Fundamental Business Model Mutation.</div>
+          <div class="regime-compare">
+            <div class="regime-box">
+              <div class="regime-label">HISTORICAL REGIME: "EQUIPMENT VENDOR"</div>
+              <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-muted">13% – 15%</span></div>
+              <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-muted">~1.2x</span></div>
+              <div class="kv-row"><span class="kv-label">Baseline RoCE Footprint</span><span class="kv-muted">~15% Baseline</span></div>
+            </div>
+            <div style="text-align:center; font-weight:700;">➔</div>
+            <div class="regime-box" style="border-color:var(--color-text-success);">
+              <div class="regime-label-hi">TARGET STATE: "AI INFRASTRUCTURE MONOPOLY NODE"</div>
+              <div class="kv-row"><span class="kv-label">Consolidated EBITDA Margin</span><span class="kv-up">24% – 28%</span></div>
+              <div class="kv-row"><span class="kv-label">Asset Turnover Ratio</span><span class="kv-up">2.0x – 2.4x</span></div>
+              <div class="kv-row"><span class="kv-label">Baseline RoCE Footprint</span><span class="kv-up" style="color:var(--text-success)">35%+ Convex Expansion</span></div>
             </div>
           </div>
           <div class="card">
-            <div class="ctitle">Model Transition Metrics</div>
-            <div class="regime-compare">
-              <div class="regime-box"><div style="font-size:9px; font-weight:700;">LEGACY VENDOR BASE</div><div style="font-size:16px; font-weight:700; margin-top:4px;">14% Margin</div></div>
-              <div style="text-align:center; font-weight:700;">➔</div>
-              <div class="regime-box" style="border-color:var(--color-text-success);"><div style="font-size:9px; font-weight:700; color:var(--color-text-success);">AI GRID CHOKEPOINT</div><div style="font-size:16px; font-weight:700; margin-top:4px; color:var(--color-text-success);">28% Target</div></div>
+            <div class="ctitle">THE NON-LINEAR CONVEX ROCE EQUATION SYSTEM</div>
+            <div style="font-size:14px; font-weight:600; text-align:center; padding:12px 0; font-family:monospace; background:var(--color-bg-surf); border-radius:4px;">
+              RoCE = [(Revenue × EBITDA Margin) - Depreciation] / [Net Working Capital + Fixed Assets]
             </div>
-            <div class="kv-row"><span class="kv-label">Contract Order Horizon</span><span class="kv-val">36+ Months</span></div>
           </div>
         </div>
-      </div>
 
-      <!-- REPORT MANDATE 03: RARE EARTH ROLLUP -->
-      <div id="rep-mineral" class="report-content-panel">
-        <div class="rep-eyebrow">SEC_03 // PRIVATE ASSET TRANSACATION BLUEPRINTS</div>
-        <div class="rep-title">The Rare Earth Matrix: Sintered Neodymium Processing Rollup Framework</div>
-        <div class="rep-hook">"Localization directives legally ban imported permanent rare-earth magnets from state defense components. Processing capability sits heavily bottlenecked inside fragmented private workshops."</div>
-        
-        <div class="asymmetry-box">
-          <strong>Strategic Transaction Arbitrage:</strong> 
-          Niche metallurgical houses executing specialized permanent Neodymium (NdFeB) sintering are completely fragmented. Sourcing these unlisted assets at standard industrial baselines (4-6x EBITDA) using premium public corporate equity vehicle currency provides a programmatic path to massive arbitrage value generation.
+        <!-- CHAPTER 4 -->
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">CHAPTER 04 · VALUATION WEAPONIZATION PLAYBOOK</div>
+          <div class="rep-title">Weaponize Premium Equity Before the Market Fully Comprehends the AI Infrastructure Narrative.</div>
+          <div class="asymmetry-box">Strategic Roll-up Architecture: Using public market equity valuation outperformance as currency to absorb distressed regional industrial units at 6-8x EBITDA represents a programmatic approach to market value manipulation.</div>
+          <div class="g2">
+            <div class="card">
+              <div class="ctitle">PHASE 01 — FULL-STACK GRID AUTOMATION ACQUISITIONS</div>
+              <div class="ins-body" style="font-size:13px; line-height:1.6;">Absorb local, under-capitalized utility integration systems, load-balancing logic IPs, and power telemetry developers to combine with Schneider hardware. This transitions the platform to capture embedded, high-margin software recurring revenue streams.</div>
+            </div>
+            <div class="card">
+              <div class="ctitle">PHASE 02 — DOWNSTREAM VALUE REVENUE MONOPOLIZATION</div>
+              <div class="ins-body" style="font-size:13px; line-height:1.6;">Vertically integrate specialized copper casting houses and insulated conductor fabricators. Securing complete physical oversight of intermediate copper alloy loops provides strict supply-chain insulation, pricing protection, and extreme delivery lead-time compression.</div>
+            </div>
+          </div>
         </div>
 
-        <table class="data-sheet">
-          <thead>
-            <tr>
-              <th>Target Asset Focus Profile</th>
-              <th>Geographic Sourcing Cluster</th>
-              <th>Implied Entry Metric</th>
-              <th>Consolidated Strategic Leverage</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="font-weight:700; color:var(--color-text-main);">Vacuum Sintering Processing Facility</td>
-              <td>Mundra Hub, Gujarat</td>
-              <td style="font-weight:700; color:var(--color-text-danger);">4.2x EBITDA Entry</td>
-              <td>Ingests underlying vacuum capital assets required to mold high-grade defense guidance magnets.</td>
-            </tr>
-            <tr>
-              <td style="font-weight:700; color:var(--color-text-main);">Chemical Sand Extraction Separation Unit</td>
-              <td>Ganjam Region, Odisha</td>
-              <td style="font-weight:700; color:var(--color-text-danger);">5.5x EBITDA Entry</td>
-              <td>Secures direct raw feedstock sand sand sovereignty, removing intermediate trans-shipment risk loops completely.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- REPORT MANDATE 04: SMALLCAP MATRIX -->
-      <div id="rep-retail" class="report-content-panel">
-        <div class="rep-eyebrow">SEC_04 // PUBLIC MARGIN TARGET SELECTION</div>
-        <div class="rep-title">High-Conviction Nifty Smallcap Alpha Matrix Ledger</div>
-        <div class="rep-hook">"Translating heavy infrastructure alternative dataset tracking loops directly into crisp, high-upside position parameters for retail outperformance."</div>
-        
-        <table class="data-sheet">
-          <thead>
-            <tr>
-              <th style="width:25%;">Stock Asset Identifier</th>
-              <th style="width:15%;">Stance</th>
-              <th style="width:15%;">Current Base</th>
-              <th style="width:15%;">12M Target</th>
-              <th style="width:30%;">The Structural Thesis ("Why")</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><div class="ticker-title">Shilchar Technologies</div><div class="ticker-code">NSE: SHILCHAR</div></td>
-              <td><span class="badge badge-buy">Strong Buy</span></td>
-              <td>₹3,450</td>
-              <td><div class="target-val">₹5,100</div><div style="font-size:10px; color:var(--color-text-success);">+47.8% Upside</div></td>
-              <td>The National Electricity Plan requires massive power grid upgrades. Alternative trackers map deep undisclosed export order backlog velocity ahead of consensus screens.</td>
-            </tr>
-            <tr>
-              <td><div class="ticker-title">eMudhra Ltd</div><div class="ticker-code">NSE: EMUDHRA</div></td>
-              <td><span class="badge badge-buy">Strong Buy</span></td>
-              <td>₹820</td>
-              <td><div class="target-val">₹1,240</div><div style="font-size:10px; color:var(--color-text-success);">+51.2% Upside</div></td>
-              <td>Corporate digital signature transitions turn user access protocols into a permanent encryption toll booth asset. Premium switching locks prevent client removal moves.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- REPORT MANDATE 05: MACRO TELEMETRY -->
-      <div id="rep-macro" class="report-content-panel">
-        <div class="rep-eyebrow">SEC_05 // INTERMARKET TRANSMISSION LEDGER</div>
-        <div class="rep-title">The Global Macro Ledger: Yield Curve Mapping & Cascade Vectors</div>
-        <div class="rep-hook">"Upstream commodity movements and bond yields are not isolated vectors. They function as the direct mechanisms driving micro corporate equity cash flows."</div>
-        
-        <div class="g2">
+        <!-- CHAPTER 5 -->
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">CHAPTER 05 · TERMINAL TRANSITIONAL LIQUIDITY MATRIX</div>
+          <div class="rep-title">The End Acquirer Is Not Running a Basic DCF Model. They Are Purchasing Sovereign Compute Speed Control.</div>
           <div class="card">
-            <div class="ctitle">Sovereign Capital Cost Baseline</div>
-            <div class="kv-row"><span class="kv-label">RBI 91-Day T-Bill Accrual Rate</span><span class="kv-val">5.40%</span></div>
-            <div class="kv-row"><span class="kv-label">India 10Y Benchmark G-Sec Bond</span><span class="kv-val" style="color:var(--color-text-danger);">7.02%</span></div>
-            <div class="kv-row"><span class="kv-label">AAA Private Corporate Debt Spread</span><span class="kv-val" style="color:var(--color-text-success);">7.65%</span></div>
-          </div>
-          <div class="card">
-            <div class="ctitle">Intermarket Cascade Flow Vectors</div>
-            <div class="insight-block">
-              <div class="ins-lead">Crude > $100 / bbl Shift Vector</div>
-              <div class="ins-body">Forces major margin pain throughout low-moat factories, directly shifting implementation spend lines toward **Schneider Electric’s** automated, energy-saving distribution switchboards.</div>
-            </div>
-            <div class="insight-block">
-              <div class="ins-lead">MCX Copper Spikes to ₹842 / kg</div>
-              <div class="ins-body">Functions as a direct leading proxy for AI data center physical grid drops, backing the premium order conversion book at **Shilchar Technologies**.</div>
+            <div class="ctitle">CORE STRATEGIC THESIS CONCLUSION SYSTEM SUMMARY</div>
+            <div style="font-size:13px; line-height:1.6; color:var(--color-text-sub);">
+              The defining systematic mistake across contemporary domestic brokerage houses is assuming the AI infrastructure buildout layout initiates at the silicon semiconductor layer. It does not. AI infrastructure begins at the **Physical Grid Synchronization Layer**. Without high-voltage switching architecture, automated load relays, and real-time intelligent power conditioning arrays, AI computing arrays cannot physically pull power. Schneider sits inside that exact gateway bottleneck.
             </div>
           </div>
         </div>
       </div>
 
-      <!-- REPORT MANDATE 06: SEMICONDUCTOR EMS -->
-      <div id="rep-semiconductor" class="report-content-panel">
-        <div class="rep-eyebrow">SEC_06 // SYSTEMIC VALUE REALIGNMENT REGIMES</div>
-        <div class="rep-title">Advanced Electronics Assembly Strain vs. Silicon OSAT Packaging IP</div>
-        <div class="rep-hook">"Standard contract phone board printing logs large topline growth while core operating margins collapse to 2% due to copper pricing spikes. Value filters into advanced silicon packaging."</div>
-        
-        <div class="asymmetry-box">
-          <strong>The Value Realignment Vector:</strong> 
-          Replicable board tracing represents an absolute margin failure. True private transaction value lives with entities capturing Outsourced Semiconductor Assembly & Test (OSAT) packaging infrastructure parameters rather than generic surface assembly assets.
-        </div>
 
-        <div class="g2">
-          <div class="card">
-            <div class="ctitle">The Mil-Spec Defense Transition</div>
-            <div style="font-size:13.5px; line-height:1.6; color:var(--color-text-sub);">
-              Shifting electronic manufacturing assets away from low-barrier consumer designs and focusing loops on high-reliability defense circuit setups and secure industrial SCADA boards secures protected operating margins (14-18%) backed by rigid regulatory customer protection clearings.
+      <!-- ==================== GROUP: RARE EARTH SOVEREIGN ROLLUP ==================== -->
+      <div id="group-mineral" class="report-group-container">
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">MANDATE_03 // SOVEREIGN RARE EARTH CORE ARCHITECTURE</div>
+          <div class="rep-title">The Rare Earth Matrix: Sintered Sourcing Rollup Playbook</div>
+          <div class="rep-hook">"While public asset managers trace high-profile consumer plays, the core defense-propulsion and EV motor supply chains remain vulnerable to external raw resource restrictions. The edge lies in consolidating private processing capacity."</div>
+          <div class="asymmetry-box">The Sovereign Mandate: Under local mining directives, domestic Tier-1 defense primes require localized sourcing of permanent rare-earth magnets. Processing infrastructure sits heavily bottlenecked inside highly fragmented private workshops. Sourcing these unlisted assets at standard industrial baselines (4-6x EBITDA) allows instant re-rating value.</div>
+          
+          <table class="data-sheet">
+            <thead>
+              <tr>
+                <th>Target Asset Focus Profile</th>
+                <th>Geographic Sourcing Cluster</th>
+                <th>Implied Entry Metric</th>
+                <th>Consolidated Strategic Leverage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:700; color:var(--color-text-main);">Vacuum Sintering Processing Facility</td>
+                <td>Mundra Hub, Gujarat</td>
+                <td style="font-weight:700; color:var(--color-text-danger);">4.2x EBITDA Entry</td>
+                <td>Ingests underlying vacuum capital assets required to mold high-grade defense guidance magnets.</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:var(--color-text-main);">Chemical Sand Extraction Separation Unit</td>
+                <td>Ganjam Region, Odisha</td>
+                <td style="font-weight:700; color:var(--color-text-danger);">5.5x EBITDA Entry</td>
+                <td>Secures direct raw feedstock sand sand sovereignty, removing foreign intermediate import exposure completely.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <!-- ==================== GROUP: NIFTY SMALLCAP MATRIX ==================== -->
+      <div id="group-retail" class="report-group-container">
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">MANDATE_04 // PUBLIC EQUITY ALPHA SCREENS</div>
+          <div class="rep-title">High-Conviction Nifty Smallcap Alpha Matrix Ledger</div>
+          <div class="rep-hook">"Translating heavy alternative dataset infrastructure tracking loops directly into crisp, high-upside position parameters for retail outperformance."</div>
+          
+          <table class="data-sheet">
+            <thead>
+              <tr>
+                <th style="width:25%;">Stock Asset Identifier</th>
+                <th style="width:15%;">Stance</th>
+                <th style="width:15%;">Current Base</th>
+                <th style="width:15%;">12M Target</th>
+                <th style="width:30%;">The Structural Thesis ("Why")</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="ticker-title">Shilchar Technologies</div><div class="ticker-code">NSE: SHILCHAR</div></td>
+                <td><span class="badge badge-buy">Strong Buy</span></td>
+                <td>₹3,450</td>
+                <td><div class="target-val">₹5,100</div><div style="font-size:10px; color:var(--color-text-success);">+47.8% Upside</div></td>
+                <td>The National Electricity Plan requires massive power grid upgrades. Alternative trackers map deep undisclosed export order backlog velocity ahead of consensus screens.</td>
+              </tr>
+              <tr>
+                <td><div class="ticker-title">eMudhra Ltd</div><div class="ticker-code">NSE: EMUDHRA</div></td>
+                <td><span class="badge badge-buy">Strong Buy</span></td>
+                <td>₹820</td>
+                <td><div class="target-val">₹1,240</div><div style="font-size:10px; color:var(--color-text-success);">+51.2% Upside</div></td>
+                <td>Corporate digital signature transitions turn user access protocols into a permanent encryption toll booth asset. Premium switching locks prevent client removal moves.</td>
+              </tr>
+              <tr>
+                <td><div class="ticker-title">Ion Exchange (India)</div><div class="ticker-code">NSE: IONEXCHANG</div></td>
+                <td><span class="badge badge-buy">Strong Buy</span></td>
+                <td>₹392</td>
+                <td><div class="target-val">₹610</div><div style="font-size:10px; color:var(--color-text-success);">+55.6% Upside</div></td>
+                <td>Stringent legislation now forces manufacturing clusters to achieve Zero Liquid Discharge (ZLD). Unawarded corporate B2B tender queues reveal multi-year backlog surges.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <!-- ==================== GROUP: GLOBAL MACRO LEDGER ==================== -->
+      <div id="group-macro" class="report-group-container">
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">MANDATE_05 // INTERMARKET TRANSMISSION LEDGER</div>
+          <div class="rep-title">The Global Macro Ledger: Yield Curve Mapping & Cascade Vectors</div>
+          <div class="rep-hook">"Upstream commodity movements and bond yields are not isolated vectors. They function as the direct mechanisms driving micro corporate equity cash flows."</div>
+          
+          <div class="g2">
+            <div class="card">
+              <div class="ctitle">Sovereign Capital Cost Baseline</div>
+              <div class="kv-row"><span class="kv-label">RBI 91-Day T-Bill Accrual Rate</span><span class="kv-val">5.40%</span></div>
+              <div class="kv-row"><span class="kv-label">India 10Y Benchmark G-Sec Bond</span><span class="kv-val" style="color:var(--color-text-danger);">7.02%</span></div>
+              <div class="kv-row"><span class="kv-label">AAA Private Corporate Debt Spread</span><span class="kv-val" style="color:var(--color-text-success);">7.65%</span></div>
+            </div>
+            <div class="card">
+              <div class="ctitle">Intermarket Cascade Flow Vectors</div>
+              <div class="insight-block">
+                <div class="ins-lead">Crude > $100 / bbl Shift Vector</div>
+                <div class="ins-body">Forces major margin pain throughout low-moat factories, directly shifting implementation spend lines toward **Schneider Electric’s** automated, energy-saving distribution switchboards.</div>
+              </div>
+              <div class="insight-block">
+                <div class="ins-lead">MCX Copper Spikes to ₹842 / kg</div>
+                <div class="ins-body">Functions as a direct leading proxy for AI data center physical grid drops, backing the premium order conversion book at **Shilchar Technologies**.</div>
+              </div>
             </div>
           </div>
-          <div class="card">
-            <div class="ctitle">Backend OSAT Packaging Target Layout</div>
-            <div class="kv-row"><span class="kv-label">Advanced Silicon Hybrid Bonding Units</span><span class="kv-val" style="color:var(--color-text-danger);">Patent Buyout Target</span></div>
-            <div class="kv-row"><span class="kv-label">Regional Industrial ICS Component Hardening</span><span class="kv-val">5.2x EBITDA Entry</span></div>
-            <div class="kv-row"><span class="kv-label">Automated Micro-Electronic Testing Labs</span><span class="kv-val">6.0x EBITDA Entry</span></div>
+        </div>
+      </div>
+
+
+      <!-- ==================== GROUP: SEMICONDUCTOR EMS ==================== -->
+      <div id="group-semiconductor" class="report-group-container">
+        <div class="dossier-chapter">
+          <div class="rep-eyebrow">MANDATE_06 // ADVANCED ELECTRONICS SUPPLY CHAIN ASSESSMENT</div>
+          <div class="rep-title">Semiconductor Packaging & EMS Margin Strain: Volume Illusions vs. IP Monopolies</div>
+          <div class="rep-hook">"India's contract assembly landscape logs massive gross volume expansion while core operating margins crumble due to unhedged base metal spikes and high raw component import reliance."</div>
+          <div class="asymmetry-box">The Value Realignment Vector: Pure circuit board assembly is a race to the bottom with 2-3% margins. True private transaction value lives with entities capturing Outsourced Semiconductor Assembly & Test (OSAT) packaging infrastructure parameters rather than generic surface assembly assets.</div>
+          
+          <div class="g2">
+            <div class="card">
+              <div class="ctitle">The Mil-Spec Defense Transition</div>
+              <div style="font-size:13px; line-height:1.6; color:var(--color-text-sub);">
+                Shifting electronic manufacturing assets away from low-barrier consumer designs and focusing loops on high-reliability defense circuit setups and secure industrial SCADA boards secures protected operating margins (14-18%) backed by rigid regulatory customer protection clearings.
+              </div>
+            </div>
+            <div class="card">
+              <div class="ctitle">Backend OSAT Packaging Target Layout</div>
+              <div class="kv-row"><span class="kv-label">Advanced Silicon Hybrid Bonding Units</span><span class="kv-val" style="color:var(--color-text-danger);">Patent Buyout Target</span></div>
+              <div class="kv-row"><span class="kv-label">Regional Industrial ICS Component Hardening</span><span class="kv-val">5.2x EBITDA Entry</span></div>
+              <div class="kv-row"><span class="kv-label">Automated Micro-Electronic Testing Labs</span><span class="kv-val">6.0x EBITDA Entry</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -481,46 +649,43 @@
   <!-- UNIFIED MASTER SECURE PORTFOLIO FOOTER -->
   <footer class="footer">
     <div class="footer-disc">
-      Presentation terminal layout compiled and maintained by analyst Lakshya Kalra. Macro indicators, alternative customs cargo logs, asset turnover math, and private target origination maps represent proprietary data synthesis for institutional discussion. Active trackers clear via live CCIL, MCX, and NSE networks.
+      System interface engineered and curated under the leadership of analyst Lakshya Kalra. Alternative data metrics, port manifestations, geospatial substation assessments, and asset roll-up strategies are independent proprietary synthesis models for professional discussion. Operational indices track active entries via live CCIL, MCX, and NSE networks.
     </div>
     <div style="font-weight:700; color:var(--color-text-sub); white-space:nowrap;">MUMBAI METRO</div>
   </footer>
 
 </div>
 
-<!-- MASTER PORTAL SPA SWITCHING CONTROL SCRIPT -->
+<!-- MASTER PORTAL CONTROLLER SCRIPT -->
 <script>
-  // 1. Trigger Full Screen Deep Dive Report Layout
-  function loadFullReport(reportPanelId) {
-    // Hide the master directory portal main view
+  function openCompleteDossier(groupPanelId) {
+    // Hide the landing dashboard portal completely
     document.getElementById('portal-landing-view').style.display = 'none';
     
-    // Unhide the macro full screen deep dive framework container
+    // Unhide the macro full screen wrapper container block
     document.getElementById('full-report-display-view').style.display = 'block';
     
-    // Clear any previously active internal report panels
-    var panels = document.querySelectorAll('.report-content-panel');
-    for (var i = 0; i < panels.length; i++) {
-      panels[i].style.display = 'none';
+    // Clear display flag settings off all individual report groups
+    var groups = document.querySelectorAll('.report-group-container');
+    for (var i = 0; i < groups.length; i++) {
+      groups[i].style.display = 'none';
     }
     
-    // Explicitly unhide the selected target report panel properties
-    document.getElementById(reportPanelId).style.display = 'block';
+    // Unhide the chosen target multi-slide dossier stack completely
+    document.getElementById(groupPanelId).style.display = 'block';
     
-    // Smooth scroll straight to top of document window
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Snap window coordinates straight back to absolute zero baseline
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  // 2. Clear Report Interface and Roll Back View to Main Directory Portal
-  function closeFullReport() {
-    // Re-hide full deep dive container frame layout
+  function closeCompleteDossier() {
+    // Re-hide full screen container panel
     document.getElementById('full-report-display-view').style.display = 'none';
     
-    // Reactivate clean structural master directory list view
+    // Bring back clean structural landing index directory portal
     document.getElementById('portal-landing-view').style.display = 'block';
     
-    // Smooth scroll back to position benchmarks
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 </script>
 </body>
