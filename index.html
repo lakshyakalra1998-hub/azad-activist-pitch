@@ -3,327 +3,417 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terminal Ledger // Lakshya Kalra</title>
+  <title>Lakshya Kalra | Capital Markets & Corporate Strategy Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-main: #0B0F19;
-      --bg-surface: #131A2C;
-      --bg-card: #1E293B;
-      --border-glow: #38BDF8;
-      --border-dark: #334155;
+      --font-sans: 'Inter', sans-serif;
+      --font-mono: 'Fira Code', monospace;
       
-      --text-glow: #38BDF8;
-      --text-bright: #F8FAFC;
-      --text-muted: #94A3B8;
-      --text-warn: #FBBF24;
-      --text-alert: #F87171;
-      --text-success: #34D399;
+      --color-bg-main: #FFFFFF;
+      --color-bg-surf: #F8FAFC;
+      --color-bg-dark: #0F172A;
+      --color-bg-accent: #E2E8F0;
+      
+      --color-text-main: #0F172A;
+      --color-text-sub: #475569;
+      --color-text-muted: #94A3B8;
+      --color-text-success: #137333;
+      --color-text-danger: #C5221F;
+      
+      --color-border: #E2E8F0;
+      --color-border-dark: #334155;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg-main); font-family: 'Inter', sans-serif; color: var(--text-muted); padding: 24px; min-height: 100vh; display: flex; justify-content: center; }
+    body { background: #F1F5F9; font-family: var(--font-sans); color: var(--color-text-main); padding: 40px 24px; display: flex; flex-direction: column; align-items: center; -webkit-font-smoothing: antialiased; }
     
-    /* TERMINAL SHELL WRAPPER */
-    .terminal-frame { width: 100%; max-width: 1300px; background: var(--bg-surface); border: 2px solid var(--border-dark); border-radius: 8px; box-shadow: 0 0 40px rgba(0, 0, 0, 0.8); overflow: hidden; display: flex; flex-direction: column; }
+    .shell { width: 100%; max-width: 1200px; background: var(--color-bg-main); border: 1px solid var(--color-border); border-radius: 8px; box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.06); overflow: hidden; }
     
-    /* TERMINAL SYSTEM UPPER HEADER */
-    .sys-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; background: #070A12; border-bottom: 2px solid var(--border-dark); font-family: 'Fira Code', monospace; font-size: 11px; }
-    .sys-title { color: var(--text-glow); font-weight: 700; display: flex; align-items: center; gap: 8px; }
-    .sys-status { color: var(--text-alert); letter-spacing: 1.5px; font-weight: 700; }
+    /* SYSTEM TOP BAR */
+    .topbar { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; background: var(--color-bg-dark); color: #FFFFFF; border-bottom: 1px solid var(--color-border); }
+    .topbar-left { display: flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-muted); }
+    .conf-pill { font-size: 10px; font-weight: 700; letter-spacing: 1px; background: rgba(239, 68, 68, 0.15); color: #F87171; padding: 3px 10px; border-radius: 4px; border: 1px solid rgba(239, 68, 68, 0.3); }
 
-    /* REALTIME FEED STRIP */
-    .ticker-belt { display: grid; grid-template-columns: repeat(4, 1fr); padding: 12px 20px; background: #0E1424; border-bottom: 1px solid var(--border-dark); font-family: 'Fira Code', monospace; font-size: 12px; gap: 20px; }
-    .belt-node { border-right: 1px solid var(--border-dark); }
-    .belt-node:last-child { border-right: none; }
-    .belt-lbl { font-size: 10px; color: var(--text-muted); text-transform: uppercase; }
-    .belt-val { color: var(--text-bright); font-weight: 700; margin-top: 2px; }
+    /* ==================== NEW EXECUTIVE HERO LANDING LAYER ==================== */
+    .hero-landing { padding: 56px 40px; background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg-surf) 100%); border-bottom: 1px solid var(--color-border); }
+    .hero-eyebrow { font-size: 12px; font-weight: 800; letter-spacing: 3px; color: #64748B; text-transform: uppercase; margin-bottom: 12px; }
+    .hero-title { font-size: 36px; font-weight: 800; color: var(--color-bg-dark); line-height: 1.2; letter-spacing: -1px; margin-bottom: 20px; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; margin-top: 32px; }
+    
+    .hero-box-left { padding-right: 20px; border-right: 1px solid var(--color-border); }
+    .hero-box-left h3 { font-size: 16px; font-weight: 700; color: var(--color-bg-dark); margin-bottom: 10px; }
+    .hero-box-left p { font-size: 14.5px; color: var(--color-text-sub); line-height: 1.6; }
+    
+    .hero-box-right { display: flex; flex-direction: column; gap: 14px; }
+    .philosophy-item { display: flex; gap: 12px; font-size: 13.5px; line-height: 1.5; color: var(--color-text-sub); }
+    .philosophy-item strong { color: var(--color-bg-dark); font-weight: 600; display: block; }
 
-    /* CORE SPLIT SCREEN INTERFACE Layout */
-    .split-workspace { display: grid; grid-template-columns: 320px 1fr; flex: 1; height: calc(100vh - 150px); min-height: 650px; }
-    
-    /* LEFT SIDE FIXED SIDEBAR DECK */
-    .sidebar-panel { background: #0E1424; border-right: 2px solid var(--border-dark); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; font-family: 'Fira Code', monospace; }
-    .analyst-profile { padding-bottom: 20px; border-bottom: 1px solid var(--border-dark); }
-    .p-title { font-size: 16px; font-weight: 700; color: var(--text-bright); margin-bottom: 4px; }
-    .p-role { font-size: 11px; color: var(--text-glow); }
-    
-    .nav-indexes { margin-top: 24px; display: flex; flex-direction: column; gap: 8px; }
-    .index-anchor { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border: 1px solid var(--border-dark); border-radius: 4px; background: var(--bg-main); color: var(--text-muted); text-decoration: none; font-size: 11px; transition: all 0.2s ease; }
-    .index-anchor:hover { border-color: var(--border-glow); color: var(--text-bright); }
-    
-    .sec-stamp { font-size: 10px; color: #475569; border-top: 1px solid var(--border-dark); padding-top: 14px; }
+    /* REAL-TIME TELEMETRY STRIP */
+    .telemetry-ticker { display: grid; grid-template-columns: repeat(4, 1fr); background: #1E293B; border-bottom: 1px solid var(--color-text-main); color: #FFFFFF; padding: 12px 24px; gap: 16px; }
+    .ticker-node { border-right: 1px solid #475569; padding-right: 12px; }
+    .ticker-node:last-child { border-right: none; }
+    .tick-lbl { font-size: 9px; font-weight: 700; color: #94A3B8; letter-spacing: 1px; text-transform: uppercase; }
+    .tick-val { font-size: 14px; font-weight: 700; color: #F8FAFC; margin-top: 2px; }
+    .tick-status { font-size: 10px; font-weight: 600; color: #34D399; margin-top: 1px; }
 
-    /* RIGHT SIDE SCROLLABLE INTELLIGENCE DOSSIER */
-    .briefing-ledger { padding: 40px; overflow-y: auto; background: var(--bg-main); display: flex; flex-direction: column; gap: 48px; scroll-behavior: smooth; }
-    
-    .memo-block { border-left: 2px solid var(--border-dark); padding-left: 24px; transition: border-color 0.3s ease; }
-    .memo-block:hover { border-color: var(--border-glow); }
-    
-    .m-meta { font-family: 'Fira Code', monospace; font-size: 11px; color: var(--text-glow); margin-bottom: 8px; font-weight: 700; }
-    .m-title { font-size: 24px; font-weight: 800; color: var(--text-bright); margin-bottom: 12px; letter-spacing: -0.5px; }
-    .m-abstract { font-size: 14px; color: var(--text-bright); line-height: 1.6; margin-bottom: 20px; font-style: italic; background: var(--bg-surface); padding: 14px 18px; border-radius: 4px; border: 1px solid var(--border-dark); }
-    
-    /* INTER-TERMINAL DATA GRID STRUCT */
-    .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
-    .t-card { background: var(--bg-surface); border: 1px solid var(--border-dark); border-radius: 6px; padding: 20px; }
-    .t-card-title { font-family: 'Fira Code', monospace; font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-dark); padding-bottom: 8px; margin-bottom: 14px; }
-    
-    .stat-row { display: flex; justify-content: space-between; font-size: 13px; padding: 8px 0; border-bottom: 1px dashed #1E293B; }
-    .stat-row:last-child { border-bottom: none; }
-    .s-lbl { color: var(--text-muted); }
-    .s-val { font-weight: 700; color: var(--text-bright); font-family: 'Fira Code', monospace; }
-    
-    .bullet-block { font-size: 13.5px; line-height: 1.6; display: flex; flex-direction: column; gap: 10px; }
-    .b-lead { font-weight: 700; color: var(--text-bright); }
+    /* INTERACTIVE TAB NAV SYSTEM */
+    .tab-navigator { display: flex; background: var(--color-bg-accent); padding: 12px 24px 0; gap: 8px; border-bottom: 1px solid var(--color-border); overflow-x: auto; }
+    .tab-btn { background: #E2E8F0; border: 1px solid var(--color-border); border-bottom: none; border-radius: 6px 6px 0 0; padding: 12px 18px; font-size: 12.5px; font-weight: 600; color: var(--color-text-sub); cursor: pointer; transition: all 0.15s ease; white-space: nowrap; }
+    .tab-btn:hover { background: #F1F5F9; color: var(--color-text-main); }
+    .tab-btn.active { background: var(--color-bg-main); border-color: var(--color-border); color: var(--color-text-main); font-weight: 700; padding-bottom: 13px; margin-bottom: -1px; }
 
-    /* MONOCHROME DATA MATRIX TABLES */
-    .matrix-sheet { width: 100%; border-collapse: collapse; text-align: left; margin-top: 16px; font-size: 13px; border: 1px solid var(--border-dark); }
-    .matrix-sheet th { background: #0E1424; color: var(--text-glow); font-family: 'Fira Code', monospace; font-size: 10px; font-weight: 700; padding: 12px 16px; border-bottom: 2px solid var(--border-dark); text-transform: uppercase; }
-    .matrix-sheet td { padding: 14px 16px; border-bottom: 1px solid var(--border-dark); background: var(--bg-surface); vertical-align: top; line-height: 1.5; color: var(--text-muted); }
-    .matrix-sheet tr:last-child td { border-bottom: none; }
+    /* CORE CONTENT DISPLAY ENGINE */
+    .tab-content-container { padding: 40px; min-height: 500px; background: var(--color-bg-main); }
+    .mandate-panel { display: none; animation: fadeIn 0.2s ease-out; }
+    .mandate-panel.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    /* UTILITY PILLE TAGS */
-    .pill { display: inline-block; font-family: 'Fira Code', monospace; font-size: 10px; font-weight: 700; padding: 4px 8px; border-radius: 3px; text-transform: uppercase; background: rgba(52, 211, 153, 0.15); color: var(--text-success); border: 1px solid rgba(52, 211, 153, 0.3); }
+    /* MANDATE STRUCTURAL TYPOGRAPHY */
+    .panel-header { margin-bottom: 28px; }
+    .panel-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #64748B; margin-bottom: 6px; text-transform: uppercase; }
+    .panel-title { font-size: 24px; font-weight: 700; color: var(--color-bg-dark); margin-bottom: 10px; letter-spacing: -0.5px; }
+    .panel-hook { font-size: 14px; color: var(--color-text-sub); line-height: 1.6; padding-left: 14px; border-left: 3px solid var(--color-bg-dark); font-style: italic; }
 
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg-main); }
-    ::-webkit-scrollbar-thumb { background: var(--border-dark); border-radius: 100px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--border-glow); }
+    .asymmetry-box { background: var(--color-bg-surf); border-left: 4px solid var(--color-text-success); border: 1px solid var(--color-border); border-left: 4px solid var(--color-text-success); border-radius: 6px; padding: 18px; margin-bottom: 28px; font-size: 14px; font-weight: 500; line-height: 1.5; }
+
+    /* GRIDS & CARDS */
+    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .gas { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+
+    .card { background: #FFFFFF; border: 1px solid var(--color-border); border-radius: 6px; padding: 20px; }
+    .ctitle { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-text-sub); margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--color-border); text-transform: uppercase; }
+
+    .kv-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 13.5px; }
+    .kv-row:last-child { border-bottom: none; }
+    .kv-label { color: var(--color-text-sub); }
+    .kv-val { font-weight: 600; color: var(--color-text-main); }
+    .kv-up { font-weight: 600; color: var(--color-text-success); }
+    .kv-muted { font-weight: 500; color: var(--color-text-muted); }
+
+    .insight-block { padding: 12px 0; border-bottom: 1px solid var(--color-border); font-size: 13.5px; }
+    .insight-block:last-child { border-bottom: none; }
+    .ins-lead { font-size: 14px; font-weight: 600; color: var(--color-text-main); margin-bottom: 4px; }
+    .ins-body { font-size: 12.5px; color: var(--color-text-sub); line-height: 1.6; }
+
+    .stat-card { background: var(--color-bg-surf); border-radius: 4px; padding: 12px 8px; text-align: center; border: 1px solid var(--color-border); }
+    .stat-lbl { font-size: 9px; font-weight: 700; color: var(--color-text-sub); text-transform: uppercase; margin-bottom: 4px; }
+    .stat-val { font-size: 20px; font-weight: 700; color: var(--color-text-main); }
+
+    .regime-compare { display: grid; grid-template-columns: 1fr 30px 1fr; gap: 0; align-items: center; margin-bottom: 20px; }
+    .regime-box { background: var(--color-bg-surf); border-radius: 6px; padding: 16px; border: 1px solid var(--color-border); }
+
+    /* TABLES */
+    .data-sheet { width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; border: 1px solid var(--color-border); border-radius: 6px; overflow: hidden; }
+    .data-sheet th { background: var(--color-bg-surf); color: var(--color-text-sub); font-size: 10px; font-weight: 700; padding: 12px 16px; border-bottom: 1px solid var(--color-border); text-transform: uppercase; letter-spacing: 1px; }
+    .data-sheet td { padding: 14px 16px; border-bottom: 1px solid var(--color-border); vertical-align: top; line-height: 1.5; color: var(--color-text-sub); }
+    
+    .ticker-title { font-size: 14.5px; font-weight: 700; color: var(--color-text-main); }
+    .ticker-code { font-size: 11px; font-weight: 600; color: var(--color-text-muted); margin-top: 1px; font-family: var(--font-mono); }
+    .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 4px 8px; border-radius: 3px; text-transform: uppercase; background: var(--color-bg-surf); border: 1px solid var(--color-border); }
+    .badge-buy { background: #E6F4EA; color: var(--color-text-success); border-color: rgba(19,115,51,0.2); }
+    .target-val { font-size: 15px; font-weight: 700; color: var(--color-text-success); }
+
+    .footer { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-top: 1px solid var(--color-border); background: var(--color-bg-surf); font-size: 11px; color: var(--color-text-muted); line-height: 1.5; }
   </style>
 </head>
 <body>
 
-<div class="terminal-frame">
+<div class="shell">
 
-  <!-- TERMINAL CONTAINER CORE TOP BAR -->
-  <div class="sys-header">
-    <div class="sys-title">
-      <span>●</span> LINK_ID: LAKSHYA_KALRA_QUANT_CORE_V4
+  <!-- SYSTEM ACCESS STRIP -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>WORKSPACE TERMINAL // AUTHOR INDEX: LAKSHYA KALRA</span>
     </div>
-    <div class="sys-status">SYS_STATUS: CRITICAL_RESTRICTED_ACCESS</div>
+    <span class="conf-pill">INTERNAL ANALYST ACCESS ONLY</span>
   </div>
 
-  <!-- LIVE INTEGRATED REAL-TIME DATA TICKER STRIP -->
-  <div class="ticker-belt">
-    <div class="belt-node">
-      <div class="belt-lbl">IN_10Y_BENCHMARK</div>
-      <div class="belt-val">7.02%</div>
-    </div>
-    <div class="belt-node">
-      <div class="belt-lbl">BRENT_CRUDE_SPOT</div>
-      <div class="belt-val">$102.40/bbl</div>
-    </div>
-    <div class="belt-node">
-      <div class="belt-lbl">MCX_COPPER_FUTURES</div>
-      <div class="belt-val">₹842.50/kg</div>
-    </div>
-    <div class="belt-node">
-      <div class="belt-lbl">REGULATORY_REGIME</div>
-      <div class="belt-val" style="color:var(--text-success)">SOVEREIGN_LOCALIZATION</div>
-    </div>
-  </div>
-
-  <!-- THE WORKSPACE GRID DIVISION -->
-  <div class="split-workspace">
+  <!-- ==================== MAIN HERO EXECUTIVE LAYER (WHAT & WHY) ==================== -->
+  <header class="hero-landing">
+    <div class="hero-eyebrow">STRATEGIC PRESENTATION PORTFOLIO</div>
+    <h1 class="hero-title">Lakshya Kalra</h1>
     
-    <!-- LEFT PANEL FIXED SYSTEM CONTROL ANCHORS -->
-    <aside class="sidebar-panel">
-      <div class="top-side-stack">
-        <div class="analyst-profile">
-          <div class="p-title">Lakshya Kalra</div>
-          <div class="p-role">Capital Markets Strategist</div>
+    <div class="hero-grid">
+      <div class="hero-box-left">
+        <h3>What I Am Executing</h3>
+        <p>
+          I track structural capital deployment cycles across the Indian industrial landscape, specializing in core capex infrastructure, advanced metallurgy, and localization networks. Rather than screening the public equity domain using standard, backward-looking trailing accounting models, I deploy custom data structures to capture operational bottlenecks and margininflections 9 to 12 months before they appear in public SEBI statements.
+        </p>
+      </div>
+      <div class="hero-box-right">
+        <div class="philosophy-item">
+          <span>🎯</span>
+          <div>
+            <strong>The "Why" Framework</strong>
+            Alpha is found entirely at single-node chokepoints where dual sovereign-funded spending vectors collide, causing massive, unpriced operational re-ratings.
+          </div>
         </div>
-        
-        <div class="nav-indexes">
-          <a href="#m01" class="index-anchor"><span>SEC_01 // AZAD_ENG</span><span>➔</span></a>
-          <a href="#m02" class="index-anchor"><span>SEC_02 // SCHNEIDER</span><span>➔</span></a>
-          <a href="#m03" class="index-anchor"><span>SEC_03 // RARE_EARTH</span><span>➔</span></a>
-          <a href="#m04" class="index-anchor"><span>SEC_04 // SMALLCAP_MX</span><span>➔</span></a>
-          <a href="#m05" class="index-anchor"><span>SEC_05 // MACRO_YIELD</span><span>➔</span></a>
-          <a href="#m06" class="index-anchor"><span>SEC_06 // ADV_EMS_RISK</span><span>➔</span></a>
+        <div class="philosophy-item">
+          <span>📊</span>
+          <div>
+            <strong>Cross-Asset Intelligence</strong>
+            I bridge raw upstream variables—like sovereign yield movements and MCX metal pricing spikes—directly to micro-cap corporate balance sheet returns.
+          </div>
         </div>
       </div>
-      
-      <div class="sec-stamp">
-        <div>LOC: MUMBAI_METRO</div>
-        <div style="margin-top:4px;">SECURE LOG OUT // CLX_092</div>
-      </div>
-    </aside>
+    </div>
+  </header>
 
-    <!-- RIGHT SCROLLING DOSSIER WRAPPER -->
-    <main class="briefing-ledger">
-
-      <!-- SEC 01: AZAD ENGINEERING -->
-      <section class="memo-block" id="m01">
-        <div class="m-meta">MANDATE_01 // ADVANCED_METALLURGY_CHOKEPOINT</div>
-        <div class="m-title">Azad Engineering: Structural Reclassification of Defense Propulsion Networks</div>
-        <div class="m-abstract">
-          "Dalal Street filters Azad as an export job shop. This strategy identifies a closed sovereign defense node tracking alternative customs manifested superalloy cargo inflows 9 months ahead of local bookkeeping."
-        </div>
-        <div class="data-grid">
-          <div class="t-card">
-            <div class="t-card-title">Capability Congruence Matrix</div>
-            <div class="bullet-block">
-              <div><span class="b-lead">GTRE Integration:</span> Private sole-source validation profiles across DRDO Kaveri turbofan lines impose a structural 7-year barrier to market entry.</div>
-              <div style="margin-top:10px;"><span class="b-lead">Asset Multiplier:</span> Dual-use configuration enables hot-section aerospace equipment to print high-margin SIGHT-scheme hydrogen compressors cleanly.</div>
-            </div>
-          </div>
-          <div class="t-card">
-            <div class="t-card-title">Core Performance Analytics</div>
-            <div class="stat-row"><span class="s-lbl">Entry EV / EBITDA Multiple</span><span class="s-val">22x</span></div>
-            <div class="stat-row"><span class="s-lbl">Activist Target Multiple</span><span class="s-val" style="color:var(--text-success)">60x</span></div>
-            <div class="stat-row"><span class="s-lbl">Current Account ROCE</span><span class="s-val">19%</span></div>
-            <div class="stat-row"><span class="s-lbl">Target Absorbed ROCE</span><span class="s-val" style="color:var(--text-success)">35 - 40%</span></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SEC 02: SCHNEIDER ELECTRIC -->
-      <section class="memo-block" id="m02">
-        <div class="m-meta">MANDATE_02 // AI_COMPUTE_GRID_ISOLATION</div>
-        <div class="m-title">Schneider Electric Infra: Gateway Switching Moats in Hyperscale Deployments</div>
-        <div class="m-abstract">
-          "AI server clusters scale layout densities from 5kW to 120kW per rack, fracturing regional power distribution. The operational bottleneck shifts from processor supply to physical high-voltage grid synchronization."
-        </div>
-        <div class="data-grid">
-          <div class="t-card">
-            <div class="t-card-title">Telemetry Signal Pipelines</div>
-            <div class="bullet-block">
-              <div>Geospatial thermal tracking and satellite structural auditing map transformer footprints near Mumbai campus clusters 12 months ahead of standard institutional research access.</div>
-            </div>
-          </div>
-          <div class="t-card">
-            <div class="t-card-title">Operating Transition Metrics</div>
-            <div class="stat-row"><span class="s-lbl">Legacy Equipment Margin</span><span class="s-val" style="color:var(--text-alert)">14%</span></div>
-            <div class="stat-row"><span class="s-lbl">AI Infrastructure Grid Margin Target</span><span class="s-val" style="color:var(--text-success)">28%</span></div>
-            <div class="stat-row"><span class="s-lbl">Order Book Visibility Horizon</span><span class="s-val">36+ Months</span></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SEC 03: RARE EARTH ROLLUP -->
-      <section class="memo-block" id="m03">
-        <div class="m-meta">MANDATE_03 // PRIVATE_MARKET_M&A_ORIGINATION</div>
-        <div class="m-title">The Rare Earth Matrix: Sintered Sourcing Rollup Playbook</div>
-        <div class="m-abstract">
-          "National defense localization acts prohibit imported magnets across military guidance relays. Sintering IP sits completely bottlenecked inside highly fragmented, cheap private entities."
-        </div>
-        <table class="matrix-sheet">
-          <thead>
-            <tr>
-              <th>Target Asset Focus</th>
-              <th>Cluster Target</th>
-              <th>Implied Entry Metric</th>
-              <th>Consolidated Strategic Arbitrage</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="font-weight:700; color:var(--text-bright);">Vacuum Sintering Cell</td>
-              <td>Mundra, GJ</td>
-              <td style="color:var(--text-warn)">4.2x EBITDA</td>
-              <td>Captures manufacturing capabilities for heavy military guidance magnets.</td>
-            </tr>
-            <tr>
-              <td style="font-weight:700; color:var(--text-bright);">Chemical Separation砂 Unit</td>
-              <td>Ganjam, OD</td>
-              <td style="color:var(--text-warn)">5.5x EBITDA</td>
-              <td>Secures upstream metallurgy supply integrity, eliminating regional shipping dependencies.</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- SEC 04: NIFTY SMALLCAP MATRIX -->
-      <section class="memo-block" id="m04">
-        <div class="m-meta">MANDATE_04 // PUBLIC_EQUITY_ALPHA_SCREENS</div>
-        <div class="m-title">High-Conviction Nifty Smallcap Alpha Matrix Ledger</div>
-        <table class="matrix-sheet">
-          <thead>
-            <tr>
-              <th>Ticker Group</th>
-              <th>Stance</th>
-              <th>Current Spot</th>
-              <th>12M Target</th>
-              <th>Alternative Analytical Core Framework</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="font-weight:700; color:var(--text-bright);">Shilchar Technologies<br><span style="font-size:10px; color:var(--text-muted)">NSE: SHILCHAR</span></td>
-              <td><span class="pill">Strong Buy</span></td>
-              <td>₹3,450</td>
-              <td style="color:var(--text-success); font-weight:700;">₹5,100</td>
-              <td>National electricity plan upgrades trigger extensive distribution transformer deployment. Data streams log premium unrecorded export backlog velocity.</td>
-            </tr>
-            <tr>
-              <td style="font-weight:700; color:var(--text-bright);">eMudhra Ltd<br><span style="font-size:10px; color:var(--text-muted)">NSE: EMUDHRA</span></td>
-              <td><span class="pill">Strong Buy</span></td>
-              <td>₹820</td>
-              <td style="color:var(--text-success); font-weight:700;">₹1,240</td>
-              <td>Corporate data encryption migrations form an automated signature gate. Entrenched switching costs prevent customer removal activity.</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- SEC 05: INTERMARKET MACRO LEDGER -->
-      <section class="memo-block" id="m05">
-        <div class="m-meta">MANDATE_05 // INTERMARKET_TRANSMISSION_TELEMETRY</div>
-        <div class="m-title">Global Macro Intermarket Yield & Commodity Vector</div>
-        <div class="m-abstract">
-          "Upstream commodity moves and sovereign macro yield changes systematically dictate corporate pricing limits and distressed capital roll-up configurations."
-        </div>
-        <div class="data-grid">
-          <div class="t-card">
-            <div class="t-card-title">Macro Asset Pricing Base</div>
-            <div class="stat-row"><span class="s-lbl">RBI 91-Day T-Bill Accrual Yield</span><span class="s-val">5.40%</span></div>
-            <div class="stat-row"><span class="s-lbl">India 10Y Benchmark G-Sec</span><span class="s-val" style="color:var(--text-alert)">7.02%</span></div>
-            <div class="stat-row"><span class="s-lbl">Domestic Corp Debt AAA Yield</span><span class="s-val" style="color:var(--text-success)">7.65%</span></div>
-          </div>
-          <div class="t-card">
-            <div class="t-card-title">Cross-Asset Transmission Loops</div>
-            <div class="bullet-block">
-              <div><span class="b-lead">Crude > $100/bbl:</span> Compresses weak manufacturing operations, driving industrial demand towards Schneider automation switchboards.</div>
-              <div style="margin-top:8px;"><span class="b-lead">MCX Copper Spikes:</span> Provides underlying asset justification for Shilchar's high-margin premium order backlogs.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SEC 06: SEMICONDUCTOR ADVANCED EMS RISK -->
-      <section class="memo-block" id="m06">
-        <div class="m-meta">MANDATE_06 // SYSTEMIC_SUPPLY_CHAIN_FILTERS</div>
-        <div class="m-title">Advanced Electronics Assembly Strain vs. OSAT Packaging Moats</div>
-        <div class="m-abstract">
-          "Generic consumer barcode electronic assembly records high topline numbers while operating margins compress to 2% due to unhedged copper costs. Structural value flows to backend OSAT packaging slots."
-        </div>
-        <div class="data-grid">
-          <div class="t-card">
-            <div class="t-card-title font-mono">The Defense PCB Shift</div>
-            <div class="ins-body" style="font-size:12.5px; line-height:1.55;">
-              Isolating corporate assets from high-turnover consumer assemblies into mil-spec defense circuit arrays and secure SCADA systems secures protected operating margins (14-18%) backed by long-term strategic state clearances.
-            </div>
-          </div>
-          <div class="t-card">
-            <div class="t-card-title">Silo packaging targets</div>
-            <div class="stat-row"><span class="s-lbl">Advanced Silicon Hybrid Bonding</span><span class="s-val" style="color:var(--text-alert)">Patent Buyout</span></div>
-            <div class="stat-row"><span class="s-lbl">Industrial ICS Device Hardening</span><span class="s-val">5.2x EBITDA</span></div>
-            <div class="stat-row"><span class="s-lbl">Automated Semiconductor Testing Cells</span><span class="s-val">6.0x EBITDA</span></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- UNIFIED WORKSPACE DISCLAIMER BAR -->
-      <footer style="margin-top:16px; padding-top:24px; border-top:1px solid var(--border-dark); font-size:10px; line-height:1.4; color:var(--text-muted);">
-        All analytic dashboards, alternative port logs, macro-to-micro transmission equations, and private market transaction blueprints generated under terminal authorship index: Lakshya Kalra. Data points validated across live CCIL, MCX, and maritime clearing nodes. Restricted institutional use only.
-      </footer>
-
-    </main>
+  <!-- MAY 2026 ACTIVE RAW MACRO DATA BELT -->
+  <div class="telemetry-ticker">
+    <div class="ticker-node">
+      <div class="tick-lbl">India 10Y G-Sec Yield</div>
+      <div class="tick-val">7.02%</div>
+      <div class="tick-status" style="color:#F87171;">▲ Elevated Capital Costs</div>
+    </div>
+    <div class="ticker-node">
+      <div class="tick-lbl">Brent Crude Spot</div>
+      <div class="tick-val">$102.40 / bbl</div>
+      <div class="tick-status" style="color:#F87171;">▲ Input Margin Headwind</div>
+    </div>
+    <div class="ticker-node">
+      <div class="tick-lbl">MCX Copper Futures</div>
+      <div class="tick-val">₹842.50 / kg</div>
+      <div class="tick-status" style="color:#34D399;">▲ High AI Grid Build Volume</div>
+    </div>
+    <div class="ticker-node">
+      <div class="tick-lbl">Sovereign Focus Regime</div>
+      <div class="tick-val">Active Localization</div>
+      <div class="tick-status">✔ Core Bottlenecks Prioritized</div>
+    </div>
   </div>
+
+  <!-- INTERACTIVE SYSTEM NAVIGATION BUTTONS -->
+  <nav class="tab-navigator">
+    <button class="tab-btn active" onclick="openMandate('m01', this)">Mandate 01: Azad Engineering</button>
+    <button class="tab-btn" onclick="openMandate('m02', this)">Mandate 02: Schneider Electric</button>
+    <button class="tab-btn" onclick="openMandate('m03', this)">Mandate 03: Rare Earth Rollup</button>
+    <button class="tab-btn" onclick="openMandate('m04', this)">Mandate 04: Smallcap Matrix</button>
+    <button class="tab-btn" onclick="openMandate('m05', this)">Mandate 05: Macro Telemetry</button>
+    <button class="tab-btn" onclick="openMandate('m06', this)">Mandate 06: Semiconductor EMS</button>
+  </nav>
+
+  <!-- INTERACTIVE CONTAINER CORE DISPLAY -->
+  <main class="tab-content-container">
+
+    <!-- MANDATE 01: AZAD ENGINEERING -->
+    <div id="m01" class="mandate-panel active">
+      <div class="panel-header">
+        <div class="panel-eyebrow">Advanced Aerospace & Energy Metallurgy Node</div>
+        <div class="panel-title">Reframing Azad from a Component Job Shop to a Sovereign Propulsion Chokepoint</div>
+        <div class="panel-hook">"Dalal Street prices a generic machinery business. This framework structures a high-barrier single-node monopoly position at the core of national defense indigenization."</div>
+      </div>
+      <div class="asymmetry-box">Alternative Data Trajectory: Custom cargo import manifests trace a +120% YoY vertical spike in raw Nickel Superalloy (Inconel) billets hitting port entry points 9 months ahead of public revenue recognition. Feedstock loads validate locked manufacturing cycles.</div>
+      <div class="gas">
+        <div class="card">
+          <div class="ctitle">The Structural Congruence Matrix</div>
+          <div class="insight-block">
+            <div class="ins-lead">GTRE Outsource Lock-ins</div>
+            <div class="ins-body">Private validation cycles across DRDO Kaveri turbofan assemblies require 5-10 years of audit clearings. Azad controls the clearance lines, keeping new entrants completely locked out.</div>
+          </div>
+          <div class="insight-block">
+            <div class="ins-lead">Dual Vertical Utilization</div>
+            <div class="ins-body">The exact same 5-axis precision machinery used to balance missile components allows Azad to produce high-margin SIGHT-scheme hydrogen turbocompressors with near-zero added net capital asset deployment.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ctitle">Financial Regime Re-Rating</div>
+          <div class="kv-row"><span class="kv-label">Current Entry EV / EBITDA Multiplier</span><span class="kv-val">22x</span></div>
+          <div class="kv-row"><span class="kv-label">Activist Target Premium Multiple</span><span class="kv-up" style="color:var(--color-text-success);">60x</span></div>
+          <div class="kv-row"><span class="kv-label">Historical Base Return on Capital (ROCE)</span><span class="kv-muted">19%</span></div>
+          <div class="kv-row"><span class="kv-label">Projected Post-Absorption ROCE Target</span><span class="kv-up">35 - 40%</span></div>
+          <div class="g4" style="margin-top:14px;">
+            <div class="stat-card"><div class="stat-lbl">BACKLOG</div><div class="stat-val">36M</div></div>
+            <div class="stat-card"><div class="stat-lbl">UPSIDE</div><div class="stat-val" style="color:var(--color-text-success);">+140%</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANDATE 02: SCHNEIDER ELECTRIC -->
+    <div id="m02" class="mandate-panel">
+      <div class="panel-header">
+        <div class="panel-eyebrow">Advanced Technology Infrastructure Grid</div>
+        <div class="panel-title">Schneider Electric: Capitalizing on Advanced AI Data Center Grid Constraints</div>
+        <div class="panel-hook">"Consensus models fail to trace physical power realities: High-density AI server modules shift allocation constraints completely from chip sourcing to automated load evacuation loops."</div>
+      </div>
+      <div class="asymmetry-box">Geospatial Telemetry: Satellite tracking of specialized high-voltage transformer footprint build-outs near Navi Mumbai and Chennai data corridors reveals facility development speeds 12 months ahead of standard institutional tracking.</div>
+      <div class="g2">
+        <div class="card">
+          <div class="ctitle">The Power Intensity Bottle Node</div>
+          <div class="insight-block">
+            <div class="ins-lead">Rack Density Scaling Moats</div>
+            <div class="ins-body">Deploying advanced Nvidia H100 arrays forces rack requirements from 5kW to 120kW. This power draw fractures traditional industrial distribution nodes. Capturing the physical high-voltage switching layer allows Schneider to function as an irreplaceable infrastructure toll-gate.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ctitle">Model Transition Metrics</div>
+          <div class="regime-compare">
+            <div class="regime-box"><div style="font-size:9px; font-weight:700;">LEGACY SYSTEM</div><div style="font-size:16px; font-weight:700; margin-top:4px;">14% Margin</div></div>
+            <div style="text-align:center; font-weight:700;">➔</div>
+            <div class="regime-box" style="border-color:var(--color-text-success);"><div style="font-size:9px; font-weight:700; color:var(--color-text-success);">AI INFRASTRUCTURE</div><div style="font-size:16px; font-weight:700; margin-top:4px; color:var(--color-text-success);">28% Target</div></div>
+          </div>
+          <div class="kv-row"><span class="kv-label">Order Horizon</span><span class="kv-val">36+ Months</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANDATE 03: RARE EARTH ROLLUP -->
+    <div id="m03" class="mandate-panel">
+      <div class="panel-header">
+        <div class="panel-eyebrow">Private Market Transaction Sourcing Matrix</div>
+        <div class="panel-title">The Rare Earth Matrix: Consolidating Unlisted Neodymium processing Cells</div>
+        <div class="panel-hook">"Localization directives legally ban imported permanent rare-earth magnets from state defense components. Processing capability sits heavily bottlenecked inside fragmented private workshops."</div>
+      </div>
+      <table class="data-sheet">
+        <thead>
+          <tr>
+            <th>Target Asset Block Profile</th>
+            <th>Geographic Sourcing Cluster</th>
+            <th>Implied Entry Metric</th>
+            <th>Consolidated Strategic Leverage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700; color:var(--color-text-main);">Vacuum Sintering Processing Cell</td>
+            <td>Mundra Corridor, Gujarat</td>
+            <td style="font-weight:700; color:var(--color-text-danger);">4.2x EBITDA Base</td>
+            <td>Absorbs critical vacuum metallurgy assets required to produce military-grade guidance magnets.</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; color:var(--color-text-main);">Chemical Sand Extraction Separation Unit</td>
+            <td>Ganjam Region, Odisha</td>
+            <td style="font-weight:700; color:var(--color-text-danger);">5.5x EBITDA Base</td>
+            <td>Secures direct raw feedstock sovereignty, cutting off foreign intermediate import exposure completely.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MANDATE 04: NIFTY SMALLCAP MATRIX -->
+    <div id="m04" class="mandate-panel">
+      <div class="panel-header">
+        <div class="panel-eyebrow">Equity Research Desk Allocations</div>
+        <div class="panel-title">High-Conviction Nifty Smallcap Alpha Matrix Ledger</div>
+        <div class="panel-hook">"Translating deep alternative asset tracking metrics down into highly clear target position parameters for localized portfolio outperformance."</div>
+      </div>
+      <table class="data-sheet">
+        <thead>
+          <tr>
+            <th style="width:25%;">Stock Asset</th>
+            <th style="width:15%;">Stance</th>
+            <th style="width:15%;">Current Spot</th>
+            <th style="width:15%;">12M Target</th>
+            <th style="width:30%;">The Structural Thesis ("Why")</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="ticker-title">Shilchar Technologies</div><div class="ticker-code">NSE: SHILCHAR</div></td>
+            <td><span class="badge badge-buy">Strong Buy</span></td>
+            <td>₹3,450</td>
+            <td><div class="target-val">₹5,100</div><div style="font-size:10px; color:var(--color-text-success);">+47.8% Upside</div></td>
+            <td>National Power Grid buildout requires extreme distribution transformer drops. Systems track massive unrecorded export backlog velocity ahead of consensus screens.</td>
+          </tr>
+          <tr>
+            <td><div class="ticker-title">eMudhra Ltd</div><div class="ticker-code">NSE: EMUDHRA</div></td>
+            <td><span class="badge badge-buy">Strong Buy</span></td>
+            <td>₹820</td>
+            <td><div class="target-val">₹1,240</div><div style="font-size:10px; color:var(--color-text-success);">+51.2% Upside</div></td>
+            <td>Corporate data encryption transitions turn identity processing into a permanent toll-booth asset. High integrated user switching costs prevent removal moves.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MANDATE 05: MACRO TELEMETRY -->
+    <div id="m05" class="mandate-panel">
+      <div class="panel-header">
+        <div class="panel-eyebrow">Intermarket Telemetry Dashboard</div>
+        <div class="panel-title">The Global Macro Ledger: Yield Curves & Transmission Vectors</div>
+        <div class="panel-hook">"We avoid tracking macro indexes in isolation. Upstream metal spikes and sovereign bond yields act as the direct catalysts that drive micro equity transformations."</div>
+      </div>
+      <div class="g2">
+        <div class="card">
+          <div class="ctitle">Sovereign Capital Cost Baseline</div>
+          <div class="kv-row"><span class="kv-label">RBI 91-Day T-Bill Accrual Rate</span><span class="kv-val">5.40%</span></div>
+          <div class="kv-row"><span class="kv-label">India 10Y Benchmark G-Sec Bond</span><span class="kv-val" style="color:var(--color-text-danger);">7.02%</span></div>
+          <div class="kv-row"><span class="kv-label">AAA Private Corporate Debt Spread</span><span class="kv-val" style="color:var(--color-text-success);">7.65%</span></div>
+        </div>
+        <div class="card">
+          <div class="ctitle">Intermarket Flow Vectors</div>
+          <div class="insight-block">
+            <div class="ins-lead">Crude > $100 / bbl Impact Cascade</div>
+            <div class="ins-body">Drives severe inflation across traditional manufacturing loops, rapidly forcing adoption metrics toward **Schneider Electric's** intelligent, energy-saving distribution switchboards.</div>
+          </div>
+          <div class="insight-block">
+            <div class="ins-lead">MCX Copper Spikes to ₹842 / kg</div>
+            <div class="ins-body">Acts as a direct leading proxy for AI data center physical grid drops, backing the premium order conversion book at **Shilchar Technologies**.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANDATE 06: SEMICONDUCTOR EMS -->
+    <div id="m06" class="mandate-panel">
+      <div class="panel-header">
+        <div class="panel-eyebrow">Systemic Electronic Supply Chain Assessment</div>
+        <div class="panel-title">Advanced Electronics Assembly Strain vs. Silicon OSAT Packaging Moats</div>
+        <div class="panel-hook">"Generic contract phone assembly records high topline metrics while operating margins contract to 2% due to unhedged copper costs. Structural alpha flows to advanced packaging IP ownership."</div>
+      </div>
+      <div class="asymmetry-box">The Value Shift: Low-barrier card positioning represents a race to the bottom. True institutional alpha belongs to entities consolidating Backend Silicon Packaging (Outsourced Semiconductor Assembly & Test - OSAT) lines.</div>
+      <div class="g2">
+        <div class="card">
+          <div class="ctitle">The Defense PCB Transition</div>
+          <div style="font-size:13px; line-height:1.6; color:var(--color-text-sub);">
+            Isolating manufacturing capital pools away from consumer boards and directing allocations into high-reliability defense circuit setups and secure industrial SCADA hardware secures protected operating margins (14-18%) backed by long-term strategic regulatory clearance blocks.
+          </div>
+        </div>
+        <div class="card">
+          <div class="ctitle">OSAT Target M&A Originations</div>
+          <div class="kv-row"><span class="kv-label">Advanced Silicon Hybrid Bonding Nodes</span><span class="kv-val" style="color:var(--color-text-danger);">Patent Buyout Track</span></div>
+          <div class="kv-row"><span class="kv-label">Regional Industrial ICS Device Hardening</span><span class="kv-val">5.2x EBITDA Entry</span></div>
+          <div class="kv-row"><span class="kv-label">Automated Micro-Electronic Testing Labs</span><span class="kv-val">6.0x EBITDA Entry</span></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- UNIFIED SECURE PORTFOLIO FOOTER -->
+  <footer class="footer">
+    <div class="footer-disc">
+      Presentation framework compiled and maintained by analyst Lakshya Kalra. Macro data metrics, alternative port logs, cross-market asset turnover equations, and private sourcing targets represent proprietary analyst data synthesis for institutional target discussion. Active tracking benchmarks clear via live CCIL, MCX, and NSE terminals.
+    </div>
+    <div style="font-weight:700; color:var(--color-text-sub); white-space:nowrap;">MUMBAI METRO</div>
+  </footer>
+
 </div>
 
+<!-- MASTER MULTI-MANDATE ROUTING CORE SCRIPT -->
+<script>
+  function openMandate(mandateId, buttonElement) {
+    // Hide all internal mandate view containers
+    var panels = document.querySelectorAll('.mandate-panel');
+    for (var i = 0; i < panels.length; i++) {
+      panels[i].classList.remove('active');
+    }
+    
+    // Wipe active styles off core navigation button tags
+    var tabs = document.querySelectorAll('.tab-btn');
+    for (var j = 0; j < tabs.length; j++) {
+      tabs[j].classList.remove('active');
+    }
+    
+    // Inject display properties straight to selected targets
+    document.getElementById(mandateId).classList.add('active');
+    buttonElement.classList.add('active');
+  }
+</script>
 </body>
 </html>
